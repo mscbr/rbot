@@ -1,0 +1,23 @@
+{
+  "name": "scan_exec",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mscbr",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix",
+    "format": "prettier -w ."
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "got": "^11.8.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^3.4.1",
+    "prettier": "^2.3.2"
+  }
+}
