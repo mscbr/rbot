@@ -2,14 +2,14 @@ const got = require('got');
 
 const Market = require('../../models/market');
 
-module.exports = class BinanceSpot {
+module.exports = class BitforexSpot {
   constructor(publicKey, secretKey, eventEmitter, logger) {
-    this.id = 'binance_spot';
-    this._baseUrl = 'https://api.binance.com/api';
-    this._wssUrl = 'wss://stream.binance.com:9443/ws';
+    this.id = 'bitforex_spot';
+    this._baseUrl = 'https://api.bitforex.com/api';
+    this._wssUrl = 'wss://www.bitforex.com/mkapi/coinGroup1/ws';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
-    this._headers = { 'X-MBX-APIKEY': this._publicKey };
+    this._headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
 
     this.logger = logger;
 
@@ -17,11 +17,11 @@ module.exports = class BinanceSpot {
   }
 
   async init() {
-    this.logger.info('Initializing BinanceSpot client');
+    this.logger.info('Initializing BitforexSpot client');
 
     this.markets = await this.getMarkets();
 
-    this.logger.info('BinanceSpot client successfully initialized');
+    this.logger.info('BitforexSpot client successfully initialized');
   }
 
   async _makeRequest(method, endpoint, data) {
@@ -43,21 +43,15 @@ module.exports = class BinanceSpot {
           this.logger.error(`${this._baseUrl + endpoint}: ${err.message}`);
           return err;
         }
-        return;
-      default:
-        throw this.logger.error('BinanceSpot _makeRequest method value error');
     }
   }
 
   async getMarkets() {
     try {
       this.logger.info('Fetching market data...');
-      const exchangeInfo = await this._makeRequest('GET', '/v3/exchangeInfo');
-      return exchangeInfo.symbols.reduce((acc, market) => {
-        if (market.isSpotTradingAllowed) {
-          acc[market.symbol] = new Market(this.id, market);
-          return acc;
-        }
+      const exchangeInfo = await this._makeRequest('GET', '/v1/market/symbols');
+      return exchangeInfo.data.reduce((acc, market) => {
+        acc[market.symbol.split('-').slice(1, 3).reverse().join('').toUpperCase()] = new Market(this.id, market);
         return acc;
       }, {});
     } catch (err) {

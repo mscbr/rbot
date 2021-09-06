@@ -2,26 +2,13 @@ require('dotenv').config();
 
 const services = require('./src/modules/services');
 
-const GateioSpotClient = require('./src/modules/connectors/gateio-spot');
-
 const logger = services.getLogger();
 
 async function initClients() {
-  // const gateioSpot = new GateioSpotClient(
-  //   process.env.APIKEY_PUBLIC_GATEIO_SPOT,
-  //   process.env.APIKEY_PRIVATE_GATEIO_SPOT,
-  //   'eventEmitter',
-  //   logger,
-  // );
-  // await gateioSpot.init();
-  // logger.debug(gateioSpot.markets);
-
   const exchanges = await services.getExchanges();
+  const collection = await services.getCollection();
 
-  exchanges.map((exchange) => {
-    logger.info(exchange.id);
-    for (let i = 0; i < 10; i++) logger.debug(exchange.markets[Object.keys(exchange.markets)[i]]);
-  });
+  logger.debug(collection);
 
   // think about the fast & light way to keep cross-exchange market data
   // check the structure of "collections.json"

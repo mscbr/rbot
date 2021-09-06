@@ -8,12 +8,24 @@ module.exports = class Market {
       this.quantityPrecision = marketInfo.quotePrecision; // compare with gateio api
       this.fee = 0.1;
     } else if (exchange === 'gateio_spot') {
-      this.symbol = marketInfo.id.split('_').join('');
+      this.symbol = marketInfo.id;
       this.baseAsset = marketInfo.base;
       this.quoteAsset = marketInfo.quote;
       this.pricePrecision = marketInfo.precision;
       this.quantityPrecision = marketInfo.amount_precision;
       this.fee = parseFloat(marketInfo.fee);
+    } else if ((exchange = 'bitforex_spot')) {
+      const baseQuote = marketInfo.symbol
+        .split('-')
+        .slice(1, 3)
+        .reverse()
+        .map((item) => item.toUpperCase());
+      this.symbol = marketInfo.symbol;
+      this.baseAsset = baseQuote[0];
+      this.quoteAsset = baseQuote[1];
+      this.pricePrecision = marketInfo.pricePrecision;
+      this.quantityPrecision = marketInfo.amountPrecision;
+      this.fee = 0.1;
     }
   }
 };

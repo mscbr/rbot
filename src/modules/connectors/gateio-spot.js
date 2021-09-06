@@ -5,7 +5,7 @@ const Market = require('../../models/market');
 module.exports = class GateioSpot {
   constructor(publicKey, secretKey, eventEmitter, logger) {
     this.id = 'gateio_spot';
-    this._baseUrl = 'https://api.gateio.ws/api/v4';
+    this._baseUrl = 'https://api.gateio.ws/api';
     this._wssUrl = 'wss://api.gateio.ws/ws/v4/';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
@@ -40,7 +40,7 @@ module.exports = class GateioSpot {
           const response = await got(options).json();
           return response;
         } catch (err) {
-          this.logger.error(this._baseUrl + endpoint, err.message);
+          this.logger.error(`${this._baseUrl + endpoint}: ${err.message}`);
           return err;
         }
         return;
@@ -52,7 +52,7 @@ module.exports = class GateioSpot {
   async getMarkets() {
     try {
       this.logger.info('Fetching market data...');
-      const exchangeInfo = await this._makeRequest('GET', '/spot/currency_pairs');
+      const exchangeInfo = await this._makeRequest('GET', '/v4/spot/currency_pairs');
       return exchangeInfo.reduce((acc, market) => {
         if (market['trade_status'] == 'tradable') {
           acc[market.id.split('_').join('')] = new Market(this.id, market);

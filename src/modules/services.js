@@ -4,8 +4,10 @@ const { createLogger, transports, format } = require('winston');
 
 const BinanceSpotClient = require('./connectors/binance-spot');
 const GateioSpotClient = require('./connectors/gateio-spot');
+const BitforexSpotClient = require('./connectors/bitforex-spot');
 
 let exchanges;
+let collections;
 let logger;
 
 module.exports = {
@@ -28,11 +30,18 @@ module.exports = {
       'eventEmitter',
       this.getLogger(),
     );
+    const bitforexSpot = new BitforexSpotClient(
+      process.env.APIKEY_PUBLIC_BITFOREX_SPOT,
+      process.env.APIKEY_PRIVATE_BITFOREX_SPOT,
+      'eventEmitter',
+      this.getLogger(),
+    );
 
     await binanceSpot.init();
     await gatioSpot.init();
+    await bitforexSpot.init();
 
-    return (exchanges = [binanceSpot, gatioSpot]);
+    return (exchanges = [binanceSpot, gatioSpot, bitforexSpot]);
   },
 
   getLogger: function () {
@@ -55,5 +64,34 @@ module.exports = {
         // }),
       ],
     }));
+  },
+
+  // collection of market: [exchanges]
+  getCollection: async function (withSingles = false) {
+    if (collections) {
+      return collections;
+    }
+    if (!exchanges) await this.getExchanges();
+
+    collections = exchanges.reduce((acc, val) => {
+      for (market in val.markets) {
+        if (acc[market]) {
+          acc[market] = [val.id, ...acc[market]];
+        } else {
+          acc[market] = [val.id];
+        }
+      }
+      return acc;
+    }, {});
+
+    if (withSingles) return collections;
+
+    return Object.keys(collections).reduce((acc, val) => {
+      if (collections[val].length > 1) {
+        acc[val] = collections[val];
+        return acc;
+      }
+      return acc;
+    }, {});
   },
 };
