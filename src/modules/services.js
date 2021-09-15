@@ -1,4 +1,5 @@
 const path = require('path');
+const events = require('events');
 
 const { createLogger, transports, format } = require('winston');
 
@@ -9,6 +10,7 @@ const BitforexSpotClient = require('./connectors/bitforex-spot');
 let exchanges;
 let collections;
 let logger;
+let eventEmitter;
 
 module.exports = {
   boot: () => console.log('empty boot()'),
@@ -17,29 +19,33 @@ module.exports = {
     if (exchanges) {
       return exchanges;
     }
+    const logger = this.getLogger();
 
     const binanceSpot = await new BinanceSpotClient(
       process.env.APIKEY_PUBLIC_BINANCE_SPOT,
       process.env.APIKEY_PRIVATE_BINANCE_SPOT,
-      'eventEmitter',
-      this.getLogger(),
+      this.getEventEmitter(),
+      logger,
     );
     const gatioSpot = await new GateioSpotClient(
       process.env.APIKEY_PUBLIC_GATEIO_SPOT,
       process.env.APIKEY_PRIVATE_GATEIO_SPOT,
-      'eventEmitter',
-      this.getLogger(),
+      this.getEventEmitter(),
+      logger,
     );
     const bitforexSpot = new BitforexSpotClient(
       process.env.APIKEY_PUBLIC_BITFOREX_SPOT,
       process.env.APIKEY_PRIVATE_BITFOREX_SPOT,
-      'eventEmitter',
-      this.getLogger(),
+      this.getEventEmitter(),
+      logger,
     );
 
-    await binanceSpot.init();
-    await gatioSpot.init();
-    await bitforexSpot.init();
+    try {
+      await Promise.all([binanceSpot.init(), gatioSpot.init(), bitforexSpot.init()]);
+    } catch (err) {
+      logger.error(err.message);
+      return err;
+    }
 
     return (exchanges = [binanceSpot, gatioSpot, bitforexSpot]);
   },
@@ -93,5 +99,10 @@ module.exports = {
       }
       return acc;
     }, {});
+  },
+
+  getEventEmitter: function () {
+    if (eventEmitter) return eventEmitter;
+    return (eventEmitter = new events.EventEmitter());
   },
 };

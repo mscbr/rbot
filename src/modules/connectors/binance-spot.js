@@ -1,6 +1,10 @@
 const got = require('got');
 
+const WebSocket = require('ws');
+
 const Market = require('../../models/market');
+const TickerEvent = require('../../models/ticker-event');
+const Ticker = require('../../models/ticker');
 
 module.exports = class BinanceSpot {
   constructor(publicKey, secretKey, eventEmitter, logger) {
@@ -11,7 +15,11 @@ module.exports = class BinanceSpot {
     this._secretKey = secretKey;
     this._headers = { 'X-MBX-APIKEY': this._publicKey };
 
+    this._ws_id = 1;
+    this._startWs = this._startWs;
+
     this.logger = logger;
+    this.eventEmitter = eventEmitter;
 
     this.markets = {};
   }
@@ -20,6 +28,7 @@ module.exports = class BinanceSpot {
     this.logger.info('Initializing BinanceSpot client');
 
     this.markets = await this.getMarkets();
+    this._startWs(['@bookTicker']);
 
     this.logger.info('BinanceSpot client successfully initialized');
   }
@@ -64,5 +73,70 @@ module.exports = class BinanceSpot {
       this.logger.error(err.message);
       return err;
     }
+  }
+
+  _startWs(subscriptions, symbols = []) {
+    const { eventEmitter, logger, _wssUrl, markets, id } = this;
+    if (!subscriptions) return logger.error(`startWs() @ BinanceSpot: No subscribtions provided`);
+
+    const ws = new WebSocket(_wssUrl);
+
+    ws.on('ping', (e) => {
+      logger.debug(`Received ping: ${e}`);
+    });
+
+    ws.onerror = function (e) {
+      logger.error(`Binance Spot: Public stream (${_wssUrl}) error: ${JSON.stringify([e.code, e.message])}`);
+    };
+
+    ws.onopen = () => {
+      // => func in order to bind this._ws_id
+      logger.info(`Binance Spot: Public stream (${_wssUrl}) opened.`);
+
+      logger.info(`Binance Spot subscriptions: ${JSON.stringify(subscriptions.length)}`);
+
+      for (let i = 0; i < subscriptions.length; i++) {
+        ws.send(
+          JSON.stringify({
+            method: 'SUBSCRIBE',
+            params: ['!bookTicker'], //symbols.map((symbol) => symbol.lowerCase() + '@' + subscriptions[i]),
+            id: this._ws_id,
+          }),
+        );
+        this._ws_id += 1;
+      }
+    };
+
+    ws.onmessage = async function (e) {
+      const body = JSON.parse(e.data);
+
+      if (markets[body.s]) {
+        try {
+          eventEmitter.emit(
+            'ticker',
+            new TickerEvent(
+              id,
+              body.s,
+              markets[body.s].baseAsset,
+              markets[body.s].quoteAsset,
+              new Ticker(Date.now(), parseFloat(body.b), parseFloat(body.a)),
+            ),
+          );
+        } catch (err) {
+          logger.error(err.message);
+        }
+      }
+    };
+
+    ws.onclose = function (event) {
+      logger.error(
+        `Binance Spot: Public Stream (${_wssUrl}) connection closed: ${JSON.stringify([event.code, event.message])}`,
+      );
+
+      // setTimeout(async () => {
+      //   logger.info(`Binance Futures: Public stream (${_wssUrl}) connection reconnect`);
+      //   await _startWs(subscriptions, symbols);
+      // }, 1000 * 20);
+    };
   }
 };
