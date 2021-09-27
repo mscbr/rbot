@@ -27,7 +27,7 @@ module.exports = {
       this.getEventEmitter(),
       logger,
     );
-    const gatioSpot = await new GateioSpotClient(
+    const gateioSpot = await new GateioSpotClient(
       process.env.APIKEY_PUBLIC_GATEIO_SPOT,
       process.env.APIKEY_PRIVATE_GATEIO_SPOT,
       this.getEventEmitter(),
@@ -41,13 +41,13 @@ module.exports = {
     );
 
     try {
-      await Promise.all([binanceSpot.init(), gatioSpot.init(), bitforexSpot.init()]);
+      await Promise.all([binanceSpot.init(), gateioSpot.init(), bitforexSpot.init()]);
     } catch (err) {
       logger.error(err.message);
       return err;
     }
 
-    return (exchanges = [binanceSpot, gatioSpot, bitforexSpot]);
+    return (exchanges = [binanceSpot, gateioSpot, bitforexSpot]);
   },
 
   getLogger: function () {

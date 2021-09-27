@@ -17,7 +17,7 @@ module.exports = class BinanceSpot {
     this._headers = { 'X-MBX-APIKEY': this._publicKey };
 
     this.ws = null;
-    this._ws_id = 1;
+    this._wsId = 1;
     this._startWs = this._startWs.bind(this);
 
     this.logger = logger;
@@ -30,8 +30,9 @@ module.exports = class BinanceSpot {
     this.logger.info('Initializing BinanceSpot client');
 
     this.markets = await this.getMarkets();
+
     // this._startWs(['!bookTicker']);
-    this.startMarketStream(["bnbusdt", "lunabnb", "ftmbnb", "adabnb"])
+    this.startMarketStream(['bnbusdt', 'lunabnb', 'ftmbnb', 'adabnb']);
 
     this.logger.info('BinanceSpot client successfully initialized');
   }
@@ -84,15 +85,15 @@ module.exports = class BinanceSpot {
     return ws;
   }
 
-  _startWs(subscriptions, symbols = []) {
+  _startWs(subscriptions) {
     const { eventEmitter, logger, _wssUrl, markets, id, _startWs } = this;
     if (!subscriptions) return logger.error(`startWs() @ BinanceSpot: No subscribtions provided`);
 
     let ws = this._getWs();
 
     ws.on('ping', (e) => {
-      logger.debug(`Received ping: ${e}`);
-      ws.send('pong');
+      logger.debug(`Received binance ping: ${e}`);
+      ws.pong();
     });
 
     ws.onerror = function (e) {
@@ -104,31 +105,14 @@ module.exports = class BinanceSpot {
 
       logger.info(`Binance Spot subscriptions: ${JSON.stringify(subscriptions.length)}`);
 
-      // handling the limit of sending 5 req/s
-      _.chunk(subscriptions, 3).forEach((chunk, idx) => {
-        if (idx === 0) {
-          logger.debug(`Binance Futures: Public stream (${idx}) subscribing: ${JSON.stringify(chunk)}`);
-          ws.send(
-            JSON.stringify({
-              method: 'SUBSCRIBE',
-              params: chunk,
-              id: this._ws_id,
-            }),
-          );
-        } else {
-          setTimeout(() => {
-            logger.debug(`Binance Futures: Public stream (${idx}) subscribing: ${JSON.stringify(chunk)}`);
-            ws.send(
-              JSON.stringify({
-                method: 'SUBSCRIBE',
-                params: chunk,
-                id: this._ws_id,
-              }),
-            );
-          }, idx * 1000);
-        }
-        this._ws_id += 1;
-      });
+      ws.send(
+        JSON.stringify({
+          method: 'SUBSCRIBE',
+          params: subscriptions,
+          id: this._wsId,
+        }),
+      );
+      this._wsId += 1;
     };
 
     ws.onmessage = async function (e) {
@@ -158,8 +142,8 @@ module.exports = class BinanceSpot {
       );
 
       setTimeout(async () => {
-        logger.info(`Binance Futures: Public stream (${_wssUrl}) connection reconnect`);
-        await _startWs(subscriptions, symbols);
+        logger.info(`Binance: Public stream (${_wssUrl}) connection reconnect`);
+        await _startWs(subscriptions);
       }, 1000 * 20);
     };
   }
@@ -169,7 +153,6 @@ module.exports = class BinanceSpot {
     for (let i = 0; i < symbols.length; i++) {
       subscriptions.push(`${symbols[i]}@bookTicker`);
     }
-    this.logger.debug(subscriptions);
     this._startWs(subscriptions);
-  };
+  }
 };
