@@ -30,8 +30,6 @@ module.exports = class GateioSpot {
 
     this.markets = await this.getMarkets();
 
-    this.startMarketStream(Object.values(this.markets).map((market) => market.symbol));
-
     this.logger.info('GateioSpot client successfully initialized');
   }
 
@@ -118,7 +116,7 @@ module.exports = class GateioSpot {
       }
     };
 
-    ws.onmessage = async function (e) {
+    ws.onmessage = function (e) {
       const { result } = JSON.parse(e.data);
       const market = result.s && result.s.split('_').join('');
 
@@ -128,6 +126,7 @@ module.exports = class GateioSpot {
             'ticker',
             new TickerEvent(
               id,
+              market,
               result.s,
               markets[market].baseAsset,
               markets[market].quoteAsset,
@@ -145,14 +144,17 @@ module.exports = class GateioSpot {
         `GateIo Spot: Public Stream (${_wssUrl}) connection closed: ${JSON.stringify([event.code, event.message])}`,
       );
 
-      setTimeout(async () => {
+      setTimeout(() => {
         logger.info(`GateIo: Public stream (${_wssUrl}) connection reconnect`);
-        await _startWs(subscriptions, symbols);
-      }, 1000 * 20);
+        _startWs(subscriptions, symbols);
+      }, 1000 * 10);
     };
   }
 
-  startMarketStream(symbols) {
-    this._startWs(['spot.book_ticker'], symbols);
+  startMarketStream(markets) {
+    this._startWs(
+      ['spot.book_ticker'],
+      markets.map((market) => this.markets && this.markets[market].symbol),
+    );
   }
 };

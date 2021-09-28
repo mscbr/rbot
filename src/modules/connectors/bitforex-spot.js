@@ -29,8 +29,6 @@ module.exports = class BitforexSpot {
 
     this.markets = await this.getMarkets();
 
-    this.startMarketStream(Object.values(this.markets).map((market) => market.symbol));
-
     this.logger.info('BitforexSpot client successfully initialized');
   }
 
@@ -115,7 +113,7 @@ module.exports = class BitforexSpot {
       }
     };
 
-    ws.onmessage = async function (e) {
+    ws.onmessage = function (e) {
       const body = JSON.parse(e.data);
       const market = body.param.businessType.split('-').slice(1, 3).reverse().join('').toUpperCase();
 
@@ -125,6 +123,7 @@ module.exports = class BitforexSpot {
             'ticker',
             new TickerEvent(
               id,
+              market,
               body.param.businessType,
               markets[market].baseAsset,
               markets[market].quoteAsset,
@@ -142,14 +141,18 @@ module.exports = class BitforexSpot {
         `Bitforex Spot: Public Stream (${_wssUrl}) connection closed: ${JSON.stringify([event.code, event.message])}`,
       );
 
-      setTimeout(async () => {
+      setTimeout(() => {
         logger.info(`Bitforex: Public stream (${_wssUrl}) connection reconnect`);
-        await _startWs(subscriptions, symbols);
-      }, 1000 * 20);
+        _startWs(subscriptions, symbols);
+      }, 1000 * 10);
     };
   }
 
-  startMarketStream(symbols) {
-    this._startWs(['depth10'], symbols, { dType: 0 });
+  startMarketStream(markets) {
+    this._startWs(
+      ['depth10'],
+      markets.map((market) => this.markets && this.markets[market].symbol),
+      { dType: 0 },
+    );
   }
 };

@@ -77,7 +77,7 @@ module.exports = {
     if (collections) {
       return collections;
     }
-    if (!exchanges) await this.getExchanges();
+    const exchanges = await this.getExchanges();
 
     collections = exchanges.reduce((acc, val) => {
       for (market in val.markets) {
@@ -99,6 +99,25 @@ module.exports = {
       }
       return acc;
     }, {});
+  },
+
+  getCollectionStream: async function (selected = []) {
+    const exchanges = await this.getExchanges();
+    const collection = await this.getCollection();
+    const markets = exchanges.reduce((acc, { id }) => {
+      acc[id] = Object.keys(collection).filter((market) => collection[market].includes(id));
+      return acc;
+    }, {});
+    const emitter = this.getEventEmitter();
+
+    exchanges
+      .filter((exchange) => (selected.length ? selected.includes(exchange.id) : true))
+      .forEach((exchange) => exchange.startMarketStream(markets[exchange.id]));
+
+    return (cb) =>
+      emitter.on('ticker', (data) => {
+        cb && cb(data);
+      });
   },
 
   getEventEmitter: function () {

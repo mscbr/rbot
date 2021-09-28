@@ -31,9 +31,6 @@ module.exports = class BinanceSpot {
 
     this.markets = await this.getMarkets();
 
-    // this._startWs(['!bookTicker']);
-    this.startMarketStream(['bnbusdt', 'lunabnb', 'ftmbnb', 'adabnb']);
-
     this.logger.info('BinanceSpot client successfully initialized');
   }
 
@@ -105,17 +102,23 @@ module.exports = class BinanceSpot {
 
       logger.info(`Binance Spot subscriptions: ${JSON.stringify(subscriptions.length)}`);
 
-      ws.send(
-        JSON.stringify({
-          method: 'SUBSCRIBE',
-          params: subscriptions,
-          id: this._wsId,
-        }),
-      );
-      this._wsId += 1;
+      // it seem like Binance has a problef for taking
+      // params.length > 380
+      _.chunk(subscriptions, 200).forEach((chunk, idx) => {
+        setTimeout(() => {
+          ws.send(
+            JSON.stringify({
+              method: 'SUBSCRIBE',
+              params: chunk,
+              id: this._wsId,
+            }),
+          );
+        }, idx * 1500);
+        this._wsId += 1;
+      });
     };
 
-    ws.onmessage = async function (e) {
+    ws.onmessage = function (e) {
       const body = JSON.parse(e.data);
 
       if (markets[body.s]) {
@@ -124,6 +127,7 @@ module.exports = class BinanceSpot {
             'ticker',
             new TickerEvent(
               id,
+              market,
               body.s,
               markets[body.s].baseAsset,
               markets[body.s].quoteAsset,
@@ -141,17 +145,17 @@ module.exports = class BinanceSpot {
         `Binance Spot: Public Stream (${_wssUrl}) connection closed: ${JSON.stringify([event.code, event.message])}`,
       );
 
-      setTimeout(async () => {
+      setTimeout(() => {
         logger.info(`Binance: Public stream (${_wssUrl}) connection reconnect`);
-        await _startWs(subscriptions);
-      }, 1000 * 20);
+        _startWs(subscriptions);
+      }, 1000 * 10);
     };
   }
 
-  startMarketStream(symbols) {
+  startMarketStream(markets) {
     const subscriptions = [];
-    for (let i = 0; i < symbols.length; i++) {
-      subscriptions.push(`${symbols[i]}@bookTicker`);
+    for (let i = 0; i < markets.length; i++) {
+      subscriptions.push(`${markets[i].toLowerCase()}@bookTicker`);
     }
     this._startWs(subscriptions);
   }
