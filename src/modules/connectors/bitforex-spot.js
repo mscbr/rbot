@@ -117,7 +117,7 @@ module.exports = class BitforexSpot {
       const body = JSON.parse(e.data);
       const market = body.param.businessType.split('-').slice(1, 3).reverse().join('').toUpperCase();
 
-      if (market && markets[market]) {
+      if (market && markets[market] && body.data) {
         try {
           eventEmitter.emit(
             'ticker',

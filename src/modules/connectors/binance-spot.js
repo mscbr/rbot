@@ -127,7 +127,7 @@ module.exports = class BinanceSpot {
             'ticker',
             new TickerEvent(
               id,
-              market,
+              body.s,
               body.s,
               markets[body.s].baseAsset,
               markets[body.s].quoteAsset,
