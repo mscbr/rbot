@@ -89,7 +89,8 @@ module.exports = class BinanceSpot {
     let ws = this._getWs();
 
     ws.on('ping', (e) => {
-      logger.debug(`Received binance ping: ${e}`);
+      // logger.debug(`Received binance ping: ${e}`);
+      console.log('PING: binance');
       ws.pong();
     });
 

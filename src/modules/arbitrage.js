@@ -4,36 +4,79 @@ module.exports = class Arbitrage {
     this.emitter = emitter;
 
     this.collectionStream = collectionStream;
-    this.marketData = {};
+    this.marketsData = {};
     this.marketUpdates = 0;
+
+    this.arbs = {};
 
     this._updateMarkets = this._updateMarkets.bind(this);
   }
 
   init() {
-    const { collectionStream, marketData, logger, emitter, _updateMarkets } = this;
+    let { collectionStream, marketsData, arbs, logger, emitter, _updateMarkets } = this;
     collectionStream((data) => {
-      _updateMarkets(data);
+      const marketData = _updateMarkets(data);
+      if (!marketData) return;
+      const singleScan = this.singleMarketScan(marketData[data.market]);
+
+      if (singleScan) {
+        arbs = {
+          ...arbs,
+          [data.market]: singleScan,
+        };
+        logger.debug(arbs);
+      }
     });
   }
 
   _updateMarkets(data) {
-    const { collectionStream, marketData, logger, emitter } = this;
+    let { collectionStream, marketsData, logger, emitter } = this;
     // is the incoming value a novelty
     if (
-      marketData[data.market] &&
-      marketData[data.market][data.exchange] &&
-      marketData[data.market][data.exchange].ticker.bid === data.ticker.bid &&
-      marketData[data.market][data.exchange].ticker.ask === data.ticker.ask
+      marketsData[data.market] &&
+      marketsData[data.market][data.exchange] &&
+      marketsData[data.market][data.exchange].ticker.bid === data.ticker.bid &&
+      marketsData[data.market][data.exchange].ticker.ask === data.ticker.ask
     )
-      return;
+      return null;
 
-    // maybe for perf, just the ticker can be updated?
-    marketData[data.market] = { ...marketData[data.market], [data.exchange]: data };
+    marketsData[data.market] = { ...marketsData[data.market], [data.exchange]: data };
 
-    // DEBUG
-    data.market === 'ETHBTC' && console.log(marketData[data.market]);
+    return { [data.market]: Object.values(marketsData[data.market]) };
   }
 
-  // singleMarketScan() {}
+  singleMarketScan(marketData) {
+    //find the lowest ask and the highest bid
+    const arb = marketData.reduce((acc, { exchange, ticker: { ask, bid }, market }, idx) => {
+      acc.market = market;
+      if (!idx) {
+        acc.lowestAsk = {
+          exchange,
+          price: ask,
+        };
+        acc.highestBid = {
+          exchange,
+          price: bid,
+        };
+        return acc;
+      }
+
+      if (acc.lowestAsk.price > ask) {
+        acc.lowestAsk = {
+          exchange,
+          price: ask,
+        };
+      }
+      if (acc.highestBid.price < bid) {
+        acc.highestBid = {
+          exchange,
+          price: bid,
+        };
+      }
+      return acc;
+    }, {});
+    if (arb.highestBid.price - arb.lowestAsk.price > 0) console.log(arb.market);
+    if (arb.lowestAsk.price < arb.highestBid.price) return arb;
+    return null;
+  }
 };

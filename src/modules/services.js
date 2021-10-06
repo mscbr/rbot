@@ -64,10 +64,10 @@ module.exports = {
         new transports.Console({
           level: 'debug',
         }),
-        // new transports.File({
-        //   filename: `${path.resolve(__dirname)}/logs.json`,
-        //   level: 'debug',
-        // }),
+        new transports.File({
+          filename: `${path.resolve(__dirname)}/logs.json`,
+          level: 'debug',
+        }),
       ],
     }));
   },

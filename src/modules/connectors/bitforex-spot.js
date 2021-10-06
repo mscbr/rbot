@@ -80,10 +80,15 @@ module.exports = class BitforexSpot {
 
     let ws = this._getWs();
 
-    ws.on('ping', (e) => {
-      logger.debug(`Received gateio ping: ${e}`);
-      ws.pong();
-    });
+    // ws.on('pong_p', (e) => {
+    //   // logger.debug(`Received bitforex ping: ${e}`);
+    //   ws.pong();
+    // });
+
+    setInterval(function () {
+      ws.send('ping');
+      console.log('PING: bitforex');
+    }, 10 * 1000);
 
     ws.onerror = function (e) {
       logger.error(`Bitforex Spot: Public stream (${_wssUrl}) error: ${JSON.stringify([e.code, e.message])}`);

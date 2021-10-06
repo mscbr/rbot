@@ -88,7 +88,8 @@ module.exports = class GateioSpot {
     let ws = this._getWs();
 
     ws.on('ping', (e) => {
-      logger.debug(`Received gateio ping: ${e}`);
+      // logger.debug(`Received gateio ping: ${e}`);
+      console.log('PING: gateio');
       ws.pong();
     });
 
