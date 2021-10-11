@@ -132,6 +132,7 @@ module.exports = class BinanceSpot {
               body.s,
               markets[body.s].baseAsset,
               markets[body.s].quoteAsset,
+              markets[body.s].fee,
               new Ticker(Date.now(), parseFloat(body.b), parseFloat(body.a)),
             ),
           );

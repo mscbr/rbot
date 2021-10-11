@@ -132,6 +132,7 @@ module.exports = class BitforexSpot {
               body.param.businessType,
               markets[market].baseAsset,
               markets[market].quoteAsset,
+              markets[market].fee,
               new Ticker(Date.now(), parseFloat(body.data.bids[0].price), parseFloat(body.data.asks[0].price)),
             ),
           );

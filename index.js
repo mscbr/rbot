@@ -25,3 +25,7 @@ async function initClients() {
 }
 
 initClients();
+
+// FURTHER STEPS AS OF 11/10/2021:
+// implement ascendex
+// implement depth of order book

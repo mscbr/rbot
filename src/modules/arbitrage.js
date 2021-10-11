@@ -1,3 +1,5 @@
+const { reduce } = require("lodash");
+
 module.exports = class Arbitrage {
   constructor(collectionStream, logger, emitter) {
     this.logger = logger;
@@ -24,7 +26,8 @@ module.exports = class Arbitrage {
           ...arbs,
           [data.market]: singleScan,
         };
-        logger.debug(arbs);
+        const ordered = Object.values(arbs).sort((a, b) => b - a).filter(arb => arb.profit > 0.99);
+        if (ordered.length) logger.debug(ordered);
       }
     });
   }
@@ -45,18 +48,25 @@ module.exports = class Arbitrage {
     return { [data.market]: Object.values(marketsData[data.market]) };
   }
 
+  _spread(bid, ask, fees = []) {
+    return bid / ask - fees.reduce((acc, val) => acc + val, 0);
+  }
+
   singleMarketScan(marketData) {
     //find the lowest ask and the highest bid
-    const arb = marketData.reduce((acc, { exchange, ticker: { ask, bid }, market }, idx) => {
+    const arb = marketData.reduce((acc, { exchange, ticker: { ask, bid }, market, fee }, idx) => {
       acc.market = market;
+
       if (!idx) {
         acc.lowestAsk = {
           exchange,
           price: ask,
+          fee,
         };
         acc.highestBid = {
           exchange,
           price: bid,
+          fee,
         };
         return acc;
       }
@@ -65,18 +75,21 @@ module.exports = class Arbitrage {
         acc.lowestAsk = {
           exchange,
           price: ask,
+          fee,
         };
       }
       if (acc.highestBid.price < bid) {
         acc.highestBid = {
           exchange,
           price: bid,
+          fee
         };
       }
       return acc;
     }, {});
-    if (arb.highestBid.price - arb.lowestAsk.price > 0) console.log(arb.market);
-    if (arb.lowestAsk.price < arb.highestBid.price) return arb;
+
+    arb.profit = this._spread(arb.highestBid.price, arb.lowestAsk.price, [arb.highestBid.fee, arb.lowestAsk.fee]);
+    if (arb.highestBid.price > arb.lowestAsk.price) return arb;
     return null;
   }
 };

@@ -131,6 +131,7 @@ module.exports = class GateioSpot {
               result.s,
               markets[market].baseAsset,
               markets[market].quoteAsset,
+              markets[market].fee,
               new Ticker(Date.now(), parseFloat(result.b), parseFloat(result.a)),
             ),
           );
