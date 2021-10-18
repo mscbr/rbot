@@ -6,6 +6,20 @@ const Market = require('../../models/market');
 const TickerEvent = require('../../models/ticker-event');
 const Ticker = require('../../models/ticker');
 
+const EXCEPTIONS_GATEIO_SPOT = {
+  NOIAETH: 'NOIAETH1',
+  PLAUSDT: 'PLAUSDT1',
+  MIRUSDT: 'MIRUSDT1',
+  TONUSDT: 'TONUSDT1',
+  EWTUSDT: 'EWTUSDT1',
+  EWTETH: 'EWTETH1',
+  MIRETH: 'MIRETH1',
+  BKCUSDT: 'BKCUSDT1',
+  CREDITUSDT: 'CREDITUSDT1',
+  TNCUSDT: 'TNCUSDT1',
+  TNCETH: 'TNCETH1',
+};
+
 module.exports = class GateioSpot {
   constructor(publicKey, secretKey, eventEmitter, logger) {
     this.id = 'gateio_spot';
@@ -64,7 +78,8 @@ module.exports = class GateioSpot {
       const exchangeInfo = await this._makeRequest('GET', '/v4/spot/currency_pairs');
       return exchangeInfo.reduce((acc, market) => {
         if (market['trade_status'] == 'tradable') {
-          acc[market.id.split('_').join('')] = new Market(this.id, market);
+          const formatted = market.id.split('_').join('');
+          acc[EXCEPTIONS_GATEIO_SPOT[formatted] || formatted] = new Market(this.id, market);
           return acc;
         }
         return acc;

@@ -1,4 +1,4 @@
-const { reduce } = require("lodash");
+const { reduce } = require('lodash');
 
 module.exports = class Arbitrage {
   constructor(collectionStream, logger, emitter) {
@@ -7,7 +7,7 @@ module.exports = class Arbitrage {
 
     this.collectionStream = collectionStream;
     this.marketsData = {};
-    this.marketUpdates = 0;
+    this.falseMarkets = {};
 
     this.arbs = {};
 
@@ -26,8 +26,7 @@ module.exports = class Arbitrage {
           ...arbs,
           [data.market]: singleScan,
         };
-        const ordered = Object.values(arbs).sort((a, b) => b - a).filter(arb => arb.profit > 0.99);
-        if (ordered.length) logger.debug(ordered);
+        logger.debug(arbs);
       }
     });
   }
@@ -82,14 +81,29 @@ module.exports = class Arbitrage {
         acc.highestBid = {
           exchange,
           price: bid,
-          fee
+          fee,
         };
       }
       return acc;
     }, {});
 
     arb.profit = this._spread(arb.highestBid.price, arb.lowestAsk.price, [arb.highestBid.fee, arb.lowestAsk.fee]);
-    if (arb.highestBid.price > arb.lowestAsk.price) return arb;
+
+    if (arb.profit > 2) {
+      const prevMarkets = { ...this.falseMarkets };
+      this.falseMarkets = {
+        ...this.falseMarkets,
+        [arb.market]: {
+          profit: arb.profit,
+          exchanges: [arb.lowestAsk.exchange, arb.highestBid.exchange],
+        },
+      };
+      if (Object.keys(prevMarkets).length !== Object.keys(this.falseMarkets).length) {
+        console.log(this.falseMarkets);
+      }
+      return null;
+    }
+    if (arb.profit > 0.97) return arb;
     return null;
   }
 };

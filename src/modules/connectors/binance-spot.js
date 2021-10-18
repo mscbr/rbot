@@ -7,6 +7,12 @@ const Market = require('../../models/market');
 const TickerEvent = require('../../models/ticker-event');
 const Ticker = require('../../models/ticker');
 
+const EXCEPTIONS_BINANCE_SPOT = {
+  GTCBTC: 'GTCBTC1',
+  GTCUSDT: 'GTCUSDT1',
+  MIRUSDT: 'MIRUSDT1',
+};
+
 module.exports = class BinanceSpot {
   constructor(publicKey, secretKey, eventEmitter, logger) {
     this.id = 'binance_spot';
@@ -65,7 +71,8 @@ module.exports = class BinanceSpot {
       const exchangeInfo = await this._makeRequest('GET', '/v3/exchangeInfo');
       return exchangeInfo.symbols.reduce((acc, market) => {
         if (market.isSpotTradingAllowed) {
-          acc[market.symbol] = new Market(this.id, market);
+          const symbol = EXCEPTIONS_BINANCE_SPOT[market.symbol] || market.symbol;
+          acc[symbol] = new Market(this.id, market);
           return acc;
         }
         return acc;

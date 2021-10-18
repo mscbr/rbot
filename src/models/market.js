@@ -14,7 +14,7 @@ module.exports = class Market {
       this.pricePrecision = marketInfo.precision;
       this.quantityPrecision = marketInfo.amount_precision;
       this.fee = parseFloat(marketInfo.fee);
-    } else if ((exchange = 'bitforex_spot')) {
+    } else if (exchange === 'bitforex_spot') {
       const baseQuote = marketInfo.symbol
         .split('-')
         .slice(1, 3)
