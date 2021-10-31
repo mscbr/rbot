@@ -9,6 +9,7 @@
     "format": "prettier -w ."
   },
   "dependencies": {
+    "ccxt": "^1.58.84",
     "dotenv": "^10.0.0",
     "got": "^11.8.2",
     "lodash": "^4.17.21",

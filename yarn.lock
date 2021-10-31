@@ -247,6 +247,11 @@ callsites@^3.0.0:
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
+ccxt@^1.58.84:
+  version "1.58.84"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.58.84.tgz#8f9439236f9a12b3a75f1d8f565da7cce8b1e9b6"
+  integrity sha512-AWmSA1kRtJOkunjwIPOCksCWYLOyqr8agDtx4GXMEDtb2LQj1WW2YwT7uzWyf833FFwq+M+kw8e4M/9ZtWzovw==
+
 chalk@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"

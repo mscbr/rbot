@@ -3,6 +3,7 @@ require('dotenv').config();
 const services = require('./src/modules/services');
 
 const Arbitrage = require('./src/modules/scan/arbitrage');
+const SingleMarketRecorder = require('./src/data-analysis/single-market-recorder');
 
 const logger = services.getLogger();
 
@@ -25,7 +26,17 @@ async function initClients() {
   // });
 }
 
-initClients();
+// initClients();
+
+async function analyze() {
+  const logger = services.getLogger();
+
+  const recorder = new SingleMarketRecorder(logger);
+  await recorder.init();
+  await recorder.scanForArbs(20);
+}
+
+analyze();
 
 // FURTHER STEPS AS OF 11/10/2021:
 // implement ascendex

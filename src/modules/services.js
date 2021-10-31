@@ -64,10 +64,12 @@ module.exports = {
         new transports.Console({
           level: 'debug',
         }),
-        new transports.File({
-          filename: `${path.resolve(__dirname)}/logs.json`,
-          level: 'debug',
-        }),
+
+        // uncomment for saving logs to json file
+        // new transports.File({
+        //   filename: `${path.resolve(__dirname)}/logs.json`,
+        //   level: 'debug',
+        // }),
       ],
     }));
   },

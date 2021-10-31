@@ -51,7 +51,7 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  singleMarketScan(marketData) {
+  singleMarketScan(marketData, profitFilter = 0.005) {
     //find the lowest ask and the highest bid
     const arb = marketData.reduce((acc, { exchange, ticker: { ask, bid }, market, fee }, idx) => {
       acc.market = market;
@@ -99,11 +99,15 @@ module.exports = class Arbitrage {
         },
       };
       if (Object.keys(prevMarkets).length !== Object.keys(this.falseMarkets).length) {
-        console.log(this.falseMarkets);
+        console.log('POTENTIALLY FALSE MARKETS: ', this.falseMarkets);
       }
       return null;
     }
-    if (arb.profit > 1.005) return arb;
+    if (arb.profit > 1 + profitFilter) return arb;
     return null;
+  }
+
+  sortArbsByProfit(arbs) {
+    return Object.values(arbs).sort((a, b) => b.profit - a.profit);
   }
 };
