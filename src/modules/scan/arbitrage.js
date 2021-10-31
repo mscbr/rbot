@@ -103,7 +103,7 @@ module.exports = class Arbitrage {
       }
       return null;
     }
-    if (arb.profit > 0.97) return arb;
+    if (arb.profit > 1.005) return arb;
     return null;
   }
 };
