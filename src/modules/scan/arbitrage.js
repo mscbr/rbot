@@ -19,14 +19,14 @@ module.exports = class Arbitrage {
     collectionStream((data) => {
       const marketData = _updateMarkets(data);
       if (!marketData) return;
-      const singleScan = this.singleMarketScan(marketData[data.market]);
+      const singleScan = this.singleMarketScan(marketData[data.market], 0.009);
 
       if (singleScan) {
         arbs = {
           ...arbs,
           [data.market]: singleScan,
         };
-        logger.debug(arbs);
+        logger.debug(this.sortArbsByProfit(arbs));
       }
     });
   }
@@ -99,7 +99,7 @@ module.exports = class Arbitrage {
         },
       };
       if (Object.keys(prevMarkets).length !== Object.keys(this.falseMarkets).length) {
-        console.log('POTENTIALLY FALSE MARKETS: ', this.falseMarkets);
+        // console.log('POTENTIALLY FALSE MARKETS: ', this.falseMarkets);
       }
       return null;
     }
@@ -108,6 +108,6 @@ module.exports = class Arbitrage {
   }
 
   sortArbsByProfit(arbs) {
-    return Object.values(arbs).sort((a, b) => b.profit - a.profit);
+    return Object.values(arbs).sort((a, b) => a.profit - b.profit);
   }
 };

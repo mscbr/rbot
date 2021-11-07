@@ -18,6 +18,8 @@ module.exports = class SingleMarketRecorder {
     this.arbs = {};
 
     this._tickersToArbs = this._tickersToArbs.bind(this);
+
+    this.scanIntervalId = null;
   }
 
   async init() {
@@ -25,7 +27,9 @@ module.exports = class SingleMarketRecorder {
     await this._loadMarkets();
   }
 
-  _loadExchanges(ids = ['binance', 'getio', 'ascendex', 'poloniex', 'bitfinex', 'kraken']) {
+  _loadExchanges(
+    ids = ['binance', 'getio', 'ascendex', 'poloniex', 'bitfinex', 'kraken', 'bitvavo', 'bitmart', 'ftx'],
+  ) {
     this.exchanges = {
       binance: new ccxt.binance(),
       gateio: new ccxt.gateio(),
@@ -33,6 +37,9 @@ module.exports = class SingleMarketRecorder {
       poloniex: new ccxt.poloniex(),
       bitfinex: new ccxt.bitfinex(),
       kraken: new ccxt.kraken(),
+      bitvavo: new ccxt.bitvavo(),
+      bitmart: new ccxt.bitmart(),
+      ftx: new ccxt.ftx(),
     };
   }
 
@@ -47,6 +54,7 @@ module.exports = class SingleMarketRecorder {
     await Promise.all(marketPromises);
   }
 
+  // param: exclude = {[exchange]: [market1, market2...]}
   _getMarketsForExchanges() {
     let { exchanges, marketsForExchanges } = this;
 
@@ -84,11 +92,11 @@ module.exports = class SingleMarketRecorder {
     const marketsForExchanges = this._getMarketsForExchanges();
 
     const tickerPromises = Object.values(exchanges).reduce((acc, exchange) => {
-      if (exchange.id === 'ascendex') {
-        acc[exchange.id] = exchange.fetchTickers();
-      } else {
-        acc[exchange.id] = exchange.fetchTickers(marketsForExchanges[exchange.id]);
-      }
+      //exceptions
+      if (exchange.id === 'ascendex') acc[exchange.id] = exchange.fetchTickers();
+      //regular handling
+      else acc[exchange.id] = exchange.fetchTickers(marketsForExchanges[exchange.id]);
+
       return acc;
     }, {});
 
@@ -113,41 +121,54 @@ module.exports = class SingleMarketRecorder {
       });
     });
 
+    // does it return pointer to the original object
+    // or just a value?
     return this.tickers;
   }
 
+  // not used within the class
   _spread(bid, ask, fees = []) {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
+  // maybe it shouldn't
+   be async f()
+  // but take tickers as a param
   async _tickersToArbs() {
     let { logger, arbs, arbitrage } = this;
 
+    logger.info('Fetching tickers...');
     const tickers = await this._fetchTickers();
     const markets = Object.keys(tickers);
 
     for (let i = 0; i < markets.length; i++) {
-      const singleScan = arbitrage.singleMarketScan(Object.values(tickers[markets[i]]), 0.009);
+      const singleScan = arbitrage.singleMarketScan(Object.values(tickers[markets[i]]), 0.06);
 
       if (singleScan) {
         arbs = {
           ...arbs,
           [markets[i]]: singleScan,
         };
-        logger.debug(arbitrage.sortArbsByProfit(arbs));
       }
     }
+    logger.debug(arbitrage.sortArbsByProfit(arbs));
+    logger.debug(arbitrage.sortArbsByProfit(arbs).length);
   }
 
   async scanForArbs(_interval = 0) {
     const { _tickersToArbs } = this;
     if (_interval) {
       const interval = _interval * 1000;
-      setInterval(async () => {
+      this.scanIntervalId = setInterval(async () => {
         await _tickersToArbs();
       }, interval);
     } else {
       await _tickersToArbs();
     }
+  }
+
+  terminateScan() {
+    if (this.scanIntervalId) clearInterval(this.scanIntervalId);
+    this.logger.error('ARB SCAN TERMINATED');
   }
 };
