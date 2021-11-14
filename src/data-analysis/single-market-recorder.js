@@ -27,9 +27,7 @@ module.exports = class SingleMarketRecorder {
     await this._loadMarkets();
   }
 
-  _loadExchanges(
-    ids = ['binance', 'getio', 'ascendex', 'poloniex', 'bitfinex', 'kraken', 'bitvavo', 'bitmart', 'ftx'],
-  ) {
+  async _loadExchanges() {
     this.exchanges = {
       binance: new ccxt.binance(),
       gateio: new ccxt.gateio(),
@@ -40,6 +38,9 @@ module.exports = class SingleMarketRecorder {
       bitvavo: new ccxt.bitvavo(),
       bitmart: new ccxt.bitmart(),
       ftx: new ccxt.ftx(),
+      hitbtc: new ccxt.hitbtc(),
+      okcoin: new ccxt.okcoin(),
+      // bitforex: new ccxt.bitforex(),// doesnt have fetchTickers
     };
   }
 
@@ -52,6 +53,9 @@ module.exports = class SingleMarketRecorder {
 
     logger.info('Loading markets...');
     await Promise.all(marketPromises);
+    Object.values(exchanges).map((exchange) => {
+      logger.info(`Loaded ${Object.keys(exchange.markets).length} markets for ${exchange.id}`);
+    });
   }
 
   // param: exclude = {[exchange]: [market1, market2...]}
@@ -131,18 +135,17 @@ module.exports = class SingleMarketRecorder {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  // maybe it shouldn't
-   be async f()
+  // maybe it shouldn'tbe async f()
   // but take tickers as a param
   async _tickersToArbs() {
-    let { logger, arbs, arbitrage } = this;
+    let { logger, arbs, arbitrage, exchanges } = this;
 
     logger.info('Fetching tickers...');
     const tickers = await this._fetchTickers();
     const markets = Object.keys(tickers);
 
     for (let i = 0; i < markets.length; i++) {
-      const singleScan = arbitrage.singleMarketScan(Object.values(tickers[markets[i]]), 0.06);
+      const singleScan = arbitrage.singleMarketScan(Object.values(tickers[markets[i]]), 0.09);
 
       if (singleScan) {
         arbs = {
@@ -151,8 +154,20 @@ module.exports = class SingleMarketRecorder {
         };
       }
     }
-    logger.debug(arbitrage.sortArbsByProfit(arbs));
-    logger.debug(arbitrage.sortArbsByProfit(arbs).length);
+    const sortedArbs = arbitrage.sortArbsByProfit(arbs);
+    logger.debug(sortedArbs);
+    logger.debug(`OPPORTUNITIES No. ${sortedArbs.length}`);
+    const occurencies = sortedArbs
+      .reduce((acc, val) => {
+        acc = [...acc, val.lowestAsk.exchange, val.highestBid.exchange];
+        return acc;
+      }, [])
+      .reduce((acc, val) => {
+        if (!acc[val]) acc[val] = 1;
+        else acc[val]++;
+        return acc;
+      }, {});
+    logger.debug(occurencies);
   }
 
   async scanForArbs(_interval = 0) {

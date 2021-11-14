@@ -1,47 +1,26 @@
 require('dotenv').config();
 
-const services = require('./src/modules/services');
-
-const Arbitrage = require('./src/modules/scan/arbitrage');
-const SingleMarketRecorder = require('./src/data-analysis/single-market-recorder');
-
+const services = require('./src/services');
 const logger = services.getLogger();
 
-async function initClients() {
+const Exchanges = require('./src/exchanges');
+const Arbitrage = require('./src/arbitrage');
+
+async function main() {
   const logger = services.getLogger();
+  const exchanges = new Exchanges(logger);
+  await exchanges.init();
+  const arbitrage = new Arbitrage();
+  const tickerInterval = services.getInterval();
 
-  const collectionStream = await services.getCollectionStream([], []);
-  const emmiter = services.getEventEmitter();
-  const arbitrage = new Arbitrage(collectionStream, logger, emmiter);
-
-  arbitrage.init();
-
-  collectionStream((data) => {
-    console.log(
-      data.exchange === 'binance_spot' ? '\x1b[31m' : data.exchange === 'gateio_spot' ? '\x1b[36m' : '\x1b[33m',
-      `${data.exchange.toUpperCase()} 'ticker' event received`,
-      data.symbol,
-      data.ticker,
-    );
+  tickerInterval.setInterval(30, async () => {
+    const tickers = await exchanges.fetchMarketTickers();
+    console.log('ARBS', arbitrage.scanAllMarketTickers({ tickers }));
   });
-}
-
-// initClients();
-
-async function analyze() {
-  const logger = services.getLogger();
-
-  const recorder = new SingleMarketRecorder(logger);
-  await recorder.init();
-  await recorder.scanForArbs(15);
 
   setTimeout(() => {
-    recorder.terminateScan();
-  }, 30000);
+    tickerInterval.terminateInterval();
+  }, 40000);
 }
 
-analyze();
-
-// FURTHER STEPS AS OF 11/10/2021:
-// implement ascendex
-// implement depth of order book
+main();

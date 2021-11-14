@@ -1,5 +1,3 @@
-const { reduce } = require('lodash');
-
 module.exports = class Arbitrage {
   constructor(collectionStream, logger, emitter) {
     this.logger = logger;
@@ -89,7 +87,7 @@ module.exports = class Arbitrage {
 
     arb.profit = this._spread(arb.highestBid.price, arb.lowestAsk.price, [arb.highestBid.fee, arb.lowestAsk.fee]);
 
-    if (arb.profit > 2) {
+    if (arb.profit > 1.7) {
       const prevMarkets = { ...this.falseMarkets };
       this.falseMarkets = {
         ...this.falseMarkets,
