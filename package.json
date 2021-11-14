@@ -11,10 +11,11 @@
   "dependencies": {
     "ccxt": "^1.58.84",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "got": "^11.8.2",
     "lodash": "^4.17.21",
     "winston": "^3.3.3",
-    "ws": "^8.2.1"
+    "ws": "^8.2.3"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
