@@ -1,10 +1,8 @@
 module.exports = class Arbitrage {
   constructor(logger) {
     this.logger = logger;
-    // this.emitter = emitter;
 
     this.marketsData = {};
-    this.falseMarkets = {};
 
     this.singleMarketTickerScan = this.singleMarketTickerScan.bind(this);
   }
@@ -111,6 +109,6 @@ module.exports = class Arbitrage {
   }
 
   sortArbsByProfit(arbs) {
-    return Object.values(arbs).sort((a, b) => a.profit - b.profit);
+    return Object.values(arbs).sort((a, b) => b.profit - a.profit);
   }
 };

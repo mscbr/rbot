@@ -2,6 +2,7 @@ const path = require('path');
 const events = require('events');
 
 const { createLogger, transports, format } = require('winston');
+const { clear } = require('console');
 
 let logger;
 let eventEmitter;
@@ -42,6 +43,7 @@ module.exports = {
     let interval = null;
     return {
       setInterval: function (duration = 10, callback) {
+        if (interval) clearInterval(interval.id);
         const targetDuration = duration * 1000;
 
         interval = {
@@ -51,18 +53,18 @@ module.exports = {
           callback,
         };
       },
-
       setIntervalDuration: function (duration = 10) {
         const targetDuration = duration * 1000;
         if (interval) {
           clearInterval(intervals[name].id);
-          this.getInterval(name, duration, interval.callback);
+          this.setInterval(name, duration, interval.callback);
         }
       },
-
       terminateInterval: function () {
         if (interval) clearInterval(interval.id);
+        interval = null;
       },
+      getInterval: () => interval,
     };
   },
 };
