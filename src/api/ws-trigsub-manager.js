@@ -1,20 +1,21 @@
 const services = require('../services');
 const logger = services.getLogger();
-// const tickerInterval = services.getInterval();
+
+const Arbitrage = require('../modules/arb/arbitrage');
 
 module.exports = class WsTrigSubManager {
   constructor(exchanges, arbitrage) {
     this.exchanges = exchanges;
-    this.arbitrage = arbitrage;
+    this.arbitrage = new Arbitrage(logger);
 
     this.channels = {
       tickerArbs: {
         arbs: [],
-        subscribers: [],
+        subscriber: null,
       },
       obArbs: {
         arbs: [],
-        subscribers: [],
+        subscriber: null,
       },
     };
 
@@ -23,35 +24,44 @@ module.exports = class WsTrigSubManager {
       obArbs: services.getInterval(),
     };
 
-    this.initChannelBroker = this.initChannelBroker.bind(this);
+    this._initChannelBroker = this._initChannelBroker.bind(this);
   }
 
   subscribe(subscriber, channel) {
-    const { initChannelBroker } = this;
+    const { _initChannelBroker } = this;
     logger.info(`WS: new subscription to ${channel}`);
+    if (this.channels[channel]) subscriber.send(JSON.stringify({ message: `Subscribitng to ${channel}` }));
+    else subscriber.send(JSON.stringify({ message: `${channel} not found` }));
 
-    this.channels[channel].subscribers.push(subscriber);
-    initChannelBroker(channel);
+    this.channels[channel].subscriber = subscriber;
+    _initChannelBroker(channel);
   }
 
-  initChannelBroker(channel) {
+  unsubscribe(channel) {
+    logger.info(`Subscription from ${channel} terminated`);
+    this.brokers[channel].terminateInterval();
+  }
+
+  _initChannelBroker(channel) {
     let { brokers, channels, exchanges, arbitrage } = this;
-    if (brokers[channel].getInterval()) return;
+    const interval = brokers[channel].getInterval();
+    if (interval && interval.duration) return;
 
     if (channel === 'tickerArbs') {
-      brokers.tickerArbs.setInterval(5, async () => {
-        const tickers = await exchanges.fetchMarketTickers();
-        const { arbs } = arbitrage.scanAllMarketTickers({ tickers });
+      brokers.tickerArbs.setInterval(5, [
+        async () => {
+          const tickers = await exchanges.fetchMarketTickers();
+          const { arbs } = arbitrage.scanAllMarketTickers({ tickers });
 
-        channels[channel].subscribers.forEach((subscriber) => {
-          subscriber.send(
+          channels[channel].subscriber.send(
             JSON.stringify({
               channel,
-              message: arbs,
+              arbs,
+              interval: interval && interval.duration,
             }),
           );
-        });
-      });
+        },
+      ]);
     }
   }
 

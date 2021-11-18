@@ -4,7 +4,6 @@ const { WebSocketServer } = require('ws');
 const WebSocket = require('ws');
 
 const WsTrigSubManager = require('./ws-trigsub-manager');
-const Arbitrage = require('../arbitrage');
 
 const services = require('../services');
 const logger = services.getLogger();
@@ -15,8 +14,6 @@ const wss = new WebSocket.Server({ server });
 
 module.exports = class Server {
   constructor(exchanges) {
-    this.arbitrage = new Arbitrage(logger);
-
     this.trigSubManager = new WsTrigSubManager(exchanges, this.arbitrage);
 
     this.ws = null;
@@ -26,7 +23,7 @@ module.exports = class Server {
     const { trigSubManager } = this;
 
     wss.on('connection', (ws, req) => {
-      ws.send('Welcome to scan_exec websocket stream %$‿︵‿︵‿︵(-_-)');
+      ws.send(JSON.stringify({ message: 'Welcome to scan_exec websocket stream %$‿︵‿︵‿︵(-_-)' }));
       logger.info(`WS: Connection request from: ${req.connection.remoteAddress}`);
       this.ws = ws;
 
@@ -42,6 +39,11 @@ module.exports = class Server {
             break;
           case 'SUB':
             trigSubManager.subscribe(ws, channel);
+            break;
+          case 'UNSUB':
+            trigSubManager.unsubscribe(channel);
+            break;
+          default:
             break;
         }
       });

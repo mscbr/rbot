@@ -21,16 +21,16 @@ module.exports = class Exchanges {
 
   async _loadExchanges() {
     this.exchanges = {
-      binance: new ccxt.binance(),
-      gateio: new ccxt.gateio(),
-      ascendex: new ccxt.ascendex(),
-      poloniex: new ccxt.poloniex(),
-      bitfinex: new ccxt.bitfinex(),
-      kraken: new ccxt.kraken(),
-      bitvavo: new ccxt.bitvavo(),
-      bitmart: new ccxt.bitmart(),
-      ftx: new ccxt.ftx(),
-      hitbtc: new ccxt.hitbtc(),
+      binance: new ccxt.binance({ enableRateLimit: true }),
+      gateio: new ccxt.gateio({ enableRateLimit: true }),
+      ascendex: new ccxt.ascendex({ enableRateLimit: true }),
+      poloniex: new ccxt.poloniex({ enableRateLimit: true }),
+      bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
+      kraken: new ccxt.kraken({ enableRateLimit: true }),
+      bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
+      bitmart: new ccxt.bitmart({ enableRateLimit: true }),
+      ftx: new ccxt.ftx({ enableRateLimit: true }),
+      hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
     };
   }
 
@@ -38,6 +38,8 @@ module.exports = class Exchanges {
     const { exchanges, logger } = this;
 
     const marketPromises = Object.values(exchanges).map(async (exchange) => await exchange.loadMarkets());
+
+    // console.log(Object.keys(exchanges).forEach((key) => console.log(key, exchanges[key].rateLimit)));
 
     logger.info('Loading markets...');
     await Promise.all(marketPromises);

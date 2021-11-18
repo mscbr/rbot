@@ -42,22 +42,28 @@ module.exports = {
   getInterval: function () {
     let interval = null;
     return {
-      setInterval: function (duration = 10, callback) {
-        if (interval) clearInterval(interval.id);
+      setInterval: function (duration = 10, callbacks = []) {
+        if (!callbacks.length) return;
+        if (interval) {
+          clearInterval(interval.id);
+          interval = null;
+        }
         const targetDuration = duration * 1000;
+        let counter = 1;
 
         interval = {
           id: setInterval(async () => {
-            await callback();
+            await callbacks[counter % callbacks.length]();
           }, targetDuration),
-          callback,
+          callbacks,
+          duration,
         };
       },
       setIntervalDuration: function (duration = 10) {
         const targetDuration = duration * 1000;
         if (interval) {
           clearInterval(intervals[name].id);
-          this.setInterval(name, duration, interval.callback);
+          this.setInterval(name, duration, interval.callbacks);
         }
       },
       terminateInterval: function () {
