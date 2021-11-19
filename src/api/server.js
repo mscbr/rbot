@@ -25,20 +25,22 @@ module.exports = class Server {
     wss.on('connection', (ws, req) => {
       ws.send(JSON.stringify({ message: 'Welcome to scan_exec websocket stream %$‿︵‿︵‿︵(-_-)' }));
       logger.info(`WS: Connection request from: ${req.connection.remoteAddress}`);
+
       this.ws = ws;
+      trigSubManager.setSubscriber(this.ws);
 
       ws.on('message', (data) => {
         const json = JSON.parse(data);
         const request = json.request;
-        // const message = json.message;
         const channel = json.channel;
+        const payload = json.payload;
 
         switch (request) {
           case 'TRIG':
-            // trigSubManager.publish(ws, channel, message);
+            trigSubManager.trigger(channel, payload);
             break;
           case 'SUB':
-            trigSubManager.subscribe(ws, channel);
+            trigSubManager.subscribe(channel);
             break;
           case 'UNSUB':
             trigSubManager.unsubscribe(channel);

@@ -24,12 +24,12 @@ module.exports = class Exchanges {
       binance: new ccxt.binance({ enableRateLimit: true }),
       gateio: new ccxt.gateio({ enableRateLimit: true }),
       ascendex: new ccxt.ascendex({ enableRateLimit: true }),
-      poloniex: new ccxt.poloniex({ enableRateLimit: true }),
+      // poloniex: new ccxt.poloniex({ enableRateLimit: true }),
       bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
       kraken: new ccxt.kraken({ enableRateLimit: true }),
-      bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
+      // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
       bitmart: new ccxt.bitmart({ enableRateLimit: true }),
-      ftx: new ccxt.ftx({ enableRateLimit: true }),
+      // ftx: new ccxt.ftx({ enableRateLimit: true }),
       hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
     };
   }
@@ -37,9 +37,14 @@ module.exports = class Exchanges {
   async _loadMarkets() {
     const { exchanges, logger } = this;
 
-    const marketPromises = Object.values(exchanges).map(async (exchange) => await exchange.loadMarkets());
-
-    // console.log(Object.keys(exchanges).forEach((key) => console.log(key, exchanges[key].rateLimit)));
+    const marketPromises = Object.values(exchanges).map(async (exchange) => {
+      try {
+        await exchange.loadMarkets();
+      } catch (err) {
+        logger.error(err.message);
+      }
+    }
+    );
 
     logger.info('Loading markets...');
     await Promise.all(marketPromises);

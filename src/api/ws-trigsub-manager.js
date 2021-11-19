@@ -2,48 +2,95 @@ const services = require('../services');
 const logger = services.getLogger();
 
 const Arbitrage = require('../modules/arb/arbitrage');
+const ScanManager = require('../modules/arb/scan-manager');
 
 module.exports = class WsTrigSubManager {
   constructor(exchanges, arbitrage) {
+    this.subscriber = null;
+
     this.exchanges = exchanges;
     this.arbitrage = new Arbitrage(logger);
+    this.scanManager = new ScanManager(this.exchanges, logger);
 
     this.channels = {
       tickerArbs: {
         arbs: [],
-        subscriber: null,
       },
       obArbs: {
         arbs: [],
-        subscriber: null,
       },
     };
 
     this.brokers = {
       tickerArbs: services.getInterval(),
-      obArbs: services.getInterval(),
     };
 
     this._initChannelBroker = this._initChannelBroker.bind(this);
+    this._obTriggerFunctions = this._obTriggerFunctions.bind(this);
   }
 
-  subscribe(subscriber, channel) {
-    const { _initChannelBroker } = this;
+  setSubscriber(subscriber) {
+    this.subscriber = subscriber;
+  }
+
+  subscribe(channel) {
+    const { _initChannelBroker, subscriber, scanManager } = this;
+    if (!subscriber) {
+      logger.error(`WS trigsub-manager: subscriber not provided`);
+      return;
+    }
+
     logger.info(`WS: new subscription to ${channel}`);
+
     if (this.channels[channel]) subscriber.send(JSON.stringify({ message: `Subscribitng to ${channel}` }));
     else subscriber.send(JSON.stringify({ message: `${channel} not found` }));
 
-    this.channels[channel].subscriber = subscriber;
-    _initChannelBroker(channel);
+    if (channel === 'tickerArbs') _initChannelBroker(channel); // maybe should be simplified
+
+    if (channel === 'obArbs') {
+      subscriber.send(JSON.stringify({ channel, targets: scanManager.getTargets() }));
+    }
+
   }
 
   unsubscribe(channel) {
     logger.info(`Subscription from ${channel} terminated`);
-    this.brokers[channel].terminateInterval();
+    this.brokers[channel] && this.brokers[channel].terminateInterval();
+  }
+
+  trigger(channel, { name, params }) {
+    const { subscriber, _obTriggerFunctions } = this;
+
+    if (!name) subscriber.send(JSON.stringify({ message: "Trigger not found" }));
+    subscriber.send(JSON.stringify({ message: `Triggering ${name} @ ${channel}` }));
+
+    switch (channel) {
+      case 'obArbs':
+        _obTriggerFunctions(name, params);
+        break;
+      default:
+        break;
+    }
+  }
+
+  _obTriggerFunctions(name, params) {
+    const { scanManager, subscriber } = this;
+
+    switch (name) {
+      case 'addTarget':
+        scanManager.addTarget(params.target);
+        break;
+      case 'clearTargets':
+        scanManager.clearTargets();
+      default:
+        break;
+    };
+
+    subscriber.send(JSON.stringify({ channel: 'obArbs', targets: scanManager.getTargets() }));
   }
 
   _initChannelBroker(channel) {
-    let { brokers, channels, exchanges, arbitrage } = this;
+    let { subscriber, brokers, channels, exchanges, arbitrage } = this;
     const interval = brokers[channel].getInterval();
     if (interval && interval.duration) return;
 
@@ -53,7 +100,7 @@ module.exports = class WsTrigSubManager {
           const tickers = await exchanges.fetchMarketTickers();
           const { arbs } = arbitrage.scanAllMarketTickers({ tickers });
 
-          channels[channel].subscriber.send(
+          subscriber.send(
             JSON.stringify({
               channel,
               arbs,
@@ -70,9 +117,5 @@ module.exports = class WsTrigSubManager {
     Object.values(this.brokers).forEach((broker) => {
       broker.terminateInterval();
     });
-  }
-
-  trigger(channel, f, params) {
-    //f list switch
   }
 };
