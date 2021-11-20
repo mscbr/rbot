@@ -8,6 +8,7 @@ const HttpError = require('../../models/httpError');
 //     id: '',
 //     market: '',
 //     exchanges: ['', ''],
+//     volume: 1000,
 //     arb: null,
 //   },
 // ];

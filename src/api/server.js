@@ -40,7 +40,7 @@ module.exports = class Server {
             trigSubManager.trigger(channel, payload);
             break;
           case 'SUB':
-            trigSubManager.subscribe(channel);
+            trigSubManager.subscribe(channel, payload);
             break;
           case 'UNSUB':
             trigSubManager.unsubscribe(channel);
