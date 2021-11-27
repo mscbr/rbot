@@ -4,6 +4,7 @@ const { WebSocketServer } = require('ws');
 const WebSocket = require('ws');
 
 const WsTrigSubManager = require('./ws-trigsub-manager');
+const RateLimitManager = require('../modules/rate-limit-manager');
 
 const services = require('../services');
 const logger = services.getLogger();
@@ -13,8 +14,9 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 module.exports = class Server {
-  constructor(exchanges) {
-    this.trigSubManager = new WsTrigSubManager(exchanges, this.arbitrage);
+  constructor(ccxtExchanges) {
+    this.rateLimitManager = new RateLimitManager(Object.keys(ccxtExchanges.exchanges));
+    this.trigSubManager = new WsTrigSubManager(ccxtExchanges, this.rateLimitManager);
 
     this.ws = null;
   }

@@ -5,13 +5,13 @@ const logger = services.getLogger();
 
 const Server = require('./src/api/server');
 
-const Exchanges = require('./src/exchanges');
+const CcxtExchanges = require('./src/ccxt-exchanges');
 
 async function main() {
-  const exchanges = new Exchanges(logger);
-  await exchanges.init();
+  const ccxtExchanges = new CcxtExchanges(logger);
+  await ccxtExchanges.init();
 
-  const websocket = new Server(exchanges);
+  const websocket = new Server(ccxtExchanges);
   websocket.startServer();
 }
 

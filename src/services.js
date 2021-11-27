@@ -54,6 +54,7 @@ module.exports = {
         interval = {
           id: setInterval(async () => {
             await callbacks[counter % callbacks.length]();
+            counter++;
           }, targetDuration),
           callbacks,
           duration,

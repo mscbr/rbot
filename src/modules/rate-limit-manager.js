@@ -1,0 +1,63 @@
+const services = require('../services');
+const logger = services.getLogger();
+
+module.exports = class RateLimitManager {
+  constructor(exchanges) {
+    this.exchanges = exchanges;
+
+    this.intervals = exchanges.reduce((acc, key) => {
+      acc[key] = {
+        callbacks: {},
+        interval: services.getInterval(),
+      };
+      return acc;
+    }, {});
+
+    this.startIntervals = this.startIntervals.bind(this);
+  }
+
+  addCallback(exchanges, { id, run }) {
+    exchanges.forEach((exchange) => {
+      if (this.intervals[exchange]) this.intervals[exchange].callbacks[id] = async () => await run(exchange);
+    });
+
+    this.startIntervals(); // should this be here?
+  }
+
+  setIntervalDuration(exchanges, duration) {
+    exchanges.forEach((exchange) => {
+      const { interval, callbacks } = this.intervals[exchange];
+      if (interval.getInterval()) interval.setIntervalDuration(duration, Object.values(callbacks));
+    });
+  }
+
+  startIntervals(exchanges = []) {
+    if (!exchanges.length) {
+      Object.values(this.intervals).forEach(
+        (interval) => interval.callbacks && interval.interval.setInterval(2, Object.values(interval.callbacks)),
+      );
+    }
+
+    if (exchanges.length)
+      exchanges.forEach((exchange) => {
+        if (this.intervals[exchange]) {
+          const { interval, callbacks } = this.intervals[exchange];
+          if (callbacks) interval.setInterval(2, Object.values(callbacks));
+        }
+      });
+  }
+
+  stopIntervals(exchanges = []) {
+    if (!exchanges.length)
+      Object.keys(this.intervals).forEach((exchange) => {
+        if (this.intervals[exchange]) {
+          this.intervals[exchange].interval.terminateInterval();
+          this.intervals[exchange].callbacks = {};
+        }
+      });
+  }
+
+  clearCallbacks(exchanges = []) {
+    this.stopIntervals(exchanges);
+  }
+};

@@ -1,17 +1,14 @@
 const ccxt = require('ccxt');
 
-module.exports = class Exchanges {
+module.exports = class CcxtExchanges {
   constructor(logger) {
     this.logger = logger;
 
     this.exchanges = {};
-    //in order to implement market/exchange exclusion
-    //write a f() to adjust marketsForExchanges
-    this.marketsForExchanges = {};
+
+    this._marketsForExchanges = {};
 
     this.tickers = {};
-
-    this._getMarketsForExchanges = this._getMarketsForExchanges.bind(this);
   }
 
   async init() {
@@ -27,7 +24,7 @@ module.exports = class Exchanges {
       poloniex: new ccxt.poloniex({ enableRateLimit: true }),
       bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
       kraken: new ccxt.kraken({ enableRateLimit: true }),
-      bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
+      // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
       bitmart: new ccxt.bitmart({ enableRateLimit: true }),
       ftx: new ccxt.ftx({ enableRateLimit: true }),
       hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
@@ -43,23 +40,21 @@ module.exports = class Exchanges {
       } catch (err) {
         logger.error(err.message);
       }
-    }
-    );
+    });
 
     logger.info('Loading markets...');
     await Promise.all(marketPromises);
   }
 
-  async _loadConversionData() {
-    const { exchanges } = this;
-    const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
+  // async _loadConversionData() {
+  //   const { exchanges } = this;
+  //   const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
+  // }
 
-  }
+  get marketsForExchanges() {
+    let { exchanges, _marketsForExchanges } = this;
 
-  _getMarketsForExchanges() {
-    let { exchanges, marketsForExchanges } = this;
-
-    if (!!Object.keys(marketsForExchanges).length) return marketsForExchanges;
+    if (!!Object.keys(_marketsForExchanges).length) return _marketsForExchanges;
 
     let exchangesForMarkets = Object.values(exchanges).reduce((acc, exchange) => {
       for (let market in exchange.markets) {
@@ -77,7 +72,7 @@ module.exports = class Exchanges {
       if (exchangesForMarkets[key].length < 2) delete exchangesForMarkets[key];
     });
 
-    marketsForExchanges = Object.keys(exchangesForMarkets).reduce((acc, market) => {
+    _marketsForExchanges = Object.keys(exchangesForMarkets).reduce((acc, market) => {
       exchangesForMarkets[market].forEach((exchange) => {
         if (!acc[exchange]) acc[exchange] = [];
         acc[exchange].push(market);
@@ -85,12 +80,11 @@ module.exports = class Exchanges {
       return acc;
     }, {});
 
-    return marketsForExchanges;
+    return _marketsForExchanges;
   }
 
   async fetchMarketTickers() {
-    const { exchanges, _getMarketsForExchanges, logger, excludedMarkets, excludedExchanges } = this;
-    const marketsForExchanges = _getMarketsForExchanges();
+    const { exchanges, marketsForExchanges, logger } = this;
 
     logger.info('Fetching market tickers...');
 
@@ -118,9 +112,9 @@ module.exports = class Exchanges {
     return this.tickers;
   }
 
-  usdtToVolume() {
+  // usdtToVolume() {
 
-  }
+  // }
 
   // fetchOrderBook
   //   rateLimit: A request rate limit in milliseconds.
