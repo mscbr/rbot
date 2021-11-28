@@ -4,19 +4,6 @@ module.exports = class CcxtExchanges {
   constructor(logger) {
     this.logger = logger;
 
-    this.exchanges = {};
-
-    this._marketsForExchanges = {};
-
-    this.tickers = {};
-  }
-
-  async init() {
-    await this._loadExchanges();
-    await this._loadMarkets();
-  }
-
-  async _loadExchanges() {
     this.exchanges = {
       binance: new ccxt.binance({ enableRateLimit: true }),
       gateio: new ccxt.gateio({ enableRateLimit: true }),
@@ -24,11 +11,22 @@ module.exports = class CcxtExchanges {
       poloniex: new ccxt.poloniex({ enableRateLimit: true }),
       bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
       kraken: new ccxt.kraken({ enableRateLimit: true }),
-      // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }),
+      // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }), // gives empty OB data
       bitmart: new ccxt.bitmart({ enableRateLimit: true }),
       ftx: new ccxt.ftx({ enableRateLimit: true }),
       hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
     };
+
+    this._marketsForExchanges = {};
+
+    this.tickers = {};
+
+    this.usdtConversionMarkets = {};
+  }
+
+  async init() {
+    await this._loadConversionData();
+    await this._loadMarkets();
   }
 
   async _loadMarkets() {
@@ -46,10 +44,51 @@ module.exports = class CcxtExchanges {
     await Promise.all(marketPromises);
   }
 
-  // async _loadConversionData() {
-  //   const { exchanges } = this;
-  //   const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
-  // }
+  async _loadConversionData() {
+    const { exchanges } = this;
+    const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
+
+    this.logger.info('Loading conversion data...');
+    for (let i = 0; i < coreMarkets.length; i++) {
+      const promises = Object.keys(exchanges).reduce((acc, exchange) => {
+        acc[exchange] = {
+          [coreMarkets[i]]: exchanges[exchange].fetchTicker(coreMarkets[i]), // use average
+        };
+        return acc;
+      }, {});
+
+      try {
+        const resultsArr = await Promise.all(Object.values(promises).map((promise) => promise[coreMarkets[i]]));
+        Object.keys(promises).forEach((exchange, i) => {
+          this.usdtConversionMarkets[exchange] = {
+            ...this.usdtConversionMarkets[exchange],
+            [resultsArr[i].symbol]: resultsArr[i],
+          };
+        });
+
+        if (i < coreMarkets.length - 1) {
+          // rate limitting to 1s/req to each exchange
+          setTimeout(() => {}, 1000);
+        }
+      } catch {
+        this.logger.error("Couldn't fetch conversion data");
+      }
+    }
+  }
+
+  usdtTo(coin, exchange) {
+    if (!coin || (coin !== 'ETH' && coin !== 'BTC')) {
+      this.logger.error('usdtTo works only w/ ETH & BTC');
+      return;
+    }
+    const { usdtConversionMarkets } = this;
+    const market = coin + '/USDT';
+
+    if (!exchange || !usdtConversionMarkets[exchange][market]) return;
+
+    const { ask } = usdtConversionMarkets[exchange][market];
+    return 1 / ask;
+  }
 
   get marketsForExchanges() {
     let { exchanges, _marketsForExchanges } = this;
@@ -111,19 +150,6 @@ module.exports = class CcxtExchanges {
 
     return this.tickers;
   }
-
-  // usdtToVolume() {
-
-  // }
-
-  // fetchOrderBook
-  //   rateLimit: A request rate limit in milliseconds.
-  // Specifies the required minimal delay between two consequent HTTP requests to the same exchange.
-  // The built-in rate-limiter is disabled by default and is turned on by setting the enableRateLimit property to true.
-  //  enableRateLimit: A boolean (true/false) value that enables the built-in rate limiter
-  // and throttles consecutive requests. This setting is true (enabled) by default. The user
-  // is required to implement own :ref:`rate limiting <rate limit>` or leave the built-in rate limiter
-  //  enabled to avoid being banned from the exchange.
 
   // https://withdrawalfees.com/exchanges/hitbtc
 };
