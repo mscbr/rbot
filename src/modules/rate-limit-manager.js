@@ -20,8 +20,7 @@ module.exports = class RateLimitManager {
     exchanges.forEach((exchange) => {
       if (this.intervals[exchange]) this.intervals[exchange].callbacks[id] = async () => await run(exchange);
     });
-
-    this.startIntervals(); // should this be here?
+    // this.startIntervals(); // should this be here?
   }
 
   setIntervalDuration(exchanges, duration) {
@@ -34,7 +33,8 @@ module.exports = class RateLimitManager {
   startIntervals(exchanges = []) {
     if (!exchanges.length) {
       Object.values(this.intervals).forEach(
-        (interval) => interval.callbacks && interval.interval.setInterval(2, Object.values(interval.callbacks)),
+        (interval) =>
+          Object.keys(interval.callbacks).length && interval.interval.setInterval(2, Object.values(interval.callbacks)),
       );
     }
 
@@ -48,16 +48,23 @@ module.exports = class RateLimitManager {
   }
 
   stopIntervals(exchanges = []) {
-    if (!exchanges.length)
-      Object.keys(this.intervals).forEach((exchange) => {
-        if (this.intervals[exchange]) {
-          this.intervals[exchange].interval.terminateInterval();
-          this.intervals[exchange].callbacks = {};
-        }
-      });
+    Object.keys(this.intervals).forEach((exchange) => {
+      if (this.intervals[exchange]) {
+        this.intervals[exchange].interval.terminateInterval();
+      }
+    });
   }
 
   clearCallbacks(exchanges = []) {
     this.stopIntervals(exchanges);
+    Object.keys(this.intervals).forEach((exchange) => {
+      this.intervals[exchange].callbacks = {};
+    });
+  }
+
+  clearCallback(callbackId) {
+    Object.keys(this.intervals).forEach((exchange) => {
+      delete this.intervals[exchange].callbacks[callbackId];
+    });
   }
 };

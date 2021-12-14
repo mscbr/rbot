@@ -25,7 +25,7 @@ module.exports = class CcxtExchanges {
   }
 
   async init() {
-    await this._loadConversionData();
+    // await this._loadConversionData();
     await this._loadMarkets();
   }
 
@@ -76,19 +76,19 @@ module.exports = class CcxtExchanges {
     }
   }
 
-  usdtTo(coin, exchange) {
-    if (!coin || (coin !== 'ETH' && coin !== 'BTC')) {
-      this.logger.error('usdtTo works only w/ ETH & BTC');
-      return;
-    }
-    const { usdtConversionMarkets } = this;
-    const market = coin + '/USDT';
+  // usdtTo(coin, exchange) {
+  //   if (!coin || (coin !== 'ETH' && coin !== 'BTC')) {
+  //     this.logger.error('usdtTo works only w/ ETH & BTC');
+  //     return;
+  //   }
+  //   const { usdtConversionMarkets } = this;
+  //   const market = coin + '/USDT';
 
-    if (!exchange || !usdtConversionMarkets[exchange][market]) return;
+  //   if (!exchange || !usdtConversionMarkets[exchange][market]) return;
 
-    const { ask } = usdtConversionMarkets[exchange][market];
-    return 1 / ask;
-  }
+  //   const { ask } = usdtConversionMarkets[exchange][market];
+  //   return 1 / ask;
+  // }
 
   get marketsForExchanges() {
     let { exchanges, _marketsForExchanges } = this;
@@ -97,6 +97,15 @@ module.exports = class CcxtExchanges {
 
     let exchangesForMarkets = Object.values(exchanges).reduce((acc, exchange) => {
       for (let market in exchange.markets) {
+        // maybe there should be HOF for transfer related checkups?
+        // filtering out
+        if (
+          exchange.currencies[exchange.markets[market].base] &&
+          exchange.currencies[exchange.markets[market].base].payout === false
+        ) {
+          return acc;
+        }
+
         if (acc[market]) {
           acc[market] = [exchange.id, ...acc[market]];
         } else {
@@ -143,7 +152,7 @@ module.exports = class CcxtExchanges {
         const ticker = tickersArr[i][market];
         this.tickers[market] = {
           ...this.tickers[market],
-          [exchange]: { ...ticker, fee: exchanges[exchange].markets[market].taker },
+          [exchange]: { ...ticker, fee: exchanges[exchange].markets[market].maker },
         };
       });
     });

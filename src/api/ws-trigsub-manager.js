@@ -49,7 +49,7 @@ module.exports = class WsTrigSubManager {
     if (channel === 'tickerArbs') _initChannelBroker(channel, payload); // maybe should be simplified
 
     if (channel === 'obArbs') {
-      subscriber.send(JSON.stringify({ channel, targets: obScanner.getTargets() }));
+      subscriber.send(JSON.stringify({ channel, paths: obScanner.paths }));
       this.obScanner.runObFetching();
     }
   }
@@ -82,23 +82,27 @@ module.exports = class WsTrigSubManager {
     const { obScanner, subscriber } = this;
 
     switch (name) {
-      case 'addTarget':
-        obScanner.addTarget(params.target);
+      case 'addPath':
+        obScanner.addPath(params.path);
         break;
-      case 'clearTargets':
-        obScanner.clearTargets();
+      case 'clearPaths':
+        obScanner.clearPaths();
+        break;
+      case 'removePath':
+        obScanner.removePath(params.path.id);
+        break;
       default:
         break;
     }
 
-    subscriber.send(JSON.stringify({ channel: 'obArbs', targets: obScanner.getTargets() }));
+    subscriber.send(JSON.stringify({ channel: 'obArbs', paths: obScanner.paths }));
   }
 
   // logic of _initChannelBroker should prolly be moved
   // to ticker-scanner.js
   _initChannelBroker(channel, { params }) {
     let { subscriber, brokers, channels, ccxtExchanges, arbitrage } = this;
-    console.log('this.obScanner.exchanges', Object.keys(this.obScanner.exchanges));
+
     const interval = brokers[channel].getInterval();
     if (interval && interval.duration) return;
 

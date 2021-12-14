@@ -15,34 +15,10 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  // CCXT fetchTickers():
-  //   {
-  //     'symbol':        string symbol of the market ('BTC/USD', 'ETH/BTC', ...)
-  //     'info':        { the original non-modified unparsed reply from exchange API },
-  //     'timestamp':     int (64-bit Unix Timestamp in milliseconds since Epoch 1 Jan 1970)
-  //     'datetime':      ISO8601 datetime string with milliseconds
-  //     'high':          float, // highest price
-  //     'low':           float, // lowest price
-  //     'bid':           float, // current best bid (buy) price
-  //     'bidVolume':     float, // current best bid (buy) amount (may be missing or undefined)
-  //     'ask':           float, // current best ask (sell) price
-  //     'askVolume':     float, // current best ask (sell) amount (may be missing or undefined)
-  //     'vwap':          float, // volume weighed average price
-  //     'open':          float, // opening price
-  //     'close':         float, // price of last trade (closing price for current period)
-  //     'last':          float, // same as `close`, duplicated for convenience
-  //     'previousClose': float, // closing price for the previous period
-  //     'change':        float, // absolute change, `last - open`
-  //     'percentage':    float, // relative change, `(change/open) * 100`
-  //     'average':       float, // average price, `(last + open) / 2`
-  //     'baseVolume':    float, // volume of base currency traded for last 24 hours
-  //     'quoteVolume':   float, // volume of quote currency traded for last 24 hours
-  //     'exchange': string
-  // }
+  singleMarketTickerScan(tickerData, hPass = 0.01, lPass = 0.6) {
+    // FIX: display all the arbs, NOT the best one only
 
-  singleMarketTickerScan(tickerData, hPass = 0.06, lPass = 1) {
     //find the lowest ask and the highest bid
-
     const arb = Object.keys(tickerData).reduce((acc, exchange, idx) => {
       if (!tickerData[exchange]) return acc;
       const { symbol, bid, ask, fee } = tickerData[exchange];
@@ -110,5 +86,76 @@ module.exports = class Arbitrage {
 
   sortArbsByProfit(arbs) {
     return Object.values(arbs).sort((a, b) => b.profit - a.profit);
+  }
+
+  singleMarketObScan(obData, levels = [500, 1000, 5000, 10000]) {
+    const {
+      in: { asks },
+      out: { bids },
+      tradeFee,
+      transferFee, // logic NOT implemented
+    } = obData;
+
+    const levelWallets = asks.reduce((acc, priceVol, idx) => {
+      const accLength = Object.keys(acc).length;
+      if (accLength === levels.length) return acc;
+
+      const levelValVol = asks.slice(0, idx + 1).reduce(
+        (cum, pV) => {
+          cum.val += pV[0] * pV[1];
+          cum.vol += pV[1];
+          return cum;
+        },
+        { val: 0, vol: 0 },
+      );
+
+      if (levelValVol.val > levels[accLength]) {
+        acc[accLength] = levelValVol;
+        return acc;
+      }
+      return acc;
+    }, {});
+
+    // FIX:
+    // {} 'NAV/BTC' hitbtc
+    // ticker size not implemented BTC to "small"
+    // console.log(levelWallets);
+
+    const output = Object.keys(levelWallets).reduce((acc, key, idx) => {
+      const { val } = levelWallets[key];
+      let vol = levelWallets[key].vol;
+
+      const postVal = bids.reduce((valAcc, bid) => {
+        if (vol === 0) return valAcc;
+        if (vol - bid[1] >= 0) {
+          valAcc += bid[0] * bid[1];
+          vol -= bid[1];
+          return valAcc;
+        }
+
+        // reccurence based on the ticker size
+        // probably should be implemented below
+        if (vol - bid[1] < 0) {
+          for (let i = 1; i <= bid[1]; i++) {
+            if (vol > 0) {
+              valAcc += bid[0];
+              vol -= 1;
+              return valAcc;
+            }
+          }
+        }
+        return valAcc;
+      }, 0);
+
+      acc[key] = {
+        preVal: val.toString(),
+        postVal: postVal.toString(),
+        arb: postVal / val - tradeFee,
+      };
+
+      return acc;
+    }, {});
+
+    return output;
   }
 };
