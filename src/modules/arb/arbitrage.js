@@ -1,10 +1,12 @@
+const TickerArb = require('../../models/ticker-arb');
+
 module.exports = class Arbitrage {
   constructor(logger) {
     this.logger = logger;
 
     this.marketsData = {};
 
-    this.singleMarketTickerScan = this.singleMarketTickerScan.bind(this);
+    this.scanMarketTickersForArbs = this.scanMarketTickersForArbs.bind(this);
   }
 
   init() {
@@ -15,69 +17,61 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  singleMarketTickerScan(tickerData, hPass = 0.01, lPass = 0.6) {
-    // FIX: display all the arbs, NOT the best one only
+  scanMarketTickersForArbs(tickerData, hPass = 0.01, lPass = 0.5) {
+    const exchanges = Object.keys(tickerData);
+    let arbs = [];
 
-    //find the lowest ask and the highest bid
-    const arb = Object.keys(tickerData).reduce((acc, exchange, idx) => {
-      if (!tickerData[exchange]) return acc;
-      const { symbol, bid, ask, fee } = tickerData[exchange];
-      acc.market = symbol;
+    for (let i = 0; i < exchanges.length - 1; i++) {
+      const reference = tickerData[exchanges[i]];
+      for (let g = i + 1; g < exchanges.length; g++) {
+        const checkup = tickerData[exchanges[g]];
+        const fees = [reference.fee, checkup.fee];
 
-      if (!idx) {
-        acc.lowestAsk = {
-          exchange,
-          price: ask,
-          fee,
-        };
-        acc.highestBid = {
-          exchange,
-          price: bid,
-          fee,
-        };
-        return acc;
+        if (reference.ask < checkup.bid) {
+          const spread = this._spread(checkup.bid, reference.ask, fees);
+          if (spread < 1 + lPass && spread > 1 + hPass) {
+            arbs.push(
+              new TickerArb(reference.symbol, reference.ask, exchanges[i], checkup.bid, exchanges[g], spread, fees),
+            );
+          }
+        }
+        if (checkup.ask < reference.bid) {
+          const spread = this._spread(reference.bid, checkup.ask, fees);
+          if (spread < 1 + lPass && spread > 1 + hPass) {
+            arbs.push(
+              new TickerArb(checkup.symbol, checkup.ask, exchanges[i], reference.bid, exchanges[g], spread, fees),
+            );
+          }
+        }
       }
+    }
 
-      if (acc.lowestAsk.price > ask) {
-        acc.lowestAsk = {
-          exchange,
-          price: ask,
-          fee,
-        };
-      }
-      if (acc.highestBid.price < bid) {
-        acc.highestBid = {
-          exchange,
-          price: bid,
-          fee,
-        };
-      }
-      return acc;
-    }, {});
-
-    arb.profit = this._spread(arb.highestBid.price, arb.lowestAsk.price, [arb.highestBid.fee, arb.lowestAsk.fee]);
-
-    if (arb.profit > 1 + lPass) return null;
-    if (arb.profit > 1 + hPass) return arb;
-    return null;
+    if (arbs.length) return arbs;
   }
 
   scanAllMarketTickers({ tickers, hPass, lPass }) {
-    let { logger, singleMarketTickerScan, exchanges } = this;
+    let { logger, scanMarketTickersForArbs, exchanges } = this;
     const markets = Object.keys(tickers);
     let arbs = {};
 
     for (let i = 0; i < markets.length; i++) {
-      const singleScan = singleMarketTickerScan(tickers[markets[i]]);
+      const marketTickerScan = scanMarketTickersForArbs(tickers[markets[i]], hPass, lPass);
 
-      if (singleScan) {
+      if (marketTickerScan) {
         arbs = {
           ...arbs,
-          [markets[i]]: singleScan,
+          [markets[i]]: marketTickerScan,
         };
       }
     }
-    const sortedArbs = this.sortArbsByProfit(arbs);
+
+    const sortedArbs = this.sortArbsByProfit(
+      Object.values(arbs).reduce((acc, arbArr) => {
+        acc = [...acc, ...arbArr];
+        return acc;
+      }, []),
+    );
+
     return {
       arbs: sortedArbs,
       opportunitiesCount: sortedArbs.length,

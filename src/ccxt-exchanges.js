@@ -157,6 +157,10 @@ module.exports = class CcxtExchanges {
       });
     });
 
+    Object.keys(this.tickers).forEach((key) => {
+      if (Object.keys(this.tickers[key]).length < 2) delete this.tickers[key];
+    });
+
     return this.tickers;
   }
 
