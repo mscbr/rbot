@@ -34,12 +34,11 @@ module.exports = class Arbitrage {
               new TickerArb(reference.symbol, reference.ask, exchanges[i], checkup.bid, exchanges[g], spread, fees),
             );
           }
-        }
-        if (checkup.ask < reference.bid) {
+        } else if (checkup.ask < reference.bid) {
           const spread = this._spread(reference.bid, checkup.ask, fees);
           if (spread < 1 + lPass && spread > 1 + hPass) {
             arbs.push(
-              new TickerArb(checkup.symbol, checkup.ask, exchanges[i], reference.bid, exchanges[g], spread, fees),
+              new TickerArb(checkup.symbol, checkup.ask, exchanges[g], reference.bid, exchanges[i], spread, fees),
             );
           }
         }
@@ -82,7 +81,7 @@ module.exports = class Arbitrage {
     return Object.values(arbs).sort((a, b) => b.profit - a.profit);
   }
 
-  singleMarketObScan(obData, levels = [500, 1000, 5000, 10000]) {
+  singleMarketObScan(obData, levels = [100, 500, 1000, 5000]) {
     const {
       in: { asks },
       out: { bids },
