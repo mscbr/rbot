@@ -5,16 +5,17 @@ module.exports = class CcxtExchanges {
     this.logger = logger;
 
     this.exchanges = {
-      binance: new ccxt.binance({ enableRateLimit: true }),
+      // binance: new ccxt.binance({ enableRateLimit: true }),
       gateio: new ccxt.gateio({ enableRateLimit: true }),
       ascendex: new ccxt.ascendex({ enableRateLimit: true }),
-      poloniex: new ccxt.poloniex({ enableRateLimit: true }),
+      // poloniex: new ccxt.poloniex({ enableRateLimit: true }),
       bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
-      kraken: new ccxt.kraken({ enableRateLimit: true }),
+      // bitforex: new ccxt.bitforex({ enableRateLimit: true }),
+      // kraken: new ccxt.kraken({ enableRateLimit: true }),
       // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }), // gives empty OB data
       bitmart: new ccxt.bitmart({ enableRateLimit: true }),
-      ftx: new ccxt.ftx({ enableRateLimit: true }),
-      hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
+      // ftx: new ccxt.ftx({ enableRateLimit: true }),
+      // hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
     };
 
     this._marketsForExchanges = {};
