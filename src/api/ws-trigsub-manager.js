@@ -5,12 +5,13 @@ const Arbitrage = require('../modules/arb/arbitrage');
 const ObScanner = require('../modules/arb/ob-scanner');
 
 module.exports = class WsTrigSubManager {
-  constructor(ccxtExchanges, rateLimitManager) {
+  constructor(ccxtExchanges, directExchanges, rateLimitManager) {
     this.subscriber = null;
 
     this.ccxtExchanges = ccxtExchanges;
+    this.directExchanges = directExchanges;
     this.arbitrage = new Arbitrage(logger);
-    this.obScanner = new ObScanner(ccxtExchanges, logger, rateLimitManager);
+    this.obScanner = new ObScanner(ccxtExchanges, directExchanges, rateLimitManager);
 
     this.channels = {
       tickerArbs: {
@@ -49,7 +50,7 @@ module.exports = class WsTrigSubManager {
     if (channel === 'tickerArbs') _initChannelBroker(channel, payload); // maybe should be simplified
 
     if (channel === 'obArbs') {
-      subscriber.send(JSON.stringify({ channel, paths: obScanner.paths }));
+      subscriber.send(JSON.stringify({ channel, paths: obScanner.paths })); // ?
       this.obScanner.runObFetching();
     }
   }
@@ -107,12 +108,20 @@ module.exports = class WsTrigSubManager {
     if (interval && interval.duration) return;
 
     if (channel === 'tickerArbs') {
+      // this should be exchange specific!
+      const withdrawDisabled = Object.values(this.directExchanges.exchanges).reduce((acc, exchange) => {
+        Object.values(exchange.currencies).forEach((currency) => {
+          if (currency.withdrawDisabled) acc.push(currency.symbol);
+        });
+        return acc;
+      }, []);
+
       // for the fetchMarketTickers there is no sense
       // of fetching more frequent than 3s because
       // of the all the responses wait-time
       brokers.tickerArbs.setInterval(params && params.interval >= 3 ? params.interval : 3, [
         async () => {
-          const tickers = await ccxtExchanges.fetchMarketTickers();
+          const tickers = await ccxtExchanges.fetchMarketTickers(withdrawDisabled);
           const { arbs } = arbitrage.scanAllMarketTickers({ tickers });
 
           subscriber.send(

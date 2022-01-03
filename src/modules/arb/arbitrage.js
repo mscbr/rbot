@@ -17,7 +17,7 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  scanMarketTickersForArbs(tickerData, hPass = 0.01, lPass = 0.5) {
+  scanMarketTickersForArbs(tickerData, hPass = 0.002, lPass = 0.5) {
     const exchanges = Object.keys(tickerData);
     let arbs = [];
 
@@ -95,8 +95,8 @@ module.exports = class Arbitrage {
 
       const levelValVol = asks.slice(0, idx + 1).reduce(
         (cum, pV) => {
-          cum.val += pV[0] * pV[1];
-          cum.vol += pV[1];
+          cum.val += parseFloat(pV[0]) * parseFloat(pV[1]);
+          cum.vol += parseFloat(pV[1]);
           return cum;
         },
         { val: 0, vol: 0 },
@@ -120,18 +120,18 @@ module.exports = class Arbitrage {
 
       const postVal = bids.reduce((valAcc, bid) => {
         if (vol === 0) return valAcc;
-        if (vol - bid[1] >= 0) {
-          valAcc += bid[0] * bid[1];
-          vol -= bid[1];
+        if (vol - parseFloat(bid[1]) >= 0) {
+          valAcc += parseFloat(bid[0]) * parseFloat(bid[1]);
+          vol -= parseFloat(bid[1]);
           return valAcc;
         }
 
         // reccurence based on the ticker size
         // probably should be implemented below
-        if (vol - bid[1] < 0) {
-          for (let i = 1; i <= bid[1]; i++) {
+        if (vol - parseFloat(bid[1]) < 0) {
+          for (let i = 1; i <= parseFloat(bid[1]); i++) {
             if (vol > 0) {
-              valAcc += bid[0];
+              valAcc += parseFloat(bid[0]);
               vol -= 1;
               return valAcc;
             }

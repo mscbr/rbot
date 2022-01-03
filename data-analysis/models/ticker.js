@@ -1,5 +1,6 @@
 module.exports = class Ticker {
-  constructor(bid, ask) {
+  constructor(time, bid, ask) {
+    this.time = time;
     this.bid = bid;
     this.ask = ask;
   }

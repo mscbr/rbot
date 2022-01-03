@@ -1,5 +1,3 @@
-const { exchanges } = require('ccxt');
-
 module.exports = class Path {
   constructor({ id, market, exchanges, tradeFees, transferFees }) {
     this.id = id;

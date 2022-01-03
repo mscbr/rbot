@@ -3,9 +3,9 @@ const _ = require('lodash');
 
 const WebSocket = require('ws');
 
-const Market = require('../../models/market');
-const TickerEvent = require('../../models/ticker-event');
-const Ticker = require('../../models/ticker');
+const Market = require('../../src/models/market');
+const TickerEvent = require('../../src/models/ticker-event');
+const Ticker = require('../../src/models/ticker');
 
 const EXCEPTIONS_BINANCE_SPOT = {
   GTCBTC: 'GTCBTC1',

@@ -7,9 +7,9 @@ module.exports = class CcxtExchanges {
     this.exchanges = {
       // binance: new ccxt.binance({ enableRateLimit: true }),
       gateio: new ccxt.gateio({ enableRateLimit: true }),
-      ascendex: new ccxt.ascendex({ enableRateLimit: true }),
+      // ascendex: new ccxt.ascendex({ enableRateLimit: true }),
       // poloniex: new ccxt.poloniex({ enableRateLimit: true }),
-      bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
+      // bitfinex: new ccxt.bitfinex({ enableRateLimit: true }),
       // bitforex: new ccxt.bitforex({ enableRateLimit: true }),
       // kraken: new ccxt.kraken({ enableRateLimit: true }),
       // bitvavo: new ccxt.bitvavo({ enableRateLimit: true }), // gives empty OB data
@@ -45,37 +45,37 @@ module.exports = class CcxtExchanges {
     await Promise.all(marketPromises);
   }
 
-  async _loadConversionData() {
-    const { exchanges } = this;
-    const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
+  // async _loadConversionData() {
+  //   const { exchanges } = this;
+  //   const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
 
-    this.logger.info('Loading conversion data...');
-    for (let i = 0; i < coreMarkets.length; i++) {
-      const promises = Object.keys(exchanges).reduce((acc, exchange) => {
-        acc[exchange] = {
-          [coreMarkets[i]]: exchanges[exchange].fetchTicker(coreMarkets[i]), // use average
-        };
-        return acc;
-      }, {});
+  //   this.logger.info('Loading conversion data...');
+  //   for (let i = 0; i < coreMarkets.length; i++) {
+  //     const promises = Object.keys(exchanges).reduce((acc, exchange) => {
+  //       acc[exchange] = {
+  //         [coreMarkets[i]]: exchanges[exchange].fetchTicker(coreMarkets[i]), // use average
+  //       };
+  //       return acc;
+  //     }, {});
 
-      try {
-        const resultsArr = await Promise.all(Object.values(promises).map((promise) => promise[coreMarkets[i]]));
-        Object.keys(promises).forEach((exchange, i) => {
-          this.usdtConversionMarkets[exchange] = {
-            ...this.usdtConversionMarkets[exchange],
-            [resultsArr[i].symbol]: resultsArr[i],
-          };
-        });
+  //     try {
+  //       const resultsArr = await Promise.all(Object.values(promises).map((promise) => promise[coreMarkets[i]]));
+  //       Object.keys(promises).forEach((exchange, i) => {
+  //         this.usdtConversionMarkets[exchange] = {
+  //           ...this.usdtConversionMarkets[exchange],
+  //           [resultsArr[i].symbol]: resultsArr[i],
+  //         };
+  //       });
 
-        if (i < coreMarkets.length - 1) {
-          // rate limitting to 1s/req to each exchange
-          setTimeout(() => {}, 1000);
-        }
-      } catch {
-        this.logger.error("Couldn't fetch conversion data");
-      }
-    }
-  }
+  //       if (i < coreMarkets.length - 1) {
+  //         // rate limitting to 1s/req to each exchange
+  //         setTimeout(() => {}, 1000);
+  //       }
+  //     } catch {
+  //       this.logger.error("Couldn't fetch conversion data");
+  //     }
+  //   }
+  // }
 
   // usdtTo(coin, exchange) {
   //   if (!coin || (coin !== 'ETH' && coin !== 'BTC')) {
@@ -132,7 +132,7 @@ module.exports = class CcxtExchanges {
     return _marketsForExchanges;
   }
 
-  async fetchMarketTickers() {
+  async fetchMarketTickers(excludedCoins = []) {
     const { exchanges, marketsForExchanges, logger } = this;
 
     logger.info('Fetching market tickers...');
@@ -151,6 +151,11 @@ module.exports = class CcxtExchanges {
     Object.keys(tickerPromises).forEach((exchange, i) => {
       Object.keys(tickersArr[i]).forEach((market) => {
         const ticker = tickersArr[i][market];
+
+        // excludedCoins ~ withdrawal disabled
+        const base = ticker.symbol.split('/')[0];
+        if (excludedCoins.length && excludedCoins.includes(base)) return;
+
         this.tickers[market] = {
           ...this.tickers[market],
           [exchange]: { ...ticker, fee: exchanges[exchange].markets[market].maker },
