@@ -5,13 +5,13 @@ const Arbitrage = require('../modules/arb/arbitrage');
 const ObScanner = require('../modules/arb/ob-scanner');
 
 module.exports = class WsTrigSubManager {
-  constructor(ccxtExchanges, directExchanges, rateLimitManager) {
-    this.subscriber = null;
+  constructor(ccxtExchanges, directExchanges, subscriber) {
+    this.subscriber = subscriber;
 
     this.ccxtExchanges = ccxtExchanges;
     this.directExchanges = directExchanges;
     this.arbitrage = new Arbitrage(logger);
-    this.obScanner = new ObScanner(ccxtExchanges, directExchanges, rateLimitManager);
+    this.obScanner = new ObScanner(directExchanges, subscriber);
 
     this.channels = {
       tickerArbs: {
@@ -28,11 +28,6 @@ module.exports = class WsTrigSubManager {
 
     this._initChannelBroker = this._initChannelBroker.bind(this);
     this._obTriggerFunctions = this._obTriggerFunctions.bind(this);
-  }
-
-  setSubscriber(subscriber) {
-    this.subscriber = subscriber;
-    this.obScanner.setSubscriber(subscriber); // :thinking_face:
   }
 
   subscribe(channel, payload) {
@@ -77,6 +72,32 @@ module.exports = class WsTrigSubManager {
       default:
         break;
     }
+  }
+
+  async _tickerTriggerFunctions(name, params) {
+    const arbs = {}; // ==> new TickerScanner()
+    switch (name) {
+      case 'populateWithdrawFees':
+        // some callback pass to populate this. arbs along?
+        await this.directExchanges.populateWithdrawFees(
+          this.arbs.reduce((acc, path) => {
+            acc[path.ask.exchange].push(path.market.split('/')[0]);
+            return acc;
+          }, {}),
+        );
+
+        // theres no such thing as this.arbs
+        // tickerScaner.arbs?
+        this.arbs = this.arbs.forEach((arb) => ({
+          ...arb,
+          transfer: this.directExchanges.exchange[arb.ask.exchange].currency[arb.market.split('/')[0]],
+        }));
+        break;
+      default:
+        break;
+    }
+
+    this.subscriber.send(JSON.stringify({ channel: 'tickerArbs', tickerArbs }));
   }
 
   _obTriggerFunctions(name, params) {

@@ -8,11 +8,9 @@ const Arbitrage = require('./arbitrage');
 const Path = require('../../models/path');
 
 module.exports = class ObScanner {
-  constructor(ccxtExchanges, directExchanges, rateLimitManager, subscriber) {
-    this.rateLimitManager = rateLimitManager;
-    this.subscriber = null;
+  constructor(directExchanges, subscriber) {
+    this.subscriber = subscriber;
 
-    this.ccxtExchanges = ccxtExchanges;
     this.directExchanges = directExchanges;
     this.arbitrage = new Arbitrage(logger);
 
@@ -23,16 +21,13 @@ module.exports = class ObScanner {
     this.directExchanges.propagateOnObUpdate(this.onObUpdate);
   }
 
-  setSubscriber(subscriber) {
-    this.subscriber = subscriber;
-  }
-
   onObUpdate(orderBook, exchange) {
     this.currentObData[exchange] = {
       ...this.currentObData[exchange],
       [orderBook.symbol]: orderBook,
     };
 
+    // optimize
     Object.values(this.obPaths)
       .filter((obPath) => obPath.market === orderBook.symbol && obPath.exchanges.includes(exchange))
       .forEach((obPath) => {
@@ -57,6 +52,8 @@ module.exports = class ObScanner {
       });
 
     this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
+
+    return this;
   }
 
   // _compareTargets(target1, target2) {

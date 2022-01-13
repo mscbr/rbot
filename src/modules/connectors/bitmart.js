@@ -1,6 +1,8 @@
 const got = require('got');
 const WebSocket = require('ws');
 const pako = require('pako');
+const CryptoJS = require('crypto-js');
+const Hex = require('crypto-js/enc-hex');
 
 const services = require('../../services');
 const logger = services.getLogger();
@@ -10,13 +12,13 @@ const Currency = require('../../models/currency');
 const OrderBook = require('../../models/orderbook');
 
 module.exports = class Bitmart {
-  constructor(publicKey, secretKey) {
+  constructor(publicKey, secretKey, memo) {
     this.id = 'bitmart';
     this._baseUrl = 'https://api-cloud.bitmart.com';
     this._wssUrl = 'wss://ws-manager-compress.bitmart.com?protocol=1.1';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
-    this._headers = { 'X-BM-KEY': publicKey };
+    this._memo = memo;
 
     this.markets = {};
     this.currencies = {};
@@ -29,6 +31,8 @@ module.exports = class Bitmart {
     this.openWsConnection = this.openWsConnection.bind(this);
     this.closeWsConnection = this.closeWsConnection.bind(this);
     this.subscribeOb = this.subscribeOb.bind(this);
+    this._generateSignature = this._generateSignature.bind(this);
+    this.loadFees = this.loadFees.bind(this);
   }
 
   _getWsClient() {
@@ -121,11 +125,23 @@ module.exports = class Bitmart {
     );
   }
 
-  async _makeRequest(method, endpoint, data) {
+  // queryString: symbol=BMXBTC&side=BUY
+  _generateSignature(timestamp, queryString) {
+    return Hex.stringify(CryptoJS.HmacSHA256(timestamp + '#' + this._memo + '#' + queryString, this._secretKey));
+  }
+
+  async _makeRequest(method, endpoint, query) {
+    const queryString = query ? new URLSearchParams(query).toString() : '';
+    const timestamp = Date.now();
+
     const options = {
       url: this._baseUrl + endpoint,
+      searchParams: query,
       headers: {
-        ...this._headers,
+        'X-BM-KEY': this._publicKey,
+        'Content-Type': 'application/json',
+        'X-BM-SIGN': this._generateSignature(timestamp, queryString),
+        'X-BM-TIMESTAMP': timestamp,
       },
       parseJson: (resp) => JSON.parse(resp),
       retry: {
@@ -175,5 +191,10 @@ module.exports = class Bitmart {
       const { id: symbol, withdraw_enabled } = currency;
       this.currencies[symbol] = new Currency(symbol, !withdraw_enabled);
     });
+  }
+
+  async loadFees(currency) {
+    const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
+    return data;
   }
 };

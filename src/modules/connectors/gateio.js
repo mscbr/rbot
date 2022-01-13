@@ -1,5 +1,8 @@
 const got = require('got');
 const WebSocket = require('ws');
+const CryptoJS = require('crypto-js');
+const Hex = require('crypto-js/enc-hex');
+const Utf8 = require('crypto-js/enc-utf8');
 
 const services = require('../../services');
 const logger = services.getLogger();
@@ -15,7 +18,7 @@ module.exports = class Gateio {
     this._wssUrl = 'wss://api.gateio.ws/ws/v4/';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
-    this._headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
+    // this._headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
 
     this.markets = {};
     this.currencies = {};
@@ -27,6 +30,8 @@ module.exports = class Gateio {
     this.openWsConnection = this.openWsConnection.bind(this);
     this.closeWsConnection = this.closeWsConnection.bind(this);
     this.subscribeOb = this.subscribeOb.bind(this);
+    this._generateSignature = this._generateSignature.bind(this);
+    this.loadFees = this.loadFees.bind(this);
   }
 
   _getWsClient() {
@@ -108,10 +113,26 @@ module.exports = class Gateio {
     );
   }
 
-  async _makeRequest(method, endpoint, data) {
-    const options = {
+  _generateSignature(method, url, queryString, payload, timestamp) {
+    const payload512 = Hex.stringify(CryptoJS.SHA512(payload));
+    const s = `${method}\n${url}\n${queryString}\n${payload512}\n${timestamp}`;
+
+    return Hex.stringify(CryptoJS.HmacSHA512(s, this._secretKey));
+  }
+
+  async _makeRequest(method, endpoint, query) {
+    const queryString = query ? new URLSearchParams(query).toString() : '';
+    const timestamp = (new Date().getTime() / 1000).toString();
+
+    let options = {
       url: this._baseUrl + endpoint,
-      headers: this._headers,
+      searchParams: query,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        KEY: this._publicKey,
+        Timestamp: timestamp,
+      },
       parseJson: (resp) => JSON.parse(resp),
       retry: {
         limit: 10,
@@ -120,6 +141,7 @@ module.exports = class Gateio {
 
     switch (method) {
       case 'GET':
+        options.headers.SIGN = this._generateSignature('GET', '/api' + endpoint, queryString, '', timestamp);
         try {
           const response = await got(options).json();
           return response;
@@ -160,5 +182,10 @@ module.exports = class Gateio {
       const withdrawDisabled = withdraw_disabled && withdraw_delayed;
       this.currencies[symbol] = new Currency(symbol, withdrawDisabled);
     });
+  }
+
+  async loadFees(currency) {
+    const data = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
+    return data;
   }
 };

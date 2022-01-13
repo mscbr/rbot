@@ -10,7 +10,11 @@ module.exports = class Exchanges {
   constructor() {
     this.exchanges = {
       gateio: new Gateio(process.env.APIKEY_PUBLIC_GATEIO_SPOT, process.env.APIKEY_PRIVATE_GATEIO_SPOT),
-      bitmart: new Bitmart(process.env.APIKEY_PUBLIC_BITMART_SPOT, process.env.APIKEY_PRIVATE_BITMART_SPOT),
+      bitmart: new Bitmart(
+        process.env.APIKEY_PUBLIC_BITMART_SPOT,
+        process.env.APIKEY_PRIVATE_BITMART_SPOT,
+        process.env.MEMO_BITMART_SPOT,
+      ),
     };
 
     this.obSubscriptions = {};
@@ -36,6 +40,12 @@ module.exports = class Exchanges {
 
     logger.info('Loading markets...');
     await Promise.all(marketPromises);
+
+    exchanges['gateio'].loadFees('BABYDOGE').then((data) => logger.debug(data));
+    exchanges['gateio'].loadFees('KISHU').then((data) => logger.debug(data));
+    exchanges['gateio'].loadFees('BTC').then((data) => logger.debug(data));
+    exchanges['bitmart'].loadFees('KISHU').then((data) => logger.debug(data));
+    exchanges['bitmart'].loadFees('AAA').then((data) => logger.debug(data));
   }
 
   async openWsConnections(exchanges = []) {
@@ -104,6 +114,8 @@ module.exports = class Exchanges {
     });
     this.startObSubscriptions();
   }
+
+  async populateWithdrawFees(coinsForExchanges) {}
 
   // stopSubscriptions() {} <-- handled by closeWsConnections
 };
