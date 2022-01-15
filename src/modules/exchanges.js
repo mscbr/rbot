@@ -115,7 +115,10 @@ module.exports = class Exchanges {
     this.startObSubscriptions();
   }
 
-  async populateWithdrawFees(coinsForExchanges) {}
+  populateWithdrawFees(coinsForExchanges) {
+    console.log('populateWithdrawFees');
+    console.log(coinsForExchanges);
+  }
 
   // stopSubscriptions() {} <-- handled by closeWsConnections
 };

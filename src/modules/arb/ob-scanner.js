@@ -21,6 +21,35 @@ module.exports = class ObScanner {
     this.directExchanges.propagateOnObUpdate(this.onObUpdate);
   }
 
+  addPath({ exchanges, market }, side = 'MAKER') {
+    if (!market || (exchanges && exchanges.length < 2)) return;
+
+    const path = new Path({
+      id: uuid(),
+      market,
+      exchanges,
+      tradeFees: [
+        parseFloat(
+          (side === 'MAKER'
+            ? this.directExchanges.exchanges[exchanges[0]].markets[market].maker +
+              this.directExchanges.exchanges[exchanges[1]].markets[market].maker
+            : this.directExchanges.exchanges[exchanges[0]].markets[market].taker +
+              this.directExchanges.exchanges[exchanges[1]].markets[market].taker
+          ).toFixed(4),
+        ),
+      ],
+      transferFee: 0, //instatiate fee data first and pass here
+    });
+
+    this.obPaths[path.id] = path;
+
+    this.directExchanges.addObSubscription(path.id, exchanges, market);
+
+    this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
+
+    return this;
+  }
+
   onObUpdate(orderBook, exchange) {
     this.currentObData[exchange] = {
       ...this.currentObData[exchange],
@@ -63,35 +92,6 @@ module.exports = class ObScanner {
   //     return acc;
   //   }, true);
   // }
-
-  addPath({ exchanges, market }, side = 'MAKER') {
-    if (!market || (exchanges && exchanges.length < 2)) return;
-
-    const path = new Path({
-      id: uuid(),
-      market,
-      exchanges,
-      tradeFees: [
-        parseFloat(
-          (side === 'MAKER'
-            ? this.directExchanges.exchanges[exchanges[0]].markets[market].maker +
-              this.directExchanges.exchanges[exchanges[1]].markets[market].maker
-            : this.directExchanges.exchanges[exchanges[0]].markets[market].taker +
-              this.directExchanges.exchanges[exchanges[1]].markets[market].taker
-          ).toFixed(4),
-        ),
-      ],
-      transferFee: 0, //instatiate fee data first and pass here
-    });
-
-    this.obPaths[path.id] = path;
-
-    this.directExchanges.addObSubscription(path.id, exchanges, market);
-
-    this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
-
-    return this;
-  }
 
   async runObFetching() {
     await this.directExchanges.openWsConnections();

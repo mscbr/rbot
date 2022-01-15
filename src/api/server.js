@@ -31,9 +31,6 @@ module.exports = class Server {
       this.ws = ws;
       this.trigSubManager = new WsTrigSubManager(this.ccxtExchanges, this.directExchanges, this.ws);
 
-      // assign this.trigSubManager here with subscriber already
-      // trigSubManager.setSubscriber(this.ws);
-
       ws.on('message', (data) => {
         const json = JSON.parse(data);
         const request = json.request;
@@ -57,7 +54,6 @@ module.exports = class Server {
 
       ws.on('close', () => {
         logger.info('WS: Stopping client connection.');
-        this.trigSubManager.clearBrokers();
       });
     });
 
