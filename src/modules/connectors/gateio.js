@@ -18,7 +18,6 @@ module.exports = class Gateio {
     this._wssUrl = 'wss://api.gateio.ws/ws/v4/';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
-    // this._headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
 
     this.markets = {};
     this.currencies = {};
@@ -185,7 +184,21 @@ module.exports = class Gateio {
   }
 
   async loadFees(currency) {
-    const data = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
-    return data;
+    try {
+      const response = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
+      const data = response[0];
+      const anyToWithdraw = parseFloat(data.withdraw_day_limit_remain) > 0;
+      const withdrawMin = parseFloat(data.withdraw_amount_mini);
+      const fix = parseFloat(data.withdraw_fix);
+      const percent = parseFloat(data.withdraw_percent.split('%')[0]) / 100;
+
+      this.currencies[currency].anyToWithdraw = anyToWithdraw;
+      this.currencies[currency].withdrawMin = withdrawMin;
+      this.currencies[currency].withdrawFee = { fix, percent };
+
+      logger.debug(this.currencies[currency]);
+    } catch (e) {
+      logger.error(e);
+    }
   }
 };

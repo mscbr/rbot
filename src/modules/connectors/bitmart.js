@@ -194,7 +194,19 @@ module.exports = class Bitmart {
   }
 
   async loadFees(currency) {
-    const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
-    return data;
+    try {
+      const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
+      const anyToWithdraw = parseFloat(data.today_available_withdraw) > 0;
+      const withdrawMin = parseFloat(data.min_withdraw);
+      const fix = parseFloat(data.withdraw_fee);
+
+      this.currencies[currency].anyToWithdraw = anyToWithdraw;
+      this.currencies[currency].withdrawMin = withdrawMin;
+      this.currencies[currency].withdrawFee = { fix };
+
+      logger.debug(this.currencies[currency]);
+    } catch (e) {
+      logger.error(e);
+    }
   }
 };

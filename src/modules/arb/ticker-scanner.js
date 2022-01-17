@@ -48,8 +48,8 @@ module.exports = class TickeScanner {
   }
 
   async populateWithdrawFees() {
-    // if (!this.arbs.length) return;
-    // this.stopTickerFetching();
+    if (!this.arbs.length) return;
+    this.stopTickerFetching();
 
     this.directExchanges.populateWithdrawFees(
       this.arbs.reduce((acc, arb) => {
@@ -57,10 +57,12 @@ module.exports = class TickeScanner {
           ask: { exchange },
           market,
         } = arb;
+        const coin = market.split('/')[0];
 
         if (!acc.hasOwnProperty(exchange)) acc[exchange] = [];
-        acc[exchange].push(market.split('/')[0]);
+        if (acc[exchange].includes(coin)) return acc;
 
+        acc[exchange].push(coin);
         return acc;
       }, {}),
     );

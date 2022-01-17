@@ -41,11 +41,11 @@ module.exports = class Exchanges {
     logger.info('Loading markets...');
     await Promise.all(marketPromises);
 
-    exchanges['gateio'].loadFees('BABYDOGE').then((data) => logger.debug(data));
-    exchanges['gateio'].loadFees('KISHU').then((data) => logger.debug(data));
-    exchanges['gateio'].loadFees('BTC').then((data) => logger.debug(data));
-    exchanges['bitmart'].loadFees('KISHU').then((data) => logger.debug(data));
-    exchanges['bitmart'].loadFees('AAA').then((data) => logger.debug(data));
+    // exchanges['gateio'].loadFees('BABYDOGE').then((data) => logger.debug(data));
+    // exchanges['gateio'].loadFees('KISHU').then((data) => logger.debug(data));
+    // exchanges['gateio'].loadFees('BTC').then((data) => logger.debug(data));
+    // exchanges['bitmart'].loadFees('KISHU').then((data) => logger.debug(data));
+    // exchanges['bitmart'].loadFees('AAA').then((data) => logger.debug(data));
   }
 
   async openWsConnections(exchanges = []) {
@@ -116,8 +116,13 @@ module.exports = class Exchanges {
   }
 
   populateWithdrawFees(coinsForExchanges) {
-    console.log('populateWithdrawFees');
-    console.log(coinsForExchanges);
+    Object.keys(coinsForExchanges).forEach((exchange) => {
+      coinsForExchanges[exchange].forEach((currency, i) => {
+        setTimeout(async () => {
+          await this.exchanges[exchange].loadFees(currency);
+        }, i * 2000);
+      });
+    });
   }
 
   // stopSubscriptions() {} <-- handled by closeWsConnections
