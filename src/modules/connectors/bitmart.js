@@ -4,6 +4,9 @@ const pako = require('pako');
 const CryptoJS = require('crypto-js');
 const Hex = require('crypto-js/enc-hex');
 
+const fs = require('fs');
+const path = require('path');
+const config = require('../../config');
 const services = require('../../services');
 const logger = services.getLogger();
 
@@ -183,20 +186,51 @@ module.exports = class Bitmart {
   }
 
   async loadCurrencies() {
-    const {
-      data: { currencies },
-    } = await this._makeRequest('GET', '/spot/v1/currencies');
+    const { loadCurrencies } = config;
 
-    currencies.forEach((currency) => {
-      const { id: symbol, withdraw_enabled } = currency;
-      this.currencies[symbol] = new Currency(symbol, !withdraw_enabled);
-    });
+    let staticData = {};
+    let currencies = {};
+
+    if (loadCurrencies.static) {
+      staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+      currencies = staticData[this.id];
+    }
+
+    if (!loadCurrencies.static || loadCurrencies.update) {
+      const {
+        data: { currencies: currenciesData },
+      } = await this._makeRequest('GET', '/spot/v1/currencies');
+
+      currenciesData.forEach((currency) => {
+        const { id: symbol, withdraw_enabled } = currency;
+        const currencyInstance = new Currency(symbol, !withdraw_enabled);
+        if (currencies[symbol]) {
+          currencies[symbol] = {
+            ...currencies[symbol],
+            ...currencyInstance,
+          };
+        } else {
+          currencies[symbol] = currencyInstance;
+        }
+      });
+
+      if (loadCurrencies.update) {
+        const data = JSON.stringify({ ...staticData, [this.id]: currencies }, null, 4);
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+    }
+
+    this.currencies = currencies;
   }
 
-  async loadFees(currency) {
+  // quote: {symbol, price}
+  async loadFees(currency, quote = null) {
+    const { loadCurrencies } = config;
+    if (loadCurrencies.static && !loadCurrencies.update) return;
+
     try {
       const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
-      const anyToWithdraw = parseFloat(data.today_available_withdraw) > 0;
+      const anyToWithdraw = parseFloat(data.today_available_withdraw_BTC) > 0;
       const withdrawMin = parseFloat(data.min_withdraw);
       const fix = parseFloat(data.withdraw_fee);
 
@@ -204,7 +238,33 @@ module.exports = class Bitmart {
       this.currencies[currency].withdrawMin = withdrawMin;
       this.currencies[currency].withdrawFee = { fix };
 
-      logger.debug(this.currencies[currency]);
+      if (quote)
+        this.currencies[currency].withdrawFee.quoteEstimation = {
+          [quote.symbol]: quote.price * fix,
+        };
+
+      if (loadCurrencies.update) {
+        const staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+        const currencies = staticData[this.id];
+        const data = JSON.stringify(
+          {
+            ...staticData,
+            [this.id]: {
+              ...staticData[this.id],
+              [currency]: {
+                ...staticData[this.id][currency],
+                ...this.currencies[currency],
+              },
+            },
+          },
+          null,
+          4,
+        );
+
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+
+      // logger.debug(this.currencies[currency]);
     } catch (e) {
       logger.error(e);
     }

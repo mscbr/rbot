@@ -4,6 +4,9 @@ const CryptoJS = require('crypto-js');
 const Hex = require('crypto-js/enc-hex');
 const Utf8 = require('crypto-js/enc-utf8');
 
+const fs = require('fs');
+const path = require('path');
+const config = require('../../config');
 const services = require('../../services');
 const logger = services.getLogger();
 
@@ -174,16 +177,47 @@ module.exports = class Gateio {
   }
 
   async loadCurrencies() {
-    const currencies = await this._makeRequest('GET', '/v4/spot/currencies');
+    const { loadCurrencies } = config;
 
-    currencies.forEach((currency) => {
-      const { currency: symbol, withdraw_disabled, withdraw_delayed } = currency;
-      const withdrawDisabled = withdraw_disabled && withdraw_delayed;
-      this.currencies[symbol] = new Currency(symbol, withdrawDisabled);
-    });
+    let staticData = {};
+    let currencies = {};
+
+    if (loadCurrencies.static) {
+      staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+      currencies = staticData[this.id];
+    }
+
+    if (!loadCurrencies.static || loadCurrencies.update) {
+      const currenciesData = await this._makeRequest('GET', '/v4/spot/currencies');
+
+      currenciesData.forEach((currency) => {
+        const { currency: symbol, withdraw_disabled, withdraw_delayed } = currency;
+        const withdrawDisabled = withdraw_disabled && withdraw_delayed;
+        const currencyInstance = new Currency(symbol, withdrawDisabled);
+        if (currencies[symbol]) {
+          currencies[symbol] = {
+            ...currencies[symbol],
+            ...currencyInstance,
+          };
+        } else {
+          currencies[symbol] = currencyInstance;
+        }
+      });
+
+      if (loadCurrencies.update) {
+        const data = JSON.stringify({ ...staticData, [this.id]: currencies }, null, 4);
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+    }
+
+    this.currencies = currencies;
   }
 
-  async loadFees(currency) {
+  // quote: {symbol, price}
+  async loadFees(currency, quote = null) {
+    const { loadCurrencies } = config;
+    if (loadCurrencies.static && !loadCurrencies.update) return;
+
     try {
       const response = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
       const data = response[0];
@@ -196,7 +230,33 @@ module.exports = class Gateio {
       this.currencies[currency].withdrawMin = withdrawMin;
       this.currencies[currency].withdrawFee = { fix, percent };
 
-      logger.debug(this.currencies[currency]);
+      if (quote)
+        this.currencies[currency].withdrawFee.quoteEstimation = {
+          [quote.symbol]: quote.price * fix,
+        };
+
+      if (loadCurrencies.update) {
+        const staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+        const currencies = staticData[this.id];
+        const data = JSON.stringify(
+          {
+            ...staticData,
+            [this.id]: {
+              ...staticData[this.id],
+              [currency]: {
+                ...staticData[this.id][currency],
+                ...this.currencies[currency],
+              },
+            },
+          },
+          null,
+          4,
+        );
+
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+
+      // logger.debug(this.currencies[currency]);
     } catch (e) {
       logger.error(e);
     }

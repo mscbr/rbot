@@ -20,6 +20,7 @@ module.exports = class TickeScanner {
     }, []);
 
     this.arbs = [];
+    this.tickers = {};
 
     this.arbitrage = new Arbitrage(logger);
     this.interval = services.getInterval();
@@ -29,6 +30,8 @@ module.exports = class TickeScanner {
     this.interval.setInterval(3, [
       async () => {
         const tickers = await this.ccxtExchanges.fetchMarketTickers(this.withdrawDisabled);
+        this.tickers = tickers;
+
         const { arbs } = this.arbitrage.scanAllMarketTickers({ tickers });
         this.arbs = arbs;
 
@@ -65,6 +68,7 @@ module.exports = class TickeScanner {
         acc[exchange].push(coin);
         return acc;
       }, {}),
+      this.tickers,
     );
   }
 };
