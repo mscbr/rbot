@@ -216,7 +216,8 @@ module.exports = class Gateio {
   // quote: {symbol, price}
   async loadFees(currency, quote = null) {
     const { loadCurrencies } = config;
-    if (loadCurrencies.static && !loadCurrencies.update) return;
+    if (loadCurrencies.static && !loadCurrencies.update)
+      return JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')))[this.id];
 
     try {
       const response = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
@@ -256,7 +257,7 @@ module.exports = class Gateio {
         fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
       }
 
-      // logger.debug(this.currencies[currency]);
+      return this.currencies[currency].withdrawFee;
     } catch (e) {
       logger.error(e);
     }

@@ -33,12 +33,30 @@ module.exports = class TickeScanner {
         this.tickers = tickers;
 
         const { arbs } = this.arbitrage.scanAllMarketTickers({ tickers });
-        this.arbs = arbs;
+
+        const arbsWithTransfer = arbs.map((arb) => {
+          if (
+            this.directExchanges.exchanges[arb.ask.exchange] &&
+            Object.keys(
+              this.directExchanges.exchanges[arb.ask.exchange].currencies[arb.market.split('/')[0]].withdrawFee,
+            ).length
+          ) {
+            return {
+              ...arb,
+              transferFees:
+                this.directExchanges.exchanges[arb.ask.exchange].currencies[arb.market.split('/')[0]].withdrawFee,
+            };
+          }
+
+          return arb;
+        });
+
+        this.arbs = arbsWithTransfer;
 
         this.subscriber.send(
           JSON.stringify({
             channel: this.channel,
-            arbs,
+            arbs: arbsWithTransfer,
             interval: 3,
           }),
         );
@@ -50,7 +68,7 @@ module.exports = class TickeScanner {
     this.interval.terminateInterval();
   }
 
-  async populateWithdrawFees() {
+  populateWithdrawFees() {
     if (!this.arbs.length) return;
     this.stopTickerFetching();
 
@@ -69,6 +87,25 @@ module.exports = class TickeScanner {
         return acc;
       }, {}),
       this.tickers,
+      (coin, exchange, transferFees) => {
+        const target = this.arbs.find((item) => item.market.split('/')[0] === coin && item.ask.exchange === exchange);
+
+        if (target) {
+          const index = this.arbs.indexOf(target);
+          this.arbs.splice(index, 1, {
+            ...target,
+            transferFees,
+          });
+
+          this.subscriber.send(
+            JSON.stringify({
+              channel: this.channel,
+              arbs: this.arbs,
+              interval: 3,
+            }),
+          );
+        }
+      },
     );
   }
 };

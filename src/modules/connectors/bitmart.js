@@ -226,7 +226,8 @@ module.exports = class Bitmart {
   // quote: {symbol, price}
   async loadFees(currency, quote = null) {
     const { loadCurrencies } = config;
-    if (loadCurrencies.static && !loadCurrencies.update) return;
+    if (loadCurrencies.static && !loadCurrencies.update)
+      return JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')))[this.id];
 
     try {
       const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
@@ -264,7 +265,7 @@ module.exports = class Bitmart {
         fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
       }
 
-      // logger.debug(this.currencies[currency]);
+      return this.currencies[currency].withdrawFee;
     } catch (e) {
       logger.error(e);
     }

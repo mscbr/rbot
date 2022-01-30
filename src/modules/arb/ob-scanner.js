@@ -24,6 +24,8 @@ module.exports = class ObScanner {
   addPath({ exchanges, market }, side = 'MAKER') {
     if (!market || (exchanges && exchanges.length < 2)) return;
 
+    const transferFees = this.directExchanges.exchanges[exchanges[0]].currencies[market.split('/')[0]].withdrawFee;
+
     const path = new Path({
       id: uuid(),
       market,
@@ -38,7 +40,7 @@ module.exports = class ObScanner {
           ).toFixed(4),
         ),
       ],
-      transferFee: 0, //instatiate fee data first and pass here
+      transferFees,
     });
 
     this.obPaths[path.id] = path;
@@ -75,7 +77,6 @@ module.exports = class ObScanner {
                 ...this.currentObData[obPath.exchanges[1]][obPath.market],
               },
               tradeFee: obPath.tradeFees.reduce((a, b) => a + b),
-              transferFee: obPath.transferFee,
             }),
           );
       });

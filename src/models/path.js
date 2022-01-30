@@ -3,13 +3,11 @@ module.exports = class Path {
     this.id = id;
     this.market = market;
     this.exchanges = exchanges;
-    this.transferFees = 0;
+    this.transferFees = transferFees;
     this.tradeFees = tradeFees;
     this.arbs = null;
   }
 
-  // how to store arbs
-  // think about saving historical data
   get path() {
     return {
       id: this.id,
@@ -24,7 +22,4 @@ module.exports = class Path {
   setArbs(arbs) {
     this.arbs = arbs;
   }
-
-  // addTransferFees()
-  // removeTransferFee()
 };

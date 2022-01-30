@@ -48,7 +48,6 @@ module.exports = class WsTrigSubManager {
 
   trigger(channel, { name, params }) {
     const { subscriber, _obTriggerFunctions, _tickerTriggerFunctions } = this;
-    console.log(_tickerTriggerFunctions, _obTriggerFunctions);
 
     if (!name) subscriber.send(JSON.stringify({ message: 'Trigger not found' }));
     subscriber.send(JSON.stringify({ message: `Triggering ${name} @ ${channel}` }));

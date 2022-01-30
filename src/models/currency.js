@@ -4,10 +4,6 @@ module.exports = class Currency {
     this.withdrawDisabled = withdrawDisabled;
     this.withdrawMin = 0;
     this.anyToWithdraw = false;
-    this.withdrawFee = {};
+    // this.withdrawFee = {}; //fix:, percent:, quoteEstimation: {[coin]: number}
   }
-
-  // set withdrawFee({ fix, percent = 0, fixUsdt }) {
-  //   this.withdrawFee = { fix, percent, fixUsdt };
-  // }
 };

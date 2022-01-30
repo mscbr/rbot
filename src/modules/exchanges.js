@@ -109,7 +109,7 @@ module.exports = class Exchanges {
     this.startObSubscriptions();
   }
 
-  populateWithdrawFees(coinsForExchanges, tickers) {
+  populateWithdrawFees(coinsForExchanges, tickers, propagate) {
     const coinKeysTickers = tickers
       ? Object.keys(tickers).reduce((acc, key) => {
           acc[key.split('/')[0]] = tickers[key];
@@ -128,8 +128,9 @@ module.exports = class Exchanges {
 
         setTimeout(async () => {
           logger.debug(`LOADING ${currency} data for ${exchange}`);
-          await this.exchanges[exchange].loadFees(currency, quote);
-        }, i * 2000);
+          const withdrawFee = await this.exchanges[exchange].loadFees(currency, quote);
+          propagate(currency, exchange, withdrawFee);
+        }, i * 1500);
       });
     });
   }

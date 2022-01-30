@@ -11,5 +11,6 @@ module.exports = class TickerArb {
     };
     this.profit = profit;
     this.fees = fees;
+    this.transferFees = {}; // fix, percent, quoteEstimation: {[coin]: number}
   }
 };
