@@ -17,7 +17,7 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  scanMarketTickersForArbs(tickerData, hPass = 0.002, lPass = 0.5) {
+  scanMarketTickersForArbs(tickerData, hPass = 0.001, lPass = 0.7) {
     const exchanges = Object.keys(tickerData);
     let arbs = [];
 
@@ -81,12 +81,11 @@ module.exports = class Arbitrage {
     return Object.values(arbs).sort((a, b) => b.profit - a.profit);
   }
 
-  singleMarketObScan(obData, levels = [100, 500, 1000, 5000]) {
+  singleMarketObScan(obData, levels = [10, 50, 100, 200]) {
     const {
       in: { asks },
       out: { bids },
       tradeFee,
-      transferFee, // logic NOT implemented
     } = obData;
 
     const levelWallets = asks.reduce((acc, priceVol, idx) => {

@@ -1,6 +1,12 @@
 const got = require('got');
 const WebSocket = require('ws');
+const CryptoJS = require('crypto-js');
+const Hex = require('crypto-js/enc-hex');
+const Utf8 = require('crypto-js/enc-utf8');
 
+const fs = require('fs');
+const path = require('path');
+const config = require('../../config');
 const services = require('../../services');
 const logger = services.getLogger();
 
@@ -15,7 +21,6 @@ module.exports = class Gateio {
     this._wssUrl = 'wss://api.gateio.ws/ws/v4/';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
-    this._headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
 
     this.markets = {};
     this.currencies = {};
@@ -27,6 +32,8 @@ module.exports = class Gateio {
     this.openWsConnection = this.openWsConnection.bind(this);
     this.closeWsConnection = this.closeWsConnection.bind(this);
     this.subscribeOb = this.subscribeOb.bind(this);
+    this._generateSignature = this._generateSignature.bind(this);
+    this.loadFees = this.loadFees.bind(this);
   }
 
   _getWsClient() {
@@ -108,10 +115,26 @@ module.exports = class Gateio {
     );
   }
 
-  async _makeRequest(method, endpoint, data) {
-    const options = {
+  _generateSignature(method, url, queryString, payload, timestamp) {
+    const payload512 = Hex.stringify(CryptoJS.SHA512(payload));
+    const s = `${method}\n${url}\n${queryString}\n${payload512}\n${timestamp}`;
+
+    return Hex.stringify(CryptoJS.HmacSHA512(s, this._secretKey));
+  }
+
+  async _makeRequest(method, endpoint, query) {
+    const queryString = query ? new URLSearchParams(query).toString() : '';
+    const timestamp = (new Date().getTime() / 1000).toString();
+
+    let options = {
       url: this._baseUrl + endpoint,
-      headers: this._headers,
+      searchParams: query,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        KEY: this._publicKey,
+        Timestamp: timestamp,
+      },
       parseJson: (resp) => JSON.parse(resp),
       retry: {
         limit: 10,
@@ -120,6 +143,7 @@ module.exports = class Gateio {
 
     switch (method) {
       case 'GET':
+        options.headers.SIGN = this._generateSignature('GET', '/api' + endpoint, queryString, '', timestamp);
         try {
           const response = await got(options).json();
           return response;
@@ -153,12 +177,89 @@ module.exports = class Gateio {
   }
 
   async loadCurrencies() {
-    const currencies = await this._makeRequest('GET', '/v4/spot/currencies');
+    const { loadCurrencies } = config;
 
-    currencies.forEach((currency) => {
-      const { currency: symbol, withdraw_disabled, withdraw_delayed } = currency;
-      const withdrawDisabled = withdraw_disabled && withdraw_delayed;
-      this.currencies[symbol] = new Currency(symbol, withdrawDisabled);
-    });
+    let staticData = {};
+    let currencies = {};
+
+    if (loadCurrencies.static) {
+      staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+      currencies = staticData[this.id];
+    }
+
+    if (!loadCurrencies.static || loadCurrencies.update) {
+      const currenciesData = await this._makeRequest('GET', '/v4/spot/currencies');
+
+      currenciesData.forEach((currency) => {
+        const { currency: symbol, withdraw_disabled, withdraw_delayed } = currency;
+        const withdrawDisabled = withdraw_disabled && withdraw_delayed;
+        const currencyInstance = new Currency(symbol, withdrawDisabled);
+        if (currencies[symbol]) {
+          currencies[symbol] = {
+            ...currencies[symbol],
+            ...currencyInstance,
+          };
+        } else {
+          currencies[symbol] = currencyInstance;
+        }
+      });
+
+      if (loadCurrencies.update) {
+        const data = JSON.stringify({ ...staticData, [this.id]: currencies }, null, 4);
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+    }
+
+    this.currencies = currencies;
+  }
+
+  // quote: {symbol, price}
+  async loadFees(currency, quote = null) {
+    const { loadCurrencies } = config;
+    if (loadCurrencies.static && !loadCurrencies.update)
+      return JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')))[this.id];
+
+    try {
+      const response = await this._makeRequest('GET', '/v4/wallet/withdraw_status', { currency: currency });
+      const data = response[0];
+      const anyToWithdraw = parseFloat(data.withdraw_day_limit_remain) > 0;
+      const withdrawMin = parseFloat(data.withdraw_amount_mini);
+      const fix = parseFloat(data.withdraw_fix);
+      const percent = parseFloat(data.withdraw_percent.split('%')[0]) / 100;
+
+      this.currencies[currency].anyToWithdraw = anyToWithdraw;
+      this.currencies[currency].withdrawMin = withdrawMin;
+      this.currencies[currency].withdrawFee = { fix, percent };
+
+      if (quote)
+        this.currencies[currency].withdrawFee.quoteEstimation = {
+          [quote.symbol]: quote.price * fix,
+        };
+
+      if (loadCurrencies.update) {
+        const staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
+        const currencies = staticData[this.id];
+        const data = JSON.stringify(
+          {
+            ...staticData,
+            [this.id]: {
+              ...staticData[this.id],
+              [currency]: {
+                ...staticData[this.id][currency],
+                ...this.currencies[currency],
+              },
+            },
+          },
+          null,
+          4,
+        );
+
+        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+      }
+
+      return this.currencies[currency].withdrawFee;
+    } catch (e) {
+      logger.error(e);
+    }
   }
 };

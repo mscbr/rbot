@@ -15,20 +15,21 @@ const wss = new WebSocketServer({ server });
 module.exports = class Server {
   constructor(ccxtExchanges, directExchanges) {
     this.rateLimitManager = new RateLimitManager(Object.keys(ccxtExchanges.exchanges));
-    this.trigSubManager = new WsTrigSubManager(ccxtExchanges, directExchanges, this.rateLimitManager);
+    this.trigSubManager = {};
+
+    this.ccxtExchanges = ccxtExchanges;
+    this.directExchanges = directExchanges;
 
     this.ws = null;
   }
 
   startServer() {
-    const { trigSubManager } = this;
-
     wss.on('connection', (ws, req) => {
       ws.send(JSON.stringify({ message: 'Welcome to scan_exec websocket stream %$‿︵‿︵‿︵(-_-)' }));
       logger.info(`WS: Connection request from: ${req.connection.remoteAddress}`);
 
       this.ws = ws;
-      trigSubManager.setSubscriber(this.ws);
+      this.trigSubManager = new WsTrigSubManager(this.ccxtExchanges, this.directExchanges, this.ws);
 
       ws.on('message', (data) => {
         const json = JSON.parse(data);
@@ -38,13 +39,13 @@ module.exports = class Server {
 
         switch (request) {
           case 'TRIG':
-            trigSubManager.trigger(channel, payload);
+            this.trigSubManager.trigger(channel, payload);
             break;
           case 'SUB':
-            trigSubManager.subscribe(channel, payload);
+            this.trigSubManager.subscribe(channel, payload);
             break;
           case 'UNSUB':
-            trigSubManager.unsubscribe(channel);
+            this.trigSubManager.unsubscribe(channel);
             break;
           default:
             break;
@@ -53,7 +54,6 @@ module.exports = class Server {
 
       ws.on('close', () => {
         logger.info('WS: Stopping client connection.');
-        this.trigSubManager.clearBrokers();
       });
     });
 

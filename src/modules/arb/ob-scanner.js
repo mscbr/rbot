@@ -8,11 +8,9 @@ const Arbitrage = require('./arbitrage');
 const Path = require('../../models/path');
 
 module.exports = class ObScanner {
-  constructor(ccxtExchanges, directExchanges, rateLimitManager, subscriber) {
-    this.rateLimitManager = rateLimitManager;
-    this.subscriber = null;
+  constructor(directExchanges, subscriber) {
+    this.subscriber = subscriber;
 
-    this.ccxtExchanges = ccxtExchanges;
     this.directExchanges = directExchanges;
     this.arbitrage = new Arbitrage(logger);
 
@@ -23,8 +21,35 @@ module.exports = class ObScanner {
     this.directExchanges.propagateOnObUpdate(this.onObUpdate);
   }
 
-  setSubscriber(subscriber) {
-    this.subscriber = subscriber;
+  addPath({ exchanges, market }, side = 'MAKER') {
+    if (!market || (exchanges && exchanges.length < 2)) return;
+
+    const transferFees = this.directExchanges.exchanges[exchanges[0]].currencies[market.split('/')[0]].withdrawFee;
+
+    const path = new Path({
+      id: uuid(),
+      market,
+      exchanges,
+      tradeFees: [
+        parseFloat(
+          (side === 'MAKER'
+            ? this.directExchanges.exchanges[exchanges[0]].markets[market].maker +
+              this.directExchanges.exchanges[exchanges[1]].markets[market].maker
+            : this.directExchanges.exchanges[exchanges[0]].markets[market].taker +
+              this.directExchanges.exchanges[exchanges[1]].markets[market].taker
+          ).toFixed(4),
+        ),
+      ],
+      transferFees,
+    });
+
+    this.obPaths[path.id] = path;
+
+    this.directExchanges.addObSubscription(path.id, exchanges, market);
+
+    this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
+
+    return this;
   }
 
   onObUpdate(orderBook, exchange) {
@@ -33,6 +58,7 @@ module.exports = class ObScanner {
       [orderBook.symbol]: orderBook,
     };
 
+    // optimize
     Object.values(this.obPaths)
       .filter((obPath) => obPath.market === orderBook.symbol && obPath.exchanges.includes(exchange))
       .forEach((obPath) => {
@@ -51,12 +77,13 @@ module.exports = class ObScanner {
                 ...this.currentObData[obPath.exchanges[1]][obPath.market],
               },
               tradeFee: obPath.tradeFees.reduce((a, b) => a + b),
-              transferFee: obPath.transferFee,
             }),
           );
       });
 
     this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
+
+    return this;
   }
 
   // _compareTargets(target1, target2) {
@@ -66,35 +93,6 @@ module.exports = class ObScanner {
   //     return acc;
   //   }, true);
   // }
-
-  addPath({ exchanges, market }, side = 'MAKER') {
-    if (!market || (exchanges && exchanges.length < 2)) return;
-
-    const path = new Path({
-      id: uuid(),
-      market,
-      exchanges,
-      tradeFees: [
-        parseFloat(
-          (side === 'MAKER'
-            ? this.directExchanges.exchanges[exchanges[0]].markets[market].maker +
-              this.directExchanges.exchanges[exchanges[1]].markets[market].maker
-            : this.directExchanges.exchanges[exchanges[0]].markets[market].taker +
-              this.directExchanges.exchanges[exchanges[1]].markets[market].taker
-          ).toFixed(4),
-        ),
-      ],
-      transferFee: 0, //instatiate fee data first and pass here
-    });
-
-    this.obPaths[path.id] = path;
-
-    this.directExchanges.addObSubscription(path.id, exchanges, market);
-
-    this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));
-
-    return this;
-  }
 
   async runObFetching() {
     await this.directExchanges.openWsConnections();
