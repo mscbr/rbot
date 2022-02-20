@@ -28,13 +28,10 @@ module.exports = class WsTrigSubManager {
 
     logger.info(`WS: new subscription to ${channel}`);
 
-    // if (this.channels[channel]) subscriber.send(JSON.stringify({ message: `Subscribitng to ${channel}` }));
-    // else subscriber.send(JSON.stringify({ message: `${channel} not found` }));
-
     if (channel === 'tickerArbs') this.tickerScanner.runTickerFetching();
 
     if (channel === 'obArbs') {
-      subscriber.send(JSON.stringify({ channel, paths: obScanner.paths })); // ?
+      subscriber.send(JSON.stringify({ channel, paths: obScanner.paths }));
       this.obScanner.runObFetching();
     }
   }

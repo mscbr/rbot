@@ -20,7 +20,6 @@ module.exports = class RateLimitManager {
     exchanges.forEach((exchange) => {
       if (this.intervals[exchange]) this.intervals[exchange].callbacks[id] = async () => await run(exchange);
     });
-    // this.startIntervals(); // should this be here?
   }
 
   setIntervalDuration(exchanges, duration) {

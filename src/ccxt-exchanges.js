@@ -26,7 +26,6 @@ module.exports = class CcxtExchanges {
   }
 
   async init() {
-    // await this._loadConversionData();
     await this._loadMarkets();
   }
 
@@ -45,52 +44,6 @@ module.exports = class CcxtExchanges {
     await Promise.all(marketPromises);
   }
 
-  // async _loadConversionData() {
-  //   const { exchanges } = this;
-  //   const coreMarkets = ['BTC/USDT', 'ETH/USDT'];
-
-  //   this.logger.info('Loading conversion data...');
-  //   for (let i = 0; i < coreMarkets.length; i++) {
-  //     const promises = Object.keys(exchanges).reduce((acc, exchange) => {
-  //       acc[exchange] = {
-  //         [coreMarkets[i]]: exchanges[exchange].fetchTicker(coreMarkets[i]), // use average
-  //       };
-  //       return acc;
-  //     }, {});
-
-  //     try {
-  //       const resultsArr = await Promise.all(Object.values(promises).map((promise) => promise[coreMarkets[i]]));
-  //       Object.keys(promises).forEach((exchange, i) => {
-  //         this.usdtConversionMarkets[exchange] = {
-  //           ...this.usdtConversionMarkets[exchange],
-  //           [resultsArr[i].symbol]: resultsArr[i],
-  //         };
-  //       });
-
-  //       if (i < coreMarkets.length - 1) {
-  //         // rate limitting to 1s/req to each exchange
-  //         setTimeout(() => {}, 1000);
-  //       }
-  //     } catch {
-  //       this.logger.error("Couldn't fetch conversion data");
-  //     }
-  //   }
-  // }
-
-  // usdtTo(coin, exchange) {
-  //   if (!coin || (coin !== 'ETH' && coin !== 'BTC')) {
-  //     this.logger.error('usdtTo works only w/ ETH & BTC');
-  //     return;
-  //   }
-  //   const { usdtConversionMarkets } = this;
-  //   const market = coin + '/USDT';
-
-  //   if (!exchange || !usdtConversionMarkets[exchange][market]) return;
-
-  //   const { ask } = usdtConversionMarkets[exchange][market];
-  //   return 1 / ask;
-  // }
-
   get marketsForExchanges() {
     let { exchanges, _marketsForExchanges } = this;
 
@@ -98,8 +51,6 @@ module.exports = class CcxtExchanges {
 
     let exchangesForMarkets = Object.values(exchanges).reduce((acc, exchange) => {
       for (let market in exchange.markets) {
-        // maybe there should be HOF for transfer related checkups?
-        // filtering out
         if (
           exchange.currencies[exchange.markets[market].base] &&
           exchange.currencies[exchange.markets[market].base].payout === false

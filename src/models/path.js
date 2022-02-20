@@ -13,8 +13,8 @@ module.exports = class Path {
       id: this.id,
       market: this.market,
       exchanges: this.exchanges,
-      transferFees: this.transferFees, // ~ -
-      tradeFees: this.tradeFees, // ~ * - for simplicity
+      transferFees: this.transferFees,
+      tradeFees: this.tradeFees,
       arbs: this.arbs,
     };
   }

@@ -58,23 +58,22 @@ module.exports = class ObScanner {
       [orderBook.symbol]: orderBook,
     };
 
-    // optimize
     Object.values(this.obPaths)
       .filter((obPath) => obPath.market === orderBook.symbol && obPath.exchanges.includes(exchange))
       .forEach((obPath) => {
-        if (
-          !!this.currentObData[obPath.exchanges[0]] &&
-          !!this.currentObData[obPath.exchanges[0]][obPath.market] &&
-          !!this.currentObData[obPath.exchanges[1]] &&
-          !!this.currentObData[obPath.exchanges[1]][obPath.market]
-        )
+        const inObData =
+          this.currentObData[obPath.exchanges[0]] && this.currentObData[obPath.exchanges[0]][obPath.market];
+        const outObData =
+          this.currentObData[obPath.exchanges[1]] && this.currentObData[obPath.exchanges[1]][obPath.market];
+
+        if (inObData && outObData)
           obPath.setArbs(
             this.arbitrage.singleMarketObScan({
               in: {
-                ...this.currentObData[obPath.exchanges[0]][obPath.market],
+                ...inObData,
               },
               out: {
-                ...this.currentObData[obPath.exchanges[1]][obPath.market],
+                ...outObData,
               },
               tradeFee: obPath.tradeFees.reduce((a, b) => a + b),
             }),
@@ -85,14 +84,6 @@ module.exports = class ObScanner {
 
     return this;
   }
-
-  // _compareTargets(target1, target2) {
-  //   if (target1.market !== target2.market) return false;
-  //   return target1.exchanges.reduce((acc, exchange) => {
-  //     if (!target2.exchanges.includes(exchange)) acc = false;
-  //     return acc;
-  //   }, true);
-  // }
 
   async runObFetching() {
     await this.directExchanges.openWsConnections();

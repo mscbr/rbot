@@ -4,6 +4,9 @@ module.exports = class Currency {
     this.withdrawDisabled = withdrawDisabled;
     this.withdrawMin = 0;
     this.anyToWithdraw = false;
-    // this.withdrawFee = {}; //fix:, percent:, quoteEstimation: {[coin]: number}
+    // this is assgined later but
+    // not defined here in order to
+    // easier check if it is nullish
+    // this.withdrawFee = {}; // {fix: number, percent: number, quoteEstimation: {[coin]: number}}
   }
 };

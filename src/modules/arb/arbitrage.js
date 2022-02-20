@@ -6,7 +6,7 @@ module.exports = class Arbitrage {
 
     this.marketsData = {};
 
-    this.scanMarketTickersForArbs = this.scanMarketTickersForArbs.bind(this);
+    this._scanMarketTickersForArbs = this._scanMarketTickersForArbs.bind(this);
   }
 
   init() {
@@ -17,7 +17,7 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  scanMarketTickersForArbs(tickerData, hPass = 0.001, lPass = 0.7) {
+  _scanMarketTickersForArbs(tickerData, hPass = 0.001, lPass = 0.7) {
     const exchanges = Object.keys(tickerData);
     let arbs = [];
 
@@ -49,12 +49,12 @@ module.exports = class Arbitrage {
   }
 
   scanAllMarketTickers({ tickers, hPass, lPass }) {
-    let { logger, scanMarketTickersForArbs, exchanges } = this;
+    let { logger, _scanMarketTickersForArbs, exchanges } = this;
     const markets = Object.keys(tickers);
     let arbs = {};
 
     for (let i = 0; i < markets.length; i++) {
-      const marketTickerScan = scanMarketTickersForArbs(tickers[markets[i]], hPass, lPass);
+      const marketTickerScan = _scanMarketTickersForArbs(tickers[markets[i]], hPass, lPass);
 
       if (marketTickerScan) {
         arbs = {
@@ -88,6 +88,7 @@ module.exports = class Arbitrage {
       tradeFee,
     } = obData;
 
+    // mapping volume of currency regarding levels variable
     const levelWallets = asks.reduce((acc, priceVol, idx) => {
       const accLength = Object.keys(acc).length;
       if (accLength === levels.length) return acc;
@@ -108,29 +109,27 @@ module.exports = class Arbitrage {
       return acc;
     }, {});
 
-    // FIX:
-    // {} 'NAV/BTC' hitbtc
-    // ticker size not implemented BTC to "small"
-    // console.log(levelWallets);
-
     const output = Object.keys(levelWallets).reduce((acc, key, idx) => {
       const { val } = levelWallets[key];
       let vol = levelWallets[key].vol;
 
       const postVal = bids.reduce((valAcc, bid) => {
+        const bidVol = parseFloat(bid[1]);
+        const bidPrice = parseFloat(bid[0]);
+
         if (vol === 0) return valAcc;
-        if (vol - parseFloat(bid[1]) >= 0) {
-          valAcc += parseFloat(bid[0]) * parseFloat(bid[1]);
-          vol -= parseFloat(bid[1]);
+        if (vol - bidVol >= 0) {
+          valAcc += bidPrice * bidVol;
+          vol -= bidVol;
           return valAcc;
         }
-
-        // reccurence based on the ticker size
-        // probably should be implemented below
-        if (vol - parseFloat(bid[1]) < 0) {
-          for (let i = 1; i <= parseFloat(bid[1]); i++) {
+        if (vol - bidVol < 0) {
+          for (let i = 1; i <= bidVol; i++) {
             if (vol > 0) {
-              valAcc += parseFloat(bid[0]);
+              valAcc += bidPrice;
+              // as we perform "-1 from volume"
+              // this method is invalid for currencies
+              // using floating points (ETH, BTC etc)
               vol -= 1;
               return valAcc;
             }

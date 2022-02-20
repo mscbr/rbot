@@ -35,12 +35,10 @@ module.exports = class TickeScanner {
         const { arbs } = this.arbitrage.scanAllMarketTickers({ tickers });
 
         const arbsWithTransfer = arbs.map((arb) => {
-          if (
-            this.directExchanges.exchanges[arb.ask.exchange] &&
-            Object.keys(
-              this.directExchanges.exchanges[arb.ask.exchange].currencies[arb.market.split('/')[0]].withdrawFee,
-            ).length
-          ) {
+          const withdrawFee =
+            this.directExchanges.exchanges[arb.ask.exchange].currencies[arb.market.split('/')[0]].withdrawFee;
+
+          if (withdrawFee && Object.keys(withdrawFee).length) {
             return {
               ...arb,
               transferFees:
