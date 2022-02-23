@@ -1,0 +1,7263 @@
+{
+    "KICK_OLD": {
+        "symbol": "KICK_OLD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DAPS": {
+        "symbol": "DAPS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTC": {
+        "symbol": "BTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TCNX": {
+        "symbol": "TCNX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BRC": {
+        "symbol": "BRC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NNC": {
+        "symbol": "NNC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BCT": {
+        "symbol": "BCT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FNB": {
+        "symbol": "FNB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IOTW": {
+        "symbol": "IOTW",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZEBI": {
+        "symbol": "ZEBI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MCC": {
+        "symbol": "MCC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HT": {
+        "symbol": "HT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OKB": {
+        "symbol": "OKB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LINA": {
+        "symbol": "LINA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "INF": {
+        "symbol": "INF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ETH": {
+        "symbol": "ETH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SRK": {
+        "symbol": "SRK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDT": {
+        "symbol": "USDT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GNY": {
+        "symbol": "GNY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BMX": {
+        "symbol": "BMX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHR": {
+        "symbol": "SHR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XLM": {
+        "symbol": "XLM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SLV": {
+        "symbol": "SLV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOBI": {
+        "symbol": "MOBI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EOS": {
+        "symbol": "EOS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BOOM": {
+        "symbol": "BOOM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDT-ERC20": {
+        "symbol": "USDT-ERC20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZNC": {
+        "symbol": "ZNC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DAS": {
+        "symbol": "DAS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ABT": {
+        "symbol": "ABT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VGX": {
+        "symbol": "VGX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ITOC": {
+        "symbol": "ITOC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NYN": {
+        "symbol": "NYN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KAN": {
+        "symbol": "KAN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMON": {
+        "symbol": "AMON",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NEO": {
+        "symbol": "NEO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VOTE": {
+        "symbol": "VOTE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OMG": {
+        "symbol": "OMG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EFX": {
+        "symbol": "EFX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GE": {
+        "symbol": "GE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AISI": {
+        "symbol": "AISI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WIN": {
+        "symbol": "WIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZRX": {
+        "symbol": "ZRX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZIL": {
+        "symbol": "ZIL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TEP": {
+        "symbol": "TEP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UPA": {
+        "symbol": "UPA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IOST": {
+        "symbol": "IOST",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RMT": {
+        "symbol": "RMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XRR": {
+        "symbol": "XRR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EON": {
+        "symbol": "EON",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ONT": {
+        "symbol": "ONT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BCR": {
+        "symbol": "BCR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GNT": {
+        "symbol": "GNT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ULT": {
+        "symbol": "ULT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AE": {
+        "symbol": "AE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRN": {
+        "symbol": "TRN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MTT": {
+        "symbol": "MTT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MKR": {
+        "symbol": "MKR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MATH": {
+        "symbol": "MATH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTM": {
+        "symbol": "BTM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LINK": {
+        "symbol": "LINK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BBK": {
+        "symbol": "BBK",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BAT": {
+        "symbol": "BAT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DPST": {
+        "symbol": "DPST",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HYDRO": {
+        "symbol": "HYDRO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YAP": {
+        "symbol": "YAP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MMC": {
+        "symbol": "MMC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AEF": {
+        "symbol": "AEF",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TWEE": {
+        "symbol": "TWEE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZEON": {
+        "symbol": "ZEON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CRO": {
+        "symbol": "CRO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EBC": {
+        "symbol": "EBC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FRTS": {
+        "symbol": "FRTS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MATIC": {
+        "symbol": "MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REP": {
+        "symbol": "REP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MT": {
+        "symbol": "MT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CCTN": {
+        "symbol": "CCTN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BCH": {
+        "symbol": "BCH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LOOM": {
+        "symbol": "LOOM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XRP": {
+        "symbol": "XRP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOT": {
+        "symbol": "HOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VET": {
+        "symbol": "VET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIT": {
+        "symbol": "LIT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VTHO": {
+        "symbol": "VTHO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PRQ": {
+        "symbol": "PRQ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TERN": {
+        "symbol": "TERN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TIC": {
+        "symbol": "TIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHE": {
+        "symbol": "CHE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SNK": {
+        "symbol": "SNK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XPT": {
+        "symbol": "XPT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WAB": {
+        "symbol": "WAB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QM": {
+        "symbol": "QM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POCBGH": {
+        "symbol": "POCBGH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FM": {
+        "symbol": "FM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NER": {
+        "symbol": "NER",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSYS": {
+        "symbol": "BSYS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CPS": {
+        "symbol": "CPS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PCL_OLD": {
+        "symbol": "PCL_OLD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HEX": {
+        "symbol": "HEX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RFUEL": {
+        "symbol": "RFUEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDT-TRC20": {
+        "symbol": "USDT-TRC20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JST": {
+        "symbol": "JST",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ABX": {
+        "symbol": "ABX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XSR": {
+        "symbol": "XSR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "COMP": {
+        "symbol": "COMP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BAL": {
+        "symbol": "BAL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RSR": {
+        "symbol": "RSR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CEL": {
+        "symbol": "CEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VRA": {
+        "symbol": "VRA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GBT": {
+        "symbol": "GBT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STS": {
+        "symbol": "STS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WRX": {
+        "symbol": "WRX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SG": {
+        "symbol": "SG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CNC": {
+        "symbol": "CNC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XDB": {
+        "symbol": "XDB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HAI": {
+        "symbol": "HAI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DIA": {
+        "symbol": "DIA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TMT": {
+        "symbol": "TMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XTP": {
+        "symbol": "XTP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "Proxi": {
+        "symbol": "Proxi",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WINR": {
+        "symbol": "WINR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BUY": {
+        "symbol": "BUY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OM": {
+        "symbol": "OM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SWAP": {
+        "symbol": "SWAP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "mUSDC": {
+        "symbol": "mUSDC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RNO": {
+        "symbol": "RNO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SUSHI": {
+        "symbol": "SUSHI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ENJ": {
+        "symbol": "ENJ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WNXM": {
+        "symbol": "WNXM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TFD": {
+        "symbol": "TFD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PETRO": {
+        "symbol": "PETRO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LRC": {
+        "symbol": "LRC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CUN": {
+        "symbol": "CUN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UNI": {
+        "symbol": "UNI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EHRT": {
+        "symbol": "EHRT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CPC": {
+        "symbol": "CPC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CRU": {
+        "symbol": "CRU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GIX": {
+        "symbol": "GIX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OAS": {
+        "symbol": "OAS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WOO": {
+        "symbol": "WOO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAND": {
+        "symbol": "SAND",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$WILD": {
+        "symbol": "$WILD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WTK": {
+        "symbol": "WTK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LTX": {
+        "symbol": "LTX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SWAG": {
+        "symbol": "SWAG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHAKE": {
+        "symbol": "SHAKE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SANC": {
+        "symbol": "SANC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HMR": {
+        "symbol": "HMR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "INJ": {
+        "symbol": "INJ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BUP": {
+        "symbol": "BUP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CORX": {
+        "symbol": "CORX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XYO": {
+        "symbol": "XYO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OVR": {
+        "symbol": "OVR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TOP": {
+        "symbol": "TOP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CREDO": {
+        "symbol": "CREDO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QRX": {
+        "symbol": "QRX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CTU": {
+        "symbol": "CTU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YFI": {
+        "symbol": "YFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FDZ": {
+        "symbol": "FDZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NEXO": {
+        "symbol": "NEXO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVH": {
+        "symbol": "AVH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SNX": {
+        "symbol": "SNX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SKM": {
+        "symbol": "SKM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UMA": {
+        "symbol": "UMA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AAVE": {
+        "symbol": "AAVE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LPK": {
+        "symbol": "LPK",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "eRSDL": {
+        "symbol": "eRSDL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WEB": {
+        "symbol": "WEB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GRT": {
+        "symbol": "GRT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LEML": {
+        "symbol": "LEML",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LON": {
+        "symbol": "LON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BHD": {
+        "symbol": "BHD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REV": {
+        "symbol": "REV",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NAT": {
+        "symbol": "NAT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "1INCH": {
+        "symbol": "1INCH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BXTB": {
+        "symbol": "BXTB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$KING": {
+        "symbol": "$KING",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POLS": {
+        "symbol": "POLS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ELT": {
+        "symbol": "ELT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMR": {
+        "symbol": "AMR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIEN": {
+        "symbol": "LIEN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TFUEL": {
+        "symbol": "TFUEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTU": {
+        "symbol": "BTU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SFUEL": {
+        "symbol": "SFUEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RFI": {
+        "symbol": "RFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CRV": {
+        "symbol": "CRV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SWRV": {
+        "symbol": "SWRV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KP3RB": {
+        "symbol": "KP3RB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JULD": {
+        "symbol": "JULD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JULB": {
+        "symbol": "JULB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLU": {
+        "symbol": "PLU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSP": {
+        "symbol": "BSP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MIR": {
+        "symbol": "MIR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REN": {
+        "symbol": "REN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ARTH": {
+        "symbol": "ARTH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SRM": {
+        "symbol": "SRM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DPI": {
+        "symbol": "DPI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HAKKA": {
+        "symbol": "HAKKA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MAHA": {
+        "symbol": "MAHA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CAKE": {
+        "symbol": "CAKE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MANA": {
+        "symbol": "MANA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WORLD": {
+        "symbol": "WORLD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHZ": {
+        "symbol": "CHZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSCX": {
+        "symbol": "BSCX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PWAY": {
+        "symbol": "PWAY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TMCN": {
+        "symbol": "TMCN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SKL": {
+        "symbol": "SKL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MVEDA": {
+        "symbol": "MVEDA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VOX": {
+        "symbol": "VOX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DEGO": {
+        "symbol": "DEGO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHDC": {
+        "symbol": "SHDC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UMB": {
+        "symbol": "UMB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YNI": {
+        "symbol": "YNI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CELR": {
+        "symbol": "CELR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ANC": {
+        "symbol": "ANC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RLY": {
+        "symbol": "RLY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TFF": {
+        "symbol": "TFF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ECELL": {
+        "symbol": "ECELL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PROPEL": {
+        "symbol": "PROPEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BERRY": {
+        "symbol": "BERRY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STORJ": {
+        "symbol": "STORJ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DORA": {
+        "symbol": "DORA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BREW": {
+        "symbol": "BREW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ORE": {
+        "symbol": "ORE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ANY": {
+        "symbol": "ANY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XDNA": {
+        "symbol": "XDNA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZCK": {
+        "symbol": "ZCK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BIFI": {
+        "symbol": "BIFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WHIRL": {
+        "symbol": "WHIRL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SXP": {
+        "symbol": "SXP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DODO": {
+        "symbol": "DODO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BAND": {
+        "symbol": "BAND",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BEC": {
+        "symbol": "BEC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GSX": {
+        "symbol": "GSX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SATOZ": {
+        "symbol": "SATOZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DMS": {
+        "symbol": "DMS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOONSHOT": {
+        "symbol": "MOONSHOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LABS": {
+        "symbol": "LABS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 4140,
+            "quoteEstimation": {
+                "USDT": 13.29768
+            }
+        }
+    },
+    "ZEP": {
+        "symbol": "ZEP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PDAO": {
+        "symbol": "PDAO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RIT20": {
+        "symbol": "RIT20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIB": {
+        "symbol": "SHIB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NAUT": {
+        "symbol": "NAUT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOG": {
+        "symbol": "HOG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDT-BSC": {
+        "symbol": "USDT-BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FET": {
+        "symbol": "FET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EPK": {
+        "symbol": "EPK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FOX": {
+        "symbol": "FOX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LAYER": {
+        "symbol": "LAYER",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GFX": {
+        "symbol": "GFX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FTS": {
+        "symbol": "FTS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EARNX": {
+        "symbol": "EARNX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "L3P": {
+        "symbol": "L3P",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GFX-ERC20": {
+        "symbol": "GFX-ERC20",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAFESTAR": {
+        "symbol": "SAFESTAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOGL": {
+        "symbol": "HOGL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NWC": {
+        "symbol": "NWC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 1.3,
+            "quoteEstimation": {
+                "USDT": 0.29419
+            }
+        }
+    },
+    "SAFESUN": {
+        "symbol": "SAFESUN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FLY": {
+        "symbol": "FLY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STARS": {
+        "symbol": "STARS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ARES": {
+        "symbol": "ARES",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAFEMARS": {
+        "symbol": "SAFEMARS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 56000000,
+            "quoteEstimation": {
+                "USDT": 0.112
+            }
+        }
+    },
+    "SAFEEARTH": {
+        "symbol": "SAFEEARTH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VANCAT": {
+        "symbol": "VANCAT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XDNA-BSC": {
+        "symbol": "XDNA-BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AFEN": {
+        "symbol": "AFEN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STRI": {
+        "symbol": "STRI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NCT": {
+        "symbol": "NCT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 600,
+            "quoteEstimation": {
+                "ETH": 0.013463999999999999
+            }
+        }
+    },
+    "DEVE": {
+        "symbol": "DEVE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PAPEL": {
+        "symbol": "PAPEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OCEAN": {
+        "symbol": "OCEAN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FTM": {
+        "symbol": "FTM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRU": {
+        "symbol": "TRU",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ELONGATE": {
+        "symbol": "ELONGATE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SOTA": {
+        "symbol": "SOTA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SOTA-BEP20": {
+        "symbol": "SOTA-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GEN": {
+        "symbol": "GEN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PIG": {
+        "symbol": "PIG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OCC": {
+        "symbol": "OCC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BCVT": {
+        "symbol": "BCVT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FULLSEND": {
+        "symbol": "FULLSEND",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ASS": {
+        "symbol": "ASS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AKITA": {
+        "symbol": "AKITA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VCC": {
+        "symbol": "VCC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FEG": {
+        "symbol": "FEG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOMA": {
+        "symbol": "MOMA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KLV": {
+        "symbol": "KLV",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 10,
+            "quoteEstimation": {
+                "USDT": 0.241
+            }
+        }
+    },
+    "ELON": {
+        "symbol": "ELON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EDDA": {
+        "symbol": "EDDA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRAC": {
+        "symbol": "TRAC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VCEGG": {
+        "symbol": "VCEGG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VCSPERM": {
+        "symbol": "VCSPERM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FFA": {
+        "symbol": "FFA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RFOX": {
+        "symbol": "RFOX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAFESPACE": {
+        "symbol": "SAFESPACE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BAKE": {
+        "symbol": "BAKE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SGE": {
+        "symbol": "SGE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EGR": {
+        "symbol": "EGR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WENMOON": {
+        "symbol": "WENMOON",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ATM": {
+        "symbol": "ATM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ROCKI": {
+        "symbol": "ROCKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOK": {
+        "symbol": "MOK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LEXI": {
+        "symbol": "LEXI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SMG": {
+        "symbol": "SMG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FINE": {
+        "symbol": "FINE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 3.3,
+            "quoteEstimation": {
+                "USDT": 0.46068
+            }
+        }
+    },
+    "ZOE": {
+        "symbol": "ZOE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZOE-BEP20": {
+        "symbol": "ZOE-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMA": {
+        "symbol": "AMA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AQUAGOAT": {
+        "symbol": "AQUAGOAT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "COSHI": {
+        "symbol": "COSHI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$FTS": {
+        "symbol": "$FTS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HUGO": {
+        "symbol": "HUGO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EGR-BEP20": {
+        "symbol": "EGR-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POLK": {
+        "symbol": "POLK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CBY": {
+        "symbol": "CBY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KHC": {
+        "symbol": "KHC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MNI": {
+        "symbol": "MNI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PNIXS": {
+        "symbol": "PNIXS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOZ": {
+        "symbol": "MOZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NFTA": {
+        "symbol": "NFTA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NFTA-BEP20": {
+        "symbol": "NFTA-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FUEL": {
+        "symbol": "FUEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BBT": {
+        "symbol": "BBT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WPP": {
+        "symbol": "WPP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SCRT": {
+        "symbol": "SCRT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BONDLY": {
+        "symbol": "BONDLY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WSB": {
+        "symbol": "WSB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WSG": {
+        "symbol": "WSG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MOONSTAR": {
+        "symbol": "MOONSTAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HAPPY": {
+        "symbol": "HAPPY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LAS": {
+        "symbol": "LAS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MIL": {
+        "symbol": "MIL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CTT": {
+        "symbol": "CTT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 0.02,
+            "quoteEstimation": {
+                "USDT": 0.0698
+            }
+        }
+    },
+    "MAKI": {
+        "symbol": "MAKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UNN": {
+        "symbol": "UNN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDT-SPL": {
+        "symbol": "USDT-SPL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDC-SPL": {
+        "symbol": "USDC-SPL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GALA": {
+        "symbol": "GALA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMP": {
+        "symbol": "AMP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OYT": {
+        "symbol": "OYT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OMT": {
+        "symbol": "OMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOD": {
+        "symbol": "HOD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 13,
+            "quoteEstimation": {
+                "USDT": 2.06
+            }
+        }
+    },
+    "YUMMY": {
+        "symbol": "YUMMY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MRCR": {
+        "symbol": "MRCR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STOPELON": {
+        "symbol": "STOPELON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RTTv2": {
+        "symbol": "RTTv2",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KAREN": {
+        "symbol": "KAREN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PORNROCKET": {
+        "symbol": "PORNROCKET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BONDLY-BEP20": {
+        "symbol": "BONDLY-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REVV": {
+        "symbol": "REVV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GOAL": {
+        "symbol": "GOAL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTCN": {
+        "symbol": "BTCN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SGO": {
+        "symbol": "SGO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LPT": {
+        "symbol": "LPT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AXC": {
+        "symbol": "AXC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "O3": {
+        "symbol": "O3",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RAY": {
+        "symbol": "RAY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BITE": {
+        "symbol": "BITE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRAIL": {
+        "symbol": "TRAIL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GERA": {
+        "symbol": "GERA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QUICK": {
+        "symbol": "QUICK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YETU": {
+        "symbol": "YETU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AUR": {
+        "symbol": "AUR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NAFTY": {
+        "symbol": "NAFTY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALPACA": {
+        "symbol": "ALPACA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SNOOP": {
+        "symbol": "SNOOP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DCN": {
+        "symbol": "DCN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TCT": {
+        "symbol": "TCT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CLU": {
+        "symbol": "CLU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ARTEX": {
+        "symbol": "ARTEX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AXS": {
+        "symbol": "AXS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SLP": {
+        "symbol": "SLP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LANC": {
+        "symbol": "LANC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMEE": {
+        "symbol": "GMEE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STA": {
+        "symbol": "STA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMC": {
+        "symbol": "AMC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMC-BEP20": {
+        "symbol": "AMC-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CFXT": {
+        "symbol": "CFXT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BABYBNB": {
+        "symbol": "BABYBNB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SCONEX": {
+        "symbol": "SCONEX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDC-TRC20": {
+        "symbol": "USDC-TRC20",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PRP": {
+        "symbol": "PRP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ENERGYX": {
+        "symbol": "ENERGYX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DEFC": {
+        "symbol": "DEFC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HERO": {
+        "symbol": "HERO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MCONTENT": {
+        "symbol": "MCONTENT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "COOP": {
+        "symbol": "COOP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHA": {
+        "symbol": "CHA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ILV": {
+        "symbol": "ILV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MINIDOGE": {
+        "symbol": "MINIDOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "Yinbi": {
+        "symbol": "Yinbi",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GDT": {
+        "symbol": "GDT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KOM": {
+        "symbol": "KOM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BABYDOGE": {
+        "symbol": "BABYDOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DPET": {
+        "symbol": "DPET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LOVELY": {
+        "symbol": "LOVELY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HODL": {
+        "symbol": "HODL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DAPSW": {
+        "symbol": "DAPSW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SUM": {
+        "symbol": "SUM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KISHU": {
+        "symbol": "KISHU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALICE": {
+        "symbol": "ALICE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ANKR": {
+        "symbol": "ANKR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MGT": {
+        "symbol": "MGT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIKE": {
+        "symbol": "LIKE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TOWER": {
+        "symbol": "TOWER",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DEFX": {
+        "symbol": "DEFX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OUD": {
+        "symbol": "OUD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MBX": {
+        "symbol": "MBX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HMT": {
+        "symbol": "HMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CART": {
+        "symbol": "CART",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZCX": {
+        "symbol": "ZCX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 34,
+            "quoteEstimation": {
+                "USDT": 37.6754
+            }
+        }
+    },
+    "SMD": {
+        "symbol": "SMD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TORG": {
+        "symbol": "TORG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LITH": {
+        "symbol": "LITH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REEF": {
+        "symbol": "REEF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REEF-BEP20": {
+        "symbol": "REEF-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MVP": {
+        "symbol": "MVP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NDC": {
+        "symbol": "NDC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LEOS": {
+        "symbol": "LEOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BLP": {
+        "symbol": "BLP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NABOX": {
+        "symbol": "NABOX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NABOX-BEP20": {
+        "symbol": "NABOX-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALLEY": {
+        "symbol": "ALLEY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UNIC": {
+        "symbol": "UNIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZOON": {
+        "symbol": "ZOON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BIT": {
+        "symbol": "BIT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$CRDN": {
+        "symbol": "$CRDN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DADDYDOGE": {
+        "symbol": "DADDYDOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DYZ": {
+        "symbol": "DYZ",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TLM": {
+        "symbol": "TLM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$LORDZ": {
+        "symbol": "$LORDZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TASTE": {
+        "symbol": "TASTE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GFCE": {
+        "symbol": "GFCE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FUSE": {
+        "symbol": "FUSE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 54,
+            "quoteEstimation": {
+                "USDT": 47.277054
+            }
+        }
+    },
+    "BUGG": {
+        "symbol": "BUGG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DRSL": {
+        "symbol": "DRSL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ERIS": {
+        "symbol": "ERIS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHESS": {
+        "symbol": "CHESS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ETHOS": {
+        "symbol": "ETHOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FORM": {
+        "symbol": "FORM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MINE": {
+        "symbol": "MINE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XAVA": {
+        "symbol": "XAVA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QI": {
+        "symbol": "QI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 1,
+            "quoteEstimation": {
+                "USDT": 0.06193
+            }
+        }
+    },
+    "BSFM": {
+        "symbol": "BSFM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UBX": {
+        "symbol": "UBX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MANGA": {
+        "symbol": "MANGA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RARE": {
+        "symbol": "RARE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RARI": {
+        "symbol": "RARI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$HERO": {
+        "symbol": "$HERO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DNF": {
+        "symbol": "DNF",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DNF-BEP20": {
+        "symbol": "DNF-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ARX": {
+        "symbol": "ARX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SUB": {
+        "symbol": "SUB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FREE": {
+        "symbol": "FREE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "10SET": {
+        "symbol": "10SET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 31,
+            "quoteEstimation": {
+                "USDT": 48.112
+            }
+        }
+    },
+    "PKR": {
+        "symbol": "PKR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PKR-BEP20": {
+        "symbol": "PKR-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$TOP": {
+        "symbol": "$TOP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$TOP-BEP20": {
+        "symbol": "$TOP-BEP20",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WRK": {
+        "symbol": "WRK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WILD": {
+        "symbol": "WILD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CIRUS": {
+        "symbol": "CIRUS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EVAI": {
+        "symbol": "EVAI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DIAMONDS": {
+        "symbol": "DIAMONDS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ISP": {
+        "symbol": "ISP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VLTY": {
+        "symbol": "VLTY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FTT": {
+        "symbol": "FTT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UST": {
+        "symbol": "UST",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLENTYCOIN": {
+        "symbol": "PLENTYCOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BABY": {
+        "symbol": "BABY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NORD": {
+        "symbol": "NORD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PETG": {
+        "symbol": "PETG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FEAR": {
+        "symbol": "FEAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AUDIO": {
+        "symbol": "AUDIO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DBZ": {
+        "symbol": "DBZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XET": {
+        "symbol": "XET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YCO": {
+        "symbol": "YCO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DYDX": {
+        "symbol": "DYDX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRAVA": {
+        "symbol": "TRAVA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAUNA": {
+        "symbol": "SAUNA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PAYA": {
+        "symbol": "PAYA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DBX": {
+        "symbol": "DBX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JADE": {
+        "symbol": "JADE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "iZOBi": {
+        "symbol": "iZOBi",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PAID": {
+        "symbol": "PAID",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SBR": {
+        "symbol": "SBR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VSP": {
+        "symbol": "VSP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LARIX": {
+        "symbol": "LARIX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZKS": {
+        "symbol": "ZKS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIFE": {
+        "symbol": "LIFE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$PAC": {
+        "symbol": "$PAC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AKN": {
+        "symbol": "AKN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIELD": {
+        "symbol": "SHIELD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CART-BEP20": {
+        "symbol": "CART-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LUNA": {
+        "symbol": "LUNA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALTRUCOIN": {
+        "symbol": "ALTRUCOIN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STR": {
+        "symbol": "STR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LYD": {
+        "symbol": "LYD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OCT": {
+        "symbol": "OCT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HBAR": {
+        "symbol": "HBAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FXF": {
+        "symbol": "FXF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XLPG": {
+        "symbol": "XLPG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BETU": {
+        "symbol": "BETU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VEMP": {
+        "symbol": "VEMP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 342,
+            "quoteEstimation": {
+                "USDT": 32.284116
+            }
+        }
+    },
+    "CIV": {
+        "symbol": "CIV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AXIS": {
+        "symbol": "AXIS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XCAD": {
+        "symbol": "XCAD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EPIC": {
+        "symbol": "EPIC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BUST": {
+        "symbol": "BUST",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PNG": {
+        "symbol": "PNG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BERS": {
+        "symbol": "BERS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAIL": {
+        "symbol": "SAIL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GEC": {
+        "symbol": "GEC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HIDEOUS": {
+        "symbol": "HIDEOUS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BANKER": {
+        "symbol": "BANKER",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ITGR": {
+        "symbol": "ITGR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PERP": {
+        "symbol": "PERP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GHD": {
+        "symbol": "GHD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TORII": {
+        "symbol": "TORII",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PORNFTCOIN": {
+        "symbol": "PORNFTCOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BME": {
+        "symbol": "BME",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SST": {
+        "symbol": "SST",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WIVA": {
+        "symbol": "WIVA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CERES": {
+        "symbol": "CERES",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ATLAS": {
+        "symbol": "ATLAS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UOS": {
+        "symbol": "UOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 54,
+            "quoteEstimation": {
+                "USDT": 46.709622
+            }
+        }
+    },
+    "E$P": {
+        "symbol": "E$P",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POLY": {
+        "symbol": "POLY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DAWN": {
+        "symbol": "DAWN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SYP": {
+        "symbol": "SYP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ARV": {
+        "symbol": "ARV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CDTC": {
+        "symbol": "CDTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NAOS": {
+        "symbol": "NAOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 2.6,
+            "quoteEstimation": {
+                "USDT": 0.7
+            }
+        }
+    },
+    "NAOS_ERC20": {
+        "symbol": "NAOS_ERC20",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZPTC": {
+        "symbol": "ZPTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIST": {
+        "symbol": "LIST",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VAB": {
+        "symbol": "VAB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KOL": {
+        "symbol": "KOL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FLNS": {
+        "symbol": "FLNS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSR": {
+        "symbol": "BSR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VLTY_OLD": {
+        "symbol": "VLTY_OLD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGE2": {
+        "symbol": "DOGE2",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WGC": {
+        "symbol": "WGC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DAOVC": {
+        "symbol": "DAOVC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ULTI": {
+        "symbol": "ULTI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ANN": {
+        "symbol": "ANN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CMCX": {
+        "symbol": "CMCX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CMCX_TRC": {
+        "symbol": "CMCX_TRC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TLOS": {
+        "symbol": "TLOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZPTC_TLOS": {
+        "symbol": "ZPTC_TLOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMD": {
+        "symbol": "GMD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CMCX_BSC": {
+        "symbol": "CMCX_BSC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YGG": {
+        "symbol": "YGG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WTON": {
+        "symbol": "WTON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HCT": {
+        "symbol": "HCT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FTB": {
+        "symbol": "FTB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STACK": {
+        "symbol": "STACK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STACK_ERC": {
+        "symbol": "STACK_ERC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MORA": {
+        "symbol": "MORA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGEBULL": {
+        "symbol": "DOGEBULL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PIZA": {
+        "symbol": "PIZA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TABOO": {
+        "symbol": "TABOO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MONI": {
+        "symbol": "MONI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LOCUS": {
+        "symbol": "LOCUS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DATE": {
+        "symbol": "DATE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STMX": {
+        "symbol": "STMX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DFC": {
+        "symbol": "DFC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KAI": {
+        "symbol": "KAI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DPET_KRC": {
+        "symbol": "DPET_KRC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AAA": {
+        "symbol": "AAA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLANETS": {
+        "symbol": "PLANETS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DMTR": {
+        "symbol": "DMTR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "THN": {
+        "symbol": "THN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BP": {
+        "symbol": "BP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BASEREWARD": {
+        "symbol": "BASEREWARD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BAGEL": {
+        "symbol": "BAGEL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PUNK": {
+        "symbol": "PUNK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$REV": {
+        "symbol": "$REV",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WELD": {
+        "symbol": "WELD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EVA": {
+        "symbol": "EVA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGECOLA": {
+        "symbol": "DOGECOLA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RVF": {
+        "symbol": "RVF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WEMP": {
+        "symbol": "WEMP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SPE": {
+        "symbol": "SPE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PIKACHU": {
+        "symbol": "PIKACHU",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LUFFY": {
+        "symbol": "LUFFY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PETS": {
+        "symbol": "PETS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SAITAMA": {
+        "symbol": "SAITAMA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WELD_BSC": {
+        "symbol": "WELD_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XWG": {
+        "symbol": "XWG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DVDX": {
+        "symbol": "DVDX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DES": {
+        "symbol": "DES",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DES_BSC": {
+        "symbol": "DES_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LED": {
+        "symbol": "LED",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLAY_invalue": {
+        "symbol": "PLAY_invalue",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LEASH": {
+        "symbol": "LEASH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SPELL": {
+        "symbol": "SPELL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SSB": {
+        "symbol": "SSB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "APP": {
+        "symbol": "APP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VERA": {
+        "symbol": "VERA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VERA_BSC": {
+        "symbol": "VERA_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PBR": {
+        "symbol": "PBR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 148,
+            "quoteEstimation": {
+                "USDT": 47.36
+            }
+        }
+    },
+    "MELLO": {
+        "symbol": "MELLO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BPAY": {
+        "symbol": "BPAY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTSL": {
+        "symbol": "BTSL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STRX": {
+        "symbol": "STRX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STARSHIP": {
+        "symbol": "STARSHIP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HYFI": {
+        "symbol": "HYFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MPLAY": {
+        "symbol": "MPLAY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USELESS": {
+        "symbol": "USELESS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KINGSHIB": {
+        "symbol": "KINGSHIB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PINU": {
+        "symbol": "PINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FUSE_Chain": {
+        "symbol": "FUSE_Chain",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "iBNB": {
+        "symbol": "iBNB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MASK": {
+        "symbol": "MASK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FUKU": {
+        "symbol": "FUKU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALTB": {
+        "symbol": "ALTB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GODS": {
+        "symbol": "GODS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IMX": {
+        "symbol": "IMX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LXF": {
+        "symbol": "LXF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FLOKI": {
+        "symbol": "FLOKI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FLOKI_ERC": {
+        "symbol": "FLOKI_ERC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GOC": {
+        "symbol": "GOC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIBAROCKET": {
+        "symbol": "SHIBAROCKET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TLOS_ETH": {
+        "symbol": "TLOS_ETH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TLOS_BSC": {
+        "symbol": "TLOS_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "METACAT": {
+        "symbol": "METACAT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SMGTO": {
+        "symbol": "SMGTO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GHC": {
+        "symbol": "GHC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ETERNAL": {
+        "symbol": "ETERNAL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TZKI": {
+        "symbol": "TZKI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MIM": {
+        "symbol": "MIM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JRIT": {
+        "symbol": "JRIT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KALAM": {
+        "symbol": "KALAM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RTC": {
+        "symbol": "RTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OPS": {
+        "symbol": "OPS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GM": {
+        "symbol": "GM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BRISE": {
+        "symbol": "BRISE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YOOSHI": {
+        "symbol": "YOOSHI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DCB": {
+        "symbol": "DCB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AMA_BSC": {
+        "symbol": "AMA_BSC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NIFT": {
+        "symbol": "NIFT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REDFLOKI": {
+        "symbol": "REDFLOKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LILFLOKI": {
+        "symbol": "LILFLOKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WSIENNA": {
+        "symbol": "WSIENNA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BHC": {
+        "symbol": "BHC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RAINBOW": {
+        "symbol": "RAINBOW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHECK": {
+        "symbol": "CHECK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EGC": {
+        "symbol": "EGC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRADE": {
+        "symbol": "TRADE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UFO": {
+        "symbol": "UFO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ENS": {
+        "symbol": "ENS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WQT": {
+        "symbol": "WQT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WQT_BSC": {
+        "symbol": "WQT_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MRXB": {
+        "symbol": "MRXB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REUM": {
+        "symbol": "REUM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHILL": {
+        "symbol": "SHILL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 2,
+            "quoteEstimation": {
+                "USDT": 0.288
+            }
+        }
+    },
+    "ULTGG": {
+        "symbol": "ULTGG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DANA": {
+        "symbol": "DANA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOFF": {
+        "symbol": "HOFF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BUCU": {
+        "symbol": "BUCU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVN": {
+        "symbol": "AVN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IMC": {
+        "symbol": "IMC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHARPEI": {
+        "symbol": "SHARPEI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SKEY": {
+        "symbol": "SKEY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RACA": {
+        "symbol": "RACA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AURORA": {
+        "symbol": "AURORA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIRYOINU": {
+        "symbol": "SHIRYOINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ACU": {
+        "symbol": "ACU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BDOG": {
+        "symbol": "BDOG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BLXM": {
+        "symbol": "BLXM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BOBA": {
+        "symbol": "BOBA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 6,
+            "quoteEstimation": {
+                "USDT": 9.78
+            }
+        }
+    },
+    "QUACK": {
+        "symbol": "QUACK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POKERMANIA": {
+        "symbol": "POKERMANIA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BHAX": {
+        "symbol": "BHAX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BLOVELY": {
+        "symbol": "BLOVELY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BMFLOKI": {
+        "symbol": "BMFLOKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMEX": {
+        "symbol": "GMEX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHN": {
+        "symbol": "CHN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LFW": {
+        "symbol": "LFW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 13,
+            "quoteEstimation": {
+                "USDT": 5.62
+            }
+        }
+    },
+    "DEVO": {
+        "symbol": "DEVO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MONS": {
+        "symbol": "MONS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$APENFT": {
+        "symbol": "$APENFT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SIMP": {
+        "symbol": "SIMP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CATGIRL": {
+        "symbol": "CATGIRL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XBN": {
+        "symbol": "XBN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MBET": {
+        "symbol": "MBET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KAINET": {
+        "symbol": "KAINET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HUMP": {
+        "symbol": "HUMP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PAF": {
+        "symbol": "PAF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 4000,
+            "quoteEstimation": {
+                "USDT": 43.44
+            }
+        }
+    },
+    "EFI": {
+        "symbol": "EFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BondDex": {
+        "symbol": "BondDex",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GAIA": {
+        "symbol": "GAIA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NFT": {
+        "symbol": "NFT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PEOPLE": {
+        "symbol": "PEOPLE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ATRI": {
+        "symbol": "ATRI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WOLVERINU": {
+        "symbol": "WOLVERINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSHEESHA": {
+        "symbol": "BSHEESHA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CIND": {
+        "symbol": "CIND",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WFAIR": {
+        "symbol": "WFAIR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ESHEESHA": {
+        "symbol": "ESHEESHA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GLD": {
+        "symbol": "GLD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NASADOGE": {
+        "symbol": "NASADOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ESW": {
+        "symbol": "ESW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BALA": {
+        "symbol": "BALA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BLOK": {
+        "symbol": "BLOK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLASTIK": {
+        "symbol": "PLASTIK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZINU": {
+        "symbol": "ZINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WELT": {
+        "symbol": "WELT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DRUG": {
+        "symbol": "DRUG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HOGE": {
+        "symbol": "HOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DBD": {
+        "symbol": "DBD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DKC": {
+        "symbol": "DKC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POPO": {
+        "symbol": "POPO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PKT": {
+        "symbol": "PKT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BICO": {
+        "symbol": "BICO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "STARS(BSC)": {
+        "symbol": "STARS(BSC)",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZENITH": {
+        "symbol": "ZENITH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KRL": {
+        "symbol": "KRL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIBAPUP": {
+        "symbol": "SHIBAPUP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IHC": {
+        "symbol": "IHC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SPIN": {
+        "symbol": "SPIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AFIN": {
+        "symbol": "AFIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOOR": {
+        "symbol": "DOOR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QRDO": {
+        "symbol": "QRDO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KIBA": {
+        "symbol": "KIBA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$HODL": {
+        "symbol": "$HODL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RETIRE": {
+        "symbol": "RETIRE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DV": {
+        "symbol": "DV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UNITS": {
+        "symbol": "UNITS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MC": {
+        "symbol": "MC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RYOSHI": {
+        "symbol": "RYOSHI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GTFO": {
+        "symbol": "GTFO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SOFI": {
+        "symbol": "SOFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AXL": {
+        "symbol": "AXL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PULSEMOON": {
+        "symbol": "PULSEMOON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MYNE": {
+        "symbol": "MYNE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ERON": {
+        "symbol": "ERON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XY": {
+        "symbol": "XY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMR": {
+        "symbol": "GMR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIBORG": {
+        "symbol": "SHIBORG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CKT": {
+        "symbol": "CKT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SLRS": {
+        "symbol": "SLRS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 5,
+            "quoteEstimation": {
+                "USDT": 1.85
+            }
+        }
+    },
+    "CTN": {
+        "symbol": "CTN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "$GM": {
+        "symbol": "$GM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "YARL": {
+        "symbol": "YARL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JASMY": {
+        "symbol": "JASMY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MGA": {
+        "symbol": "MGA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "H2O": {
+        "symbol": "H2O",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VPAD": {
+        "symbol": "VPAD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UPI": {
+        "symbol": "UPI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ACYC": {
+        "symbol": "ACYC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PCL": {
+        "symbol": "PCL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WMT": {
+        "symbol": "WMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMCOIN": {
+        "symbol": "GMCOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HIGH": {
+        "symbol": "HIGH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "POT": {
+        "symbol": "POT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 1,
+            "quoteEstimation": {
+                "USDT": 0.6175
+            }
+        }
+    },
+    "RAVE": {
+        "symbol": "RAVE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GOPX": {
+        "symbol": "GOPX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHA": {
+        "symbol": "SHA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MEFA": {
+        "symbol": "MEFA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VICA": {
+        "symbol": "VICA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DFA": {
+        "symbol": "DFA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHX": {
+        "symbol": "SHX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VODKA": {
+        "symbol": "VODKA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NFTY": {
+        "symbol": "NFTY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TONCOIN": {
+        "symbol": "TONCOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SOS": {
+        "symbol": "SOS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TALK": {
+        "symbol": "TALK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 42,
+            "quoteEstimation": {
+                "USDT": 15.11994666
+            }
+        }
+    },
+    "HOTCROSS": {
+        "symbol": "HOTCROSS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SON": {
+        "symbol": "SON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AGV": {
+        "symbol": "AGV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BBANK": {
+        "symbol": "BBANK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LSP": {
+        "symbol": "LSP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TNG": {
+        "symbol": "TNG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FRR": {
+        "symbol": "FRR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CLIFF": {
+        "symbol": "CLIFF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CHIP": {
+        "symbol": "CHIP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MCRT": {
+        "symbol": "MCRT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CWEB": {
+        "symbol": "CWEB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 308,
+            "quoteEstimation": {
+                "USDT": 16.741956000000002
+            }
+        }
+    },
+    "2022M": {
+        "symbol": "2022M",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGEDASH": {
+        "symbol": "DOGEDASH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 3509,
+            "quoteEstimation": {
+                "USDT": 0.8577048700000001
+            }
+        }
+    },
+    "THG": {
+        "symbol": "THG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 0.5,
+            "quoteEstimation": {
+                "USDT": 1.0006
+            }
+        }
+    },
+    "VR": {
+        "symbol": "VR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ICW": {
+        "symbol": "ICW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NUGGET": {
+        "symbol": "NUGGET",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LIQ": {
+        "symbol": "LIQ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MUSC": {
+        "symbol": "MUSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NSUR": {
+        "symbol": "NSUR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NEOM": {
+        "symbol": "NEOM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ADS": {
+        "symbol": "ADS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KATA": {
+        "symbol": "KATA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GNNX": {
+        "symbol": "GNNX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MPL": {
+        "symbol": "MPL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGECOIN": {
+        "symbol": "DOGECOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVG": {
+        "symbol": "AVG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IMPACTXP": {
+        "symbol": "IMPACTXP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SLC": {
+        "symbol": "SLC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHIBAMETA": {
+        "symbol": "SHIBAMETA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MATATA": {
+        "symbol": "MATATA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TCG2": {
+        "symbol": "TCG2",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZLDA": {
+        "symbol": "ZLDA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MILK": {
+        "symbol": "MILK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MrFOX": {
+        "symbol": "MrFOX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TOK": {
+        "symbol": "TOK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FIMI": {
+        "symbol": "FIMI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WPL": {
+        "symbol": "WPL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SFM": {
+        "symbol": "SFM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 3000,
+            "quoteEstimation": {
+                "USDT": 4.752
+            }
+        }
+    },
+    "LOOKS": {
+        "symbol": "LOOKS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CBL": {
+        "symbol": "CBL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DODI": {
+        "symbol": "DODI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WEC": {
+        "symbol": "WEC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BPLC": {
+        "symbol": "BPLC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CWOLF": {
+        "symbol": "CWOLF",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BLEU": {
+        "symbol": "BLEU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WSOW": {
+        "symbol": "WSOW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "METIS": {
+        "symbol": "METIS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 0.17,
+            "quoteEstimation": {
+                "USDT": 24.310000000000002
+            }
+        }
+    },
+    "NBL": {
+        "symbol": "NBL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SHINJA": {
+        "symbol": "SHINJA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KICK": {
+        "symbol": "KICK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LNR": {
+        "symbol": "LNR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GARI": {
+        "symbol": "GARI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BORING": {
+        "symbol": "BORING",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 599,
+            "quoteEstimation": {
+                "USDT": 20.119212
+            }
+        }
+    },
+    "MBMX": {
+        "symbol": "MBMX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LEZ": {
+        "symbol": "LEZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PYE": {
+        "symbol": "PYE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTTC": {
+        "symbol": "BTTC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MVRS": {
+        "symbol": "MVRS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTA": {
+        "symbol": "BTA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GNP": {
+        "symbol": "GNP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EVU": {
+        "symbol": "EVU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ANTIS": {
+        "symbol": "ANTIS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MVG": {
+        "symbol": "MVG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GAMINGSHIBA": {
+        "symbol": "GAMINGSHIBA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLEX": {
+        "symbol": "PLEX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XCH": {
+        "symbol": "XCH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CCX": {
+        "symbol": "CCX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVAX-C": {
+        "symbol": "AVAX-C",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KAR": {
+        "symbol": "KAR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NEAR": {
+        "symbol": "NEAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FIO": {
+        "symbol": "FIO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 12,
+            "quoteEstimation": {
+                "USDT": 1.1244
+            }
+        }
+    },
+    "SCRT(SecretNetwork)": {
+        "symbol": "SCRT(SecretNetwork)",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "IOTX": {
+        "symbol": "IOTX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MATIC-POLYGON": {
+        "symbol": "MATIC-POLYGON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HT-HECO": {
+        "symbol": "HT-HECO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XDC": {
+        "symbol": "XDC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ONE": {
+        "symbol": "ONE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVAX": {
+        "symbol": "AVAX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SOL": {
+        "symbol": "SOL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LAT": {
+        "symbol": "LAT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CSPR": {
+        "symbol": "CSPR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ICP": {
+        "symbol": "ICP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LBC": {
+        "symbol": "LBC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XTZ": {
+        "symbol": "XTZ",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OK": {
+        "symbol": "OK",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MINA": {
+        "symbol": "MINA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CS": {
+        "symbol": "CS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RDD": {
+        "symbol": "RDD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ADA": {
+        "symbol": "ADA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BNB-BEP20": {
+        "symbol": "BNB-BEP20",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ERG": {
+        "symbol": "ERG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOGE": {
+        "symbol": "DOGE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "THETA": {
+        "symbol": "THETA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XYM": {
+        "symbol": "XYM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CPH": {
+        "symbol": "CPH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FIC": {
+        "symbol": "FIC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XAG": {
+        "symbol": "XAG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AKT": {
+        "symbol": "AKT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 0.5,
+            "quoteEstimation": {
+                "USDT": 0.755
+            }
+        }
+    },
+    "XEM": {
+        "symbol": "XEM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XIN": {
+        "symbol": "XIN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AR": {
+        "symbol": "AR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CELO": {
+        "symbol": "CELO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SMH": {
+        "symbol": "SMH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTCV": {
+        "symbol": "BTCV",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NVT": {
+        "symbol": "NVT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FIL": {
+        "symbol": "FIL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CLC": {
+        "symbol": "CLC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NULS": {
+        "symbol": "NULS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CLX": {
+        "symbol": "CLX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EWT": {
+        "symbol": "EWT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "mHLX": {
+        "symbol": "mHLX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MXW": {
+        "symbol": "MXW",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ETE": {
+        "symbol": "ETE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VEIL": {
+        "symbol": "VEIL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ETC": {
+        "symbol": "ETC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UGC": {
+        "symbol": "UGC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TSL": {
+        "symbol": "TSL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "UPG": {
+        "symbol": "UPG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "XHD": {
+        "symbol": "XHD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "HDD": {
+        "symbol": "HDD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WICC": {
+        "symbol": "WICC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DOT": {
+        "symbol": "DOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DASH": {
+        "symbol": "DASH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DGB": {
+        "symbol": "DGB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LHD": {
+        "symbol": "LHD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KSM": {
+        "symbol": "KSM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BNB": {
+        "symbol": "BNB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GRIN": {
+        "symbol": "GRIN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "WAVES": {
+        "symbol": "WAVES",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ALGO": {
+        "symbol": "ALGO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ATOM": {
+        "symbol": "ATOM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NDAU": {
+        "symbol": "NDAU",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ABBC": {
+        "symbol": "ABBC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LTC": {
+        "symbol": "LTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BSV": {
+        "symbol": "BSV",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "APL": {
+        "symbol": "APL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TRX": {
+        "symbol": "TRX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "QTUM": {
+        "symbol": "QTUM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ZEC": {
+        "symbol": "ZEC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GUSD": {
+        "symbol": "GUSD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "METM": {
+        "symbol": "METM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CV": {
+        "symbol": "CV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "Menlo": {
+        "symbol": "Menlo",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDC": {
+        "symbol": "USDC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MSG": {
+        "symbol": "MSG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "NFC": {
+        "symbol": "NFC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LXT": {
+        "symbol": "LXT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TUSD": {
+        "symbol": "TUSD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "DROP": {
+        "symbol": "DROP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BOB": {
+        "symbol": "BOB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "PLA": {
+        "symbol": "PLA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ATP": {
+        "symbol": "ATP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "USDP": {
+        "symbol": "USDP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "TNS": {
+        "symbol": "TNS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "COT": {
+        "symbol": "COT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "RFR": {
+        "symbol": "RFR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CERT": {
+        "symbol": "CERT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FCY": {
+        "symbol": "FCY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "1SG": {
+        "symbol": "1SG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ENTS": {
+        "symbol": "ENTS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "REPO": {
+        "symbol": "REPO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "ODE": {
+        "symbol": "ODE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EDR": {
+        "symbol": "EDR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LQD": {
+        "symbol": "LQD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "CR": {
+        "symbol": "CR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTTOLD": {
+        "symbol": "BTTOLD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "EUM": {
+        "symbol": "EUM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MBMT": {
+        "symbol": "MBMT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SKI": {
+        "symbol": "SKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "GMC": {
+        "symbol": "GMC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "KTN": {
+        "symbol": "KTN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "FLC": {
+        "symbol": "FLC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "OIO": {
+        "symbol": "OIO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "AVA": {
+        "symbol": "AVA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "MBIT": {
+        "symbol": "MBIT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "JCT": {
+        "symbol": "JCT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BTT": {
+        "symbol": "BTT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 100,
+            "quoteEstimation": {
+                "USDT": 0.000211
+            }
+        }
+    },
+    "STEP": {
+        "symbol": "STEP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "SRWD": {
+        "symbol": "SRWD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "VHC": {
+        "symbol": "VHC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "LYXE": {
+        "symbol": "LYXE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false,
+        "withdrawFee": {}
+    },
+    "BCOIN": {
+        "symbol": "BCOIN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WVSOL": {
+        "symbol": "WVSOL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TNNS": {
+        "symbol": "TNNS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MESA": {
+        "symbol": "MESA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ACA": {
+        "symbol": "ACA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ARTRINO": {
+        "symbol": "ARTRINO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MEAN": {
+        "symbol": "MEAN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "STARL": {
+        "symbol": "STARL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FIRO": {
+        "symbol": "FIRO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "NXD": {
+        "symbol": "NXD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RTT": {
+        "symbol": "RTT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DCASH": {
+        "symbol": "DCASH",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RBT": {
+        "symbol": "RBT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PECO": {
+        "symbol": "PECO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CVX": {
+        "symbol": "CVX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GEL": {
+        "symbol": "GEL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "XTAG": {
+        "symbol": "XTAG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BLH": {
+        "symbol": "BLH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RCG": {
+        "symbol": "RCG",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WBTC": {
+        "symbol": "WBTC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FRONT": {
+        "symbol": "FRONT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DAI": {
+        "symbol": "DAI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "Common-Galaxy-Boxes": {
+        "symbol": "Common-Galaxy-Boxes",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "Epic-Galaxy-Boxes": {
+        "symbol": "Epic-Galaxy-Boxes",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FEN": {
+        "symbol": "FEN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "Legendary-Boxes": {
+        "symbol": "Legendary-Boxes",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PSULE": {
+        "symbol": "PSULE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "AETH": {
+        "symbol": "AETH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GWT": {
+        "symbol": "GWT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TEDDY": {
+        "symbol": "TEDDY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DFI": {
+        "symbol": "DFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TNU": {
+        "symbol": "TNU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "NEKO": {
+        "symbol": "NEKO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BNT": {
+        "symbol": "BNT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "API3": {
+        "symbol": "API3",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "COVAL": {
+        "symbol": "COVAL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "YLDY_ERC": {
+        "symbol": "YLDY_ERC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LOOT": {
+        "symbol": "LOOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "KT": {
+        "symbol": "KT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "POCHI": {
+        "symbol": "POCHI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SEON": {
+        "symbol": "SEON",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LEAFTY": {
+        "symbol": "LEAFTY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MR": {
+        "symbol": "MR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BLINU": {
+        "symbol": "BLINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ATHENAS": {
+        "symbol": "ATHENAS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LUFFY TOKEN": {
+        "symbol": "LUFFY TOKEN",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TON": {
+        "symbol": "TON",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "YLDY": {
+        "symbol": "YLDY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BUSD": {
+        "symbol": "BUSD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FINA": {
+        "symbol": "FINA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "NAKA": {
+        "symbol": "NAKA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TANK": {
+        "symbol": "TANK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "QNT": {
+        "symbol": "QNT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RSS3": {
+        "symbol": "RSS3",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "APU": {
+        "symbol": "APU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "$SANDWICH": {
+        "symbol": "$SANDWICH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PARA": {
+        "symbol": "PARA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "VOLT(1M)": {
+        "symbol": "VOLT(1M)",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FTRB": {
+        "symbol": "FTRB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MPLGR": {
+        "symbol": "MPLGR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "EARN": {
+        "symbol": "EARN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PLT": {
+        "symbol": "PLT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SWFTC": {
+        "symbol": "SWFTC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TIIM": {
+        "symbol": "TIIM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "REFLEX": {
+        "symbol": "REFLEX",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CHICKS": {
+        "symbol": "CHICKS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SMILE": {
+        "symbol": "SMILE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "APOLLO": {
+        "symbol": "APOLLO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "METAN": {
+        "symbol": "METAN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TOWER_POLYGON": {
+        "symbol": "TOWER_POLYGON",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RBIF": {
+        "symbol": "RBIF",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SIDUS": {
+        "symbol": "SIDUS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SHINTAMA": {
+        "symbol": "SHINTAMA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CLASS": {
+        "symbol": "CLASS",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    }
+}

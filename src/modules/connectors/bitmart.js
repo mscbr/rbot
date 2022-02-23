@@ -187,13 +187,10 @@ module.exports = class Bitmart {
 
   async loadCurrencies() {
     const { loadCurrencies } = config;
-
-    let staticData = {};
     let currencies = {};
 
     if (loadCurrencies.static) {
-      staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
-      currencies = staticData[this.id];
+      currencies = JSON.parse(fs.readFileSync(path.resolve(`./src/static-data/currencies/${this.id}.json`)));
     }
 
     if (!loadCurrencies.static || loadCurrencies.update) {
@@ -215,8 +212,8 @@ module.exports = class Bitmart {
       });
 
       if (loadCurrencies.update) {
-        const data = JSON.stringify({ ...staticData, [this.id]: currencies }, null, 4);
-        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+        const data = JSON.stringify(currencies, null, 4);
+        fs.writeFileSync(path.resolve(`./src/static-data/currencies/${this.id}.json`), data);
       }
     }
 
@@ -227,7 +224,7 @@ module.exports = class Bitmart {
   async loadFees(currency, quote = null) {
     const { loadCurrencies } = config;
     if (loadCurrencies.static && !loadCurrencies.update)
-      return JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')))[this.id];
+      return JSON.parse(fs.readFileSync(path.resolve(`./src/static-data/currencies/${this.id}.json`)));
 
     try {
       const { data } = await this._makeRequest('GET', '/account/v1/withdraw/charge', { currency: currency });
@@ -245,24 +242,20 @@ module.exports = class Bitmart {
         };
 
       if (loadCurrencies.update) {
-        const staticData = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/currencies.json')));
-        const currencies = staticData[this.id];
+        const currencies = JSON.parse(fs.readFileSync(path.resolve(`./src/static-data/currencies/${this.id}.json`)));
         const data = JSON.stringify(
           {
-            ...staticData,
-            [this.id]: {
-              ...staticData[this.id],
-              [currency]: {
-                ...staticData[this.id][currency],
-                ...this.currencies[currency],
-              },
+            ...currencies,
+            [currency]: {
+              ...staticData[this.id][currency],
+              ...this.currencies[currency],
             },
           },
           null,
           4,
         );
 
-        fs.writeFileSync(path.resolve('./src/static-data/currencies.json'), data);
+        fs.writeFileSync(path.resolve(`./src/static-data/currencies/${this.id}.json`), data);
       }
 
       return this.currencies[currency].withdrawFee;
