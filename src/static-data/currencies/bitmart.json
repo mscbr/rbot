@@ -1857,7 +1857,7 @@
     },
     "VANCAT": {
         "symbol": "VANCAT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4692,7 +4692,7 @@
     },
     "DANA": {
         "symbol": "DANA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5377,7 +5377,7 @@
     },
     "WMT": {
         "symbol": "WMT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5410,7 +5410,7 @@
     },
     "RAVE": {
         "symbol": "RAVE",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5867,7 +5867,7 @@
     },
     "SHINJA": {
         "symbol": "SHINJA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6157,7 +6157,7 @@
     },
     "ADA": {
         "symbol": "ADA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6267,7 +6267,7 @@
     },
     "BTCV": {
         "symbol": "BTCV",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -7178,19 +7178,19 @@
     },
     "EARN": {
         "symbol": "EARN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "PLT": {
         "symbol": "PLT",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "SWFTC": {
         "symbol": "SWFTC",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7214,13 +7214,13 @@
     },
     "SMILE": {
         "symbol": "SMILE",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "APOLLO": {
         "symbol": "APOLLO",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7238,13 +7238,13 @@
     },
     "RBIF": {
         "symbol": "RBIF",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "SIDUS": {
         "symbol": "SIDUS",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7256,6 +7256,48 @@
     },
     "CLASS": {
         "symbol": "CLASS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ALPINE": {
+        "symbol": "ALPINE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SUN": {
+        "symbol": "SUN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "POLC": {
+        "symbol": "POLC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SPHRI": {
+        "symbol": "SPHRI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GW": {
+        "symbol": "GW",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "$ORE": {
+        "symbol": "$ORE",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RIM": {
+        "symbol": "RIM",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
