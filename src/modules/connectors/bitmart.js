@@ -18,7 +18,7 @@ module.exports = class Bitmart {
   constructor(publicKey, secretKey, memo) {
     this.id = 'bitmart';
     this._baseUrl = 'https://api-cloud.bitmart.com';
-    this._wssUrl = 'wss://ws-manager-compress.bitmart.com?protocol=1.1';
+    this._wssUrl = 'wss://ws-manager-compress.bitmart.com/api?protocol=1.1';
     this._publicKey = publicKey;
     this._secretKey = secretKey;
     this._memo = memo;

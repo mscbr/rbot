@@ -1,9 +1,7 @@
 const TickerArb = require('../../models/ticker-arb');
 
 module.exports = class Arbitrage {
-  constructor(logger) {
-    this.logger = logger;
-
+  constructor() {
     this.marketsData = {};
 
     this._scanMarketTickersForArbs = this._scanMarketTickersForArbs.bind(this);
@@ -49,7 +47,7 @@ module.exports = class Arbitrage {
   }
 
   scanAllMarketTickers({ tickers, hPass, lPass }) {
-    let { logger, _scanMarketTickersForArbs, exchanges } = this;
+    let { _scanMarketTickersForArbs, exchanges } = this;
     const markets = Object.keys(tickers);
     let arbs = {};
 

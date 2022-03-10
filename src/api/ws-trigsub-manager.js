@@ -11,7 +11,7 @@ module.exports = class WsTrigSubManager {
 
     this.ccxtExchanges = ccxtExchanges;
     this.directExchanges = directExchanges;
-    this.arbitrage = new Arbitrage(logger);
+    this.arbitrage = new Arbitrage();
     this.obScanner = new ObScanner(directExchanges, subscriber);
     this.tickerScanner = new TickerScanner(ccxtExchanges, directExchanges, subscriber);
 

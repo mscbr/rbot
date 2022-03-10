@@ -1,7 +1,12 @@
 const ccxt = require('ccxt');
 
+const chalkAnimation = require('chalk-animation');
+
+const services = require('./services');
+const logger = services.getLogger();
+
 module.exports = class CcxtExchanges {
-  constructor(logger) {
+  constructor() {
     this.logger = logger;
 
     this.exchanges = {
@@ -33,15 +38,17 @@ module.exports = class CcxtExchanges {
     const { exchanges, logger } = this;
 
     const marketPromises = Object.values(exchanges).map(async (exchange) => {
-      try {
-        await exchange.loadMarkets();
-      } catch (err) {
-        logger.error(err.message);
-      }
+      await exchange.loadMarkets();
     });
 
-    logger.info('Loading markets...');
-    await Promise.all(marketPromises);
+    const marketLoadingAnimation = chalkAnimation.karaoke('Loading CCXT markets');
+    try {
+      await Promise.all(marketPromises);
+    } catch (err) {
+      throw new Error(err);
+    } finally {
+      marketLoadingAnimation.stop();
+    }
   }
 
   get marketsForExchanges() {
