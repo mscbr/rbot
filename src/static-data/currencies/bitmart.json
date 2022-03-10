@@ -2561,7 +2561,7 @@
     },
     "QUICK": {
         "symbol": "QUICK",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -2785,7 +2785,7 @@
     },
     "KOM": {
         "symbol": "KOM",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3260,7 +3260,7 @@
     },
     "$TOP": {
         "symbol": "$TOP",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4945,7 +4945,7 @@
     },
     "GAIA": {
         "symbol": "GAIA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5022,7 +5022,7 @@
     },
     "ESW": {
         "symbol": "ESW",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5036,7 +5036,7 @@
     },
     "BLOK": {
         "symbol": "BLOK",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5057,7 +5057,7 @@
     },
     "WELT": {
         "symbol": "WELT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5078,7 +5078,7 @@
     },
     "DBD": {
         "symbol": "DBD",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5127,7 +5127,7 @@
     },
     "KRL": {
         "symbol": "KRL",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6052,7 +6052,7 @@
     },
     "MATIC-POLYGON": {
         "symbol": "MATIC-POLYGON",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -7118,7 +7118,7 @@
     },
     "NAKA": {
         "symbol": "NAKA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7142,7 +7142,7 @@
     },
     "APU": {
         "symbol": "APU",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7352,7 +7352,7 @@
     },
     "TERA": {
         "symbol": "TERA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7412,7 +7412,7 @@
     },
     "CSPD": {
         "symbol": "CSPD",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7502,7 +7502,7 @@
     },
     "WAL": {
         "symbol": "WAL",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
