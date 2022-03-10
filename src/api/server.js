@@ -23,13 +23,12 @@ module.exports = class Server {
     this.ws = null;
   }
 
-  startServer() {
+  async startServer() {
     wss.on('connection', (ws, req) => {
       ws.send(JSON.stringify({ message: 'Welcome to scan_exec websocket stream %$‿︵‿︵‿︵(-_-)' }));
       logger.info(`WS: Connection request from: ${req.connection.remoteAddress}`);
 
       this.ws = ws;
-      this.trigSubManager = new WsTrigSubManager(this.ccxtExchanges, this.directExchanges, this.ws);
 
       ws.on('message', (data) => {
         const json = JSON.parse(data);
@@ -55,10 +54,15 @@ module.exports = class Server {
       ws.on('close', () => {
         logger.info('WS: Stopping client connection.');
       });
+
+      this.trigSubManager = new WsTrigSubManager(this.ccxtExchanges, this.directExchanges, this.ws);
     });
 
-    server.listen(process.env.PORT || 8080, () => {
-      logger.info(`WS: server started on port ${server.address().port}`);
+    return new Promise((resolve) => {
+      server.listen(process.env.PORT || 8080, () => {
+        // logger.info(`WS: server started on port ${server.address().port}`);
+        resolve(`WS: server started on port ${server.address().port}`);
+      });
     });
   }
 };

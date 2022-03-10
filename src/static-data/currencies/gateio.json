@@ -5069,7 +5069,7 @@
     },
     "GXS": {
         "symbol": "GXS",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -9822,7 +9822,7 @@
     },
     "FUSE": {
         "symbol": "FUSE",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -14204,6 +14204,168 @@
     },
     "API33S": {
         "symbol": "API33S",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "1EARTH": {
+        "symbol": "1EARTH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DELFI": {
+        "symbol": "DELFI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZLK_GLMR": {
+        "symbol": "ZLK_GLMR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GEMINIS": {
+        "symbol": "GEMINIS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DGOLD": {
+        "symbol": "DGOLD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DG_MATIC": {
+        "symbol": "DG_MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TUR": {
+        "symbol": "TUR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FUSE_ETH": {
+        "symbol": "FUSE_ETH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RBLS": {
+        "symbol": "RBLS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LUS": {
+        "symbol": "LUS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "UPI": {
+        "symbol": "UPI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MQL": {
+        "symbol": "MQL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZKT": {
+        "symbol": "ZKT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DOME": {
+        "symbol": "DOME",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "AZERO": {
+        "symbol": "AZERO",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LOOT_BSC": {
+        "symbol": "LOOT_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LOOT": {
+        "symbol": "LOOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CNAME_MATIC": {
+        "symbol": "CNAME_MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CRO3S": {
+        "symbol": "CRO3S",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FAME": {
+        "symbol": "FAME",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CRO3L": {
+        "symbol": "CRO3L",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "RITE": {
+        "symbol": "RITE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ORBR": {
+        "symbol": "ORBR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "HDV": {
+        "symbol": "HDV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMT": {
+        "symbol": "GMT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMT_BSC": {
+        "symbol": "GMT_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "INDI": {
+        "symbol": "INDI",
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false

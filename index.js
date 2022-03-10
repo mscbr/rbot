@@ -1,5 +1,10 @@
 require('dotenv').config();
 
+const figlet = require('figlet');
+const gradient = require('gradient-string');
+const chalk = require('chalk');
+const chalkAnimation = require('chalk-animation');
+
 const services = require('./src/services');
 const logger = services.getLogger();
 
@@ -10,13 +15,28 @@ const Exchanges = require('./src/modules/exchanges');
 
 async function main() {
   const ccxtExchanges = new CcxtExchanges(logger);
-  await ccxtExchanges.init();
-
   const directExchanges = new Exchanges();
-  await directExchanges.init();
+  try {
+    console.log(gradient.retro('Initializing RBOT...'));
+    await ccxtExchanges.init();
+    await directExchanges.init();
+  } catch (err) {
+    console.log(chalk.red(err));
+  }
 
   const websocket = new Server(ccxtExchanges, directExchanges);
-  websocket.startServer();
+  try {
+    const resolution = await websocket.startServer();
+    console.log(gradient.fruit(resolution));
+  } catch (err) {
+    console.log(chalk.red(err));
+  }
+
+  console.log(gradient.teen('\n🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑'));
+  figlet.text('RBOT', {}, (_, data) => {
+    console.log(gradient.teen(data));
+    console.log(gradient.teen('\n🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑'));
+  });
 }
 
 main();

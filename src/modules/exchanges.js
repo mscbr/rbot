@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const chalkAnimation = require('chalk-animation');
+
 const services = require('../services');
 const logger = services.getLogger();
 
@@ -30,16 +32,18 @@ module.exports = class Exchanges {
     const { exchanges } = this;
 
     const marketPromises = Object.values(exchanges).map(async (exchange) => {
-      try {
-        await exchange.loadMarkets();
-        await exchange.loadCurrencies();
-      } catch (err) {
-        logger.error(err.message);
-      }
+      await exchange.loadMarkets();
+      await exchange.loadCurrencies();
     });
 
-    logger.info('Loading direct markets...');
-    await Promise.all(marketPromises);
+    const marketLoadingAnimation = chalkAnimation.karaoke('Loading direct connectors markets');
+    try {
+      await Promise.all(marketPromises);
+    } catch (err) {
+      throw new Error(err);
+    } finally {
+      marketLoadingAnimation.stop();
+    }
   }
 
   async openWsConnections(exchanges = []) {

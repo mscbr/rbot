@@ -463,7 +463,7 @@
     },
     "MMC": {
         "symbol": "MMC",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -491,7 +491,7 @@
     },
     "CRO": {
         "symbol": "CRO",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -1058,7 +1058,7 @@
     },
     "XYO": {
         "symbol": "XYO",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -1198,7 +1198,7 @@
     },
     "BHD": {
         "symbol": "BHD",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3650,7 +3650,7 @@
     },
     "GEC": {
         "symbol": "GEC",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3734,7 +3734,7 @@
     },
     "ATLAS": {
         "symbol": "ATLAS",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3774,7 +3774,7 @@
     },
     "SYP": {
         "symbol": "SYP",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3989,7 +3989,7 @@
     },
     "DOGEBULL": {
         "symbol": "DOGEBULL",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4024,7 +4024,7 @@
     },
     "DATE": {
         "symbol": "DATE",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4045,7 +4045,7 @@
     },
     "KAI": {
         "symbol": "KAI",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4115,7 +4115,7 @@
     },
     "$REV": {
         "symbol": "$REV",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4150,7 +4150,7 @@
     },
     "WEMP": {
         "symbol": "WEMP",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4295,7 +4295,7 @@
     },
     "MELLO": {
         "symbol": "MELLO",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4365,7 +4365,7 @@
     },
     "FUSE_Chain": {
         "symbol": "FUSE_Chain",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4512,7 +4512,7 @@
     },
     "KALAM": {
         "symbol": "KALAM",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4802,7 +4802,7 @@
     },
     "POKERMANIA": {
         "symbol": "POKERMANIA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5015,7 +5015,7 @@
     },
     "NASADOGE": {
         "symbol": "NASADOGE",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5176,7 +5176,7 @@
     },
     "KIBA": {
         "symbol": "KIBA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5410,7 +5410,7 @@
     },
     "RAVE": {
         "symbol": "RAVE",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6066,7 +6066,7 @@
     },
     "XDC": {
         "symbol": "XDC",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6087,7 +6087,7 @@
     },
     "SOL": {
         "symbol": "SOL",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6157,7 +6157,7 @@
     },
     "ADA": {
         "symbol": "ADA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6267,7 +6267,7 @@
     },
     "BTCV": {
         "symbol": "BTCV",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6854,7 +6854,7 @@
     },
     "MEAN": {
         "symbol": "MEAN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -6914,7 +6914,7 @@
     },
     "XTAG": {
         "symbol": "XTAG",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -6974,7 +6974,7 @@
     },
     "PSULE": {
         "symbol": "PSULE",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7028,7 +7028,7 @@
     },
     "COVAL": {
         "symbol": "COVAL",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7100,7 +7100,7 @@
     },
     "YLDY": {
         "symbol": "YLDY",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7154,7 +7154,7 @@
     },
     "PARA": {
         "symbol": "PARA",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7166,7 +7166,7 @@
     },
     "FTRB": {
         "symbol": "FTRB",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7226,7 +7226,7 @@
     },
     "METAN": {
         "symbol": "METAN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7268,36 +7268,276 @@
     },
     "SUN": {
         "symbol": "SUN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "POLC": {
         "symbol": "POLC",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "SPHRI": {
         "symbol": "SPHRI",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "GW": {
         "symbol": "GW",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "$ORE": {
         "symbol": "$ORE",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "RIM": {
         "symbol": "RIM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ALTRU": {
+        "symbol": "ALTRU",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "C98": {
+        "symbol": "C98",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ROCK": {
+        "symbol": "ROCK",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MCONTENT_ERC": {
+        "symbol": "MCONTENT_ERC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PSTAKE": {
+        "symbol": "PSTAKE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "STORE": {
+        "symbol": "STORE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SST_BSC": {
+        "symbol": "SST_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MRI": {
+        "symbol": "MRI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TERA": {
+        "symbol": "TERA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BOBC": {
+        "symbol": "BOBC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "REVU": {
+        "symbol": "REVU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MRHB": {
+        "symbol": "MRHB",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ACH": {
+        "symbol": "ACH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WEMP_V2": {
+        "symbol": "WEMP_V2",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SilverNFTKits": {
+        "symbol": "SilverNFTKits",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BronzeNFTKits": {
+        "symbol": "BronzeNFTKits",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GoldNFTKits": {
+        "symbol": "GoldNFTKits",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DiamondNFTKits": {
+        "symbol": "DiamondNFTKits",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CSPD": {
+        "symbol": "CSPD",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "OJA": {
+        "symbol": "OJA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FTM_FANTOM": {
+        "symbol": "FTM_FANTOM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TOR": {
+        "symbol": "TOR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "HEC": {
+        "symbol": "HEC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DEP": {
+        "symbol": "DEP",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MBT": {
+        "symbol": "MBT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SHINTAMA(1M)": {
+        "symbol": "SHINTAMA(1M)",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CHEDDA": {
+        "symbol": "CHEDDA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "KLAY": {
+        "symbol": "KLAY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "KTX": {
+        "symbol": "KTX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "OMI": {
+        "symbol": "OMI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DAO": {
+        "symbol": "DAO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "TRNDZ": {
+        "symbol": "TRNDZ",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FTSY": {
+        "symbol": "FTSY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WAL": {
+        "symbol": "WAL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMT": {
+        "symbol": "GMT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GGG": {
+        "symbol": "GGG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "HDAO": {
+        "symbol": "HDAO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "IDNA": {
+        "symbol": "IDNA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MRX": {
+        "symbol": "MRX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WEMIX": {
+        "symbol": "WEMIX",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
