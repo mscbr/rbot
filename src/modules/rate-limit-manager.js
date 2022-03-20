@@ -1,5 +1,4 @@
 const services = require('../services');
-const logger = services.getLogger();
 
 module.exports = class RateLimitManager {
   constructor(exchanges) {
@@ -22,7 +21,7 @@ module.exports = class RateLimitManager {
     });
   }
 
-  setIntervalDuration(exchanges, duration) {
+  setIntervalsDuration(exchanges, duration) {
     exchanges.forEach((exchange) => {
       const { interval, callbacks } = this.intervals[exchange];
       if (interval.getInterval()) interval.setIntervalDuration(duration, Object.values(callbacks));
@@ -46,7 +45,7 @@ module.exports = class RateLimitManager {
       });
   }
 
-  stopIntervals(exchanges = []) {
+  stopIntervals() {
     Object.keys(this.intervals).forEach((exchange) => {
       if (this.intervals[exchange]) {
         this.intervals[exchange].interval.terminateInterval();

@@ -5,16 +5,13 @@ const gradient = require('gradient-string');
 const chalk = require('chalk');
 const chalkAnimation = require('chalk-animation');
 
-const services = require('./src/services');
-const logger = services.getLogger();
-
 const Server = require('./src/api/server');
 
 const CcxtExchanges = require('./src/ccxt-exchanges');
 const Exchanges = require('./src/modules/exchanges');
 
 async function main() {
-  const ccxtExchanges = new CcxtExchanges(logger);
+  const ccxtExchanges = new CcxtExchanges();
   const directExchanges = new Exchanges();
   try {
     console.log(gradient.retro('Initializing RBOT...'));

@@ -18,8 +18,4 @@ module.exports = class Path {
       arbs: this.arbs,
     };
   }
-
-  setArbs(arbs) {
-    this.arbs = arbs;
-  }
 };

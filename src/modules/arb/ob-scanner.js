@@ -3,7 +3,6 @@ const { v4: uuid } = require('uuid');
 const services = require('../../services');
 const logger = services.getLogger();
 
-const HttpError = require('../../models/httpError');
 const Arbitrage = require('./arbitrage');
 const Path = require('../../models/path');
 
@@ -67,17 +66,11 @@ module.exports = class ObScanner {
           this.currentObData[obPath.exchanges[1]] && this.currentObData[obPath.exchanges[1]][obPath.market];
 
         if (inObData && outObData)
-          obPath.setArbs(
-            this.arbitrage.singleMarketObScan({
-              in: {
-                ...inObData,
-              },
-              out: {
-                ...outObData,
-              },
-              tradeFee: obPath.tradeFees.reduce((a, b) => a + b),
-            }),
-          );
+          obPath.arbs = this.arbitrage.singleMarketObScan({
+            in: inObData,
+            out: outObData,
+            tradeFee: obPath.tradeFees.reduce((a, b) => a + b),
+          });
       });
 
     this.subscriber && this.subscriber.send(JSON.stringify({ channel: 'obArbs', paths: this.obPaths }));

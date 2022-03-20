@@ -91,7 +91,7 @@ module.exports = class Bitmart {
         setTimeout(async () => {
           logger.info(`Bitmart: Public stream (${_wssUrl}) connection reconnecting`);
           await restartObSubscriptions();
-        }, 1000 * 3);
+        }, 3000);
       }
     };
 

@@ -1,4 +1,3 @@
-const path = require('path');
 const events = require('events');
 
 const { createLogger, transports, format } = require('winston');
@@ -25,7 +24,7 @@ module.exports = {
           level: 'debug',
         }),
 
-        // uncomment for saving logs to json file
+        // uncomment for saving logs to json file and add "const path = require('path');"
         // new transports.File({
         //   filename: `${path.resolve(__dirname)}/logs.json`,
         //   level: 'debug',

@@ -5069,7 +5069,7 @@
     },
     "GXS": {
         "symbol": "GXS",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -9822,7 +9822,7 @@
     },
     "FUSE": {
         "symbol": "FUSE",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -14354,7 +14354,7 @@
     },
     "GMT": {
         "symbol": "GMT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -14366,6 +14366,168 @@
     },
     "INDI": {
         "symbol": "INDI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FRAEVM": {
+        "symbol": "FRAEVM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ASTREVM": {
+        "symbol": "ASTREVM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BSW": {
+        "symbol": "BSW",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ORB": {
+        "symbol": "ORB",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMT3S": {
+        "symbol": "GMT3S",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMT3L": {
+        "symbol": "GMT3L",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "HIBIKI": {
+        "symbol": "HIBIKI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZINU": {
+        "symbol": "ZINU",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "AXL_BSC": {
+        "symbol": "AXL_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "UBXS": {
+        "symbol": "UBXS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CHNG_OLD": {
+        "symbol": "CHNG_OLD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WEAR": {
+        "symbol": "WEAR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "URUS_BSC": {
+        "symbol": "URUS_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BERRY": {
+        "symbol": "BERRY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "EVER": {
+        "symbol": "EVER",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZBC": {
+        "symbol": "ZBC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SD": {
+        "symbol": "SD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ASTR_ASTREVM": {
+        "symbol": "ASTR_ASTREVM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "REI": {
+        "symbol": "REI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FRA_FRAEVM": {
+        "symbol": "FRA_FRAEVM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZINU_MATIC": {
+        "symbol": "ZINU_MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "APE3S": {
+        "symbol": "APE3S",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "APE3L": {
+        "symbol": "APE3L",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "APE": {
+        "symbol": "APE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "AXL": {
+        "symbol": "AXL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ZINU_BSC": {
+        "symbol": "ZINU_BSC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CHZ_ETH": {
+        "symbol": "CHZ_ETH",
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
