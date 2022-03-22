@@ -2561,7 +2561,7 @@
     },
     "QUICK": {
         "symbol": "QUICK",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -2785,7 +2785,7 @@
     },
     "KOM": {
         "symbol": "KOM",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3260,7 +3260,7 @@
     },
     "$TOP": {
         "symbol": "$TOP",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4945,7 +4945,7 @@
     },
     "GAIA": {
         "symbol": "GAIA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5022,7 +5022,7 @@
     },
     "ESW": {
         "symbol": "ESW",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5036,7 +5036,7 @@
     },
     "BLOK": {
         "symbol": "BLOK",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5057,7 +5057,7 @@
     },
     "WELT": {
         "symbol": "WELT",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5078,7 +5078,7 @@
     },
     "DBD": {
         "symbol": "DBD",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5099,7 +5099,7 @@
     },
     "PKT": {
         "symbol": "PKT",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -5127,7 +5127,7 @@
     },
     "KRL": {
         "symbol": "KRL",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6872,7 +6872,7 @@
     },
     "NXD": {
         "symbol": "NXD",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -6896,7 +6896,7 @@
     },
     "PECO": {
         "symbol": "PECO",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7118,7 +7118,7 @@
     },
     "NAKA": {
         "symbol": "NAKA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7142,7 +7142,7 @@
     },
     "APU": {
         "symbol": "APU",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7472,7 +7472,7 @@
     },
     "KTX": {
         "symbol": "KTX",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7634,7 +7634,7 @@
     },
     "FALCONS": {
         "symbol": "FALCONS",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7658,7 +7658,7 @@
     },
     "TRAXX": {
         "symbol": "TRAXX",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7682,6 +7682,24 @@
     },
     "GAMI": {
         "symbol": "GAMI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SOLAR": {
+        "symbol": "SOLAR",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "VXL": {
+        "symbol": "VXL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DXT": {
+        "symbol": "DXT",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false

@@ -1,4 +1,4 @@
-const services = require('../services');
+const services = require('../modules/services');
 const logger = services.getLogger();
 
 const Arbitrage = require('../modules/arb/arbitrage');

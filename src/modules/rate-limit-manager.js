@@ -1,4 +1,4 @@
-const services = require('../services');
+const services = require('./services');
 
 module.exports = class RateLimitManager {
   constructor(exchanges) {

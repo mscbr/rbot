@@ -7,7 +7,7 @@ const chalkAnimation = require('chalk-animation');
 
 const Server = require('./src/api/server');
 
-const CcxtExchanges = require('./src/ccxt-exchanges');
+const CcxtExchanges = require('./src/modules/ccxt-exchanges');
 const Exchanges = require('./src/modules/exchanges');
 
 async function main() {

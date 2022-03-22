@@ -475,7 +475,7 @@
     },
     "WAVES": {
         "symbol": "WAVES",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -14354,7 +14354,7 @@
     },
     "GMT": {
         "symbol": "GMT",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -14528,6 +14528,108 @@
     },
     "CHZ_ETH": {
         "symbol": "CHZ_ETH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GAL": {
+        "symbol": "GAL",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CITY": {
+        "symbol": "CITY",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CELT": {
+        "symbol": "CELT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "REAP": {
+        "symbol": "REAP",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BORA": {
+        "symbol": "BORA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FEAR_MATIC": {
+        "symbol": "FEAR_MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MV_MATIC": {
+        "symbol": "MV_MATIC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WZRD": {
+        "symbol": "WZRD",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MV": {
+        "symbol": "MV",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "MIT": {
+        "symbol": "MIT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DOGA": {
+        "symbol": "DOGA",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "UNIQUE": {
+        "symbol": "UNIQUE",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BABI": {
+        "symbol": "BABI",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ARC": {
+        "symbol": "ARC",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ASR": {
+        "symbol": "ASR",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PIZA_ETH": {
+        "symbol": "PIZA_ETH",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FALCONS": {
+        "symbol": "FALCONS",
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false

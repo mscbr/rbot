@@ -5,7 +5,7 @@ const { WebSocketServer } = require('ws');
 const WsTrigSubManager = require('./ws-trigsub-manager');
 const RateLimitManager = require('../modules/rate-limit-manager');
 
-const services = require('../services');
+const services = require('../modules/services');
 const logger = services.getLogger();
 
 const app = express();

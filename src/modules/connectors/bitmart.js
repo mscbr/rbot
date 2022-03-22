@@ -7,7 +7,7 @@ const Hex = require('crypto-js/enc-hex');
 const fs = require('fs');
 const path = require('path');
 const config = require('../../config');
-const services = require('../../services');
+const services = require('../services');
 const logger = services.getLogger();
 
 const Market = require('../../models/market');

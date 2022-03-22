@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const chalkAnimation = require('chalk-animation');
 
-const services = require('../services');
+const services = require('./services');
 const logger = services.getLogger();
 
 const Gateio = require('./connectors/gateio');

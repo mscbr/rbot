@@ -1,4 +1,4 @@
-const services = require('../../services');
+const services = require('../services');
 const logger = services.getLogger();
 
 const Arbitrage = require('./arbitrage');
@@ -11,12 +11,15 @@ module.exports = class TickeScanner {
     this.ccxtExchanges = ccxtExchanges;
     this.directExchanges = directExchanges;
 
-    this.withdrawDisabledCoins = Object.values(directExchanges.exchanges).reduce((acc, exchange) => {
+    this.exchangeDisabledCoins = Object.values(directExchanges.exchanges).reduce((acc, exchange) => {
       Object.values(exchange.currencies).forEach((currency) => {
-        if (currency.withdrawDisabled) acc.push(currency.symbol);
+        if (currency.withdrawDisabled) {
+          if (acc[exchange.id]) acc[exchange.id] = [...acc[exchange.id], currency.symbol];
+          else acc[exchange.id] = [currency.symbol];
+        }
       });
       return acc;
-    }, []);
+    }, {});
 
     this.arbs = [];
     this.tickers = {};
@@ -28,7 +31,7 @@ module.exports = class TickeScanner {
   runTickerFetching() {
     this.interval.setInterval(3, [
       async () => {
-        const tickers = await this.ccxtExchanges.fetchMarketTickers(this.withdrawDisabled);
+        const tickers = await this.ccxtExchanges.fetchMarketTickers(this.exchangeDisabledCoins);
         this.tickers = tickers;
 
         const { arbs } = this.arbitrage.scanAllMarketTickers({ tickers });

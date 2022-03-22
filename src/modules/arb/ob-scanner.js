@@ -1,6 +1,6 @@
 const { v4: uuid } = require('uuid');
 
-const services = require('../../services');
+const services = require('../services');
 const logger = services.getLogger();
 
 const Arbitrage = require('./arbitrage');

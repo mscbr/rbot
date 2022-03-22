@@ -24,6 +24,7 @@ module.exports = class CcxtExchanges {
     };
 
     this.tickers = {};
+    this._exchangesForMarketsCache = null;
 
     this.usdtConversionMarkets = {};
   }
@@ -50,7 +51,9 @@ module.exports = class CcxtExchanges {
   }
 
   get marketsForExchanges() {
-    let { exchanges } = this;
+    let { exchanges, _marketsForExchangesCache } = this;
+
+    if (_marketsForExchangesCache) return _marketsForExchangesCache;
 
     let exchangesForMarkets = Object.values(exchanges).reduce((acc, exchange) => {
       for (let market in exchange.markets) {
@@ -75,16 +78,18 @@ module.exports = class CcxtExchanges {
       if (exchangesForMarkets[key].length < 2) delete exchangesForMarkets[key];
     });
 
-    return Object.keys(exchangesForMarkets).reduce((acc, market) => {
+    _marketsForExchangesCache = Object.keys(exchangesForMarkets).reduce((acc, market) => {
       exchangesForMarkets[market].forEach((exchange) => {
         if (!acc[exchange]) acc[exchange] = [];
         acc[exchange].push(market);
       });
       return acc;
     }, {});
+
+    return _marketsForExchangesCache;
   }
 
-  async fetchMarketTickers(excludedCoins = []) {
+  async fetchMarketTickers(excludedCoins = null) {
     const { exchanges, marketsForExchanges, logger } = this;
 
     logger.info('Fetching market tickers...');
@@ -106,7 +111,7 @@ module.exports = class CcxtExchanges {
 
         // excludedCoins ~ withdrawal disabled
         const base = ticker.symbol.split('/')[0];
-        if (excludedCoins.length && excludedCoins.includes(base)) return;
+        if (excludedCoins && excludedCoins[exchange].includes(base)) return;
 
         this.tickers[market] = {
           ...this.tickers[market],
