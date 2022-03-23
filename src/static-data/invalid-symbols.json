@@ -1,0 +1,6 @@
+{
+  "type": ["INVALID", "TO-TEST", "CHECKED"],
+  "QUACK": [["gateio", "bitmart", "TO-TEST"]],
+  "BRISE": [["gateio", "bitmart", "TO-TEST"]],
+  "LUFFY": [["gateio", "bitmart", "TO-TEST"]]
+}

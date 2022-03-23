@@ -274,7 +274,7 @@
     },
     "FLY": {
         "symbol": "FLY",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -14630,6 +14630,12 @@
     },
     "FALCONS": {
         "symbol": "FALCONS",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DAGX": {
+        "symbol": "DAGX",
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false

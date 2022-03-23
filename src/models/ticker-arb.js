@@ -1,5 +1,5 @@
 module.exports = class TickerArb {
-  constructor(market, askPrice, askExchange, bidPrice, bidExchange, profit, fees) {
+  constructor(market, askPrice, askExchange, bidPrice, bidExchange, profit, fees, symbolStatus) {
     this.market = market;
     this.ask = {
       price: askPrice,
@@ -12,5 +12,6 @@ module.exports = class TickerArb {
     this.profit = profit;
     this.fees = fees;
     this.transferFees = {}; // {fix: number, percent: number, quoteEstimation: {[coin]: number}}
+    this.symbolStatus = symbolStatus;
   }
 };

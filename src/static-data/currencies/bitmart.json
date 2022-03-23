@@ -6019,7 +6019,7 @@
     },
     "NEAR": {
         "symbol": "NEAR",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6561,7 +6561,7 @@
     },
     "NFC": {
         "symbol": "NFC",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -7700,6 +7700,24 @@
     },
     "DXT": {
         "symbol": "DXT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LPY": {
+        "symbol": "LPY",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "$MESA": {
+        "symbol": "$MESA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "WNK": {
+        "symbol": "WNK",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false

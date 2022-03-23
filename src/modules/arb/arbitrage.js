@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const TickerArb = require('../../models/ticker-arb');
 
 module.exports = class Arbitrage {
@@ -16,27 +19,55 @@ module.exports = class Arbitrage {
   }
 
   _scanMarketTickersForArbs(tickerData, highPass = 0.001, lowPass = 0.7) {
+    const invalidSymbols = JSON.parse(fs.readFileSync(path.resolve('./src/static-data/invalid-symbols.json')));
     const exchanges = Object.keys(tickerData);
     let arbs = [];
 
     for (let i = 0; i < exchanges.length - 1; i++) {
       const reference = tickerData[exchanges[i]];
+      const coin = reference.symbol.split('/')[0];
       for (let g = i + 1; g < exchanges.length; g++) {
         const checkup = tickerData[exchanges[g]];
         const fees = [reference.fee, checkup.fee];
+        let symbolStatus = null;
+
+        if (invalidSymbols[coin]) {
+          const targetConnection = invalidSymbols[coin].find(
+            (arr) => arr.includes(exchanges[i]) && arr.includes(exchanges[g]),
+          );
+          if (targetConnection) symbolStatus = targetConnection[2];
+        }
 
         if (reference.ask < checkup.bid) {
           const spread = this._spread(checkup.bid, reference.ask, fees);
           if (spread < 1 + lowPass && spread > 1 + highPass) {
             arbs.push(
-              new TickerArb(reference.symbol, reference.ask, exchanges[i], checkup.bid, exchanges[g], spread, fees),
+              new TickerArb(
+                reference.symbol,
+                reference.ask,
+                exchanges[i],
+                checkup.bid,
+                exchanges[g],
+                spread,
+                fees,
+                symbolStatus,
+              ),
             );
           }
         } else if (checkup.ask < reference.bid) {
           const spread = this._spread(reference.bid, checkup.ask, fees);
           if (spread < 1 + lowPass && spread > 1 + highPass) {
             arbs.push(
-              new TickerArb(checkup.symbol, checkup.ask, exchanges[g], reference.bid, exchanges[i], spread, fees),
+              new TickerArb(
+                checkup.symbol,
+                checkup.ask,
+                exchanges[g],
+                reference.bid,
+                exchanges[i],
+                spread,
+                fees,
+                symbolStatus,
+              ),
             );
           }
         }
