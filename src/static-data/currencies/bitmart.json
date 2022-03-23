@@ -7616,7 +7616,7 @@
     },
     "SPAY": {
         "symbol": "SPAY",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7652,7 +7652,7 @@
     },
     "GYC": {
         "symbol": "GYC",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7718,6 +7718,12 @@
     },
     "WNK": {
         "symbol": "WNK",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "EMPIRE": {
+        "symbol": "EMPIRE",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
