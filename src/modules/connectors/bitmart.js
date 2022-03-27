@@ -247,7 +247,7 @@ module.exports = class Bitmart {
           {
             ...currencies,
             [currency]: {
-              ...staticData[this.id][currency],
+              ...currencies[currency],
               ...this.currencies[currency],
             },
           },

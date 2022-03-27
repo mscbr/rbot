@@ -237,7 +237,7 @@ module.exports = class Gateio {
           {
             ...currencies,
             [currency]: {
-              ...staticData[this.id][currency],
+              ...currencies[currency],
               ...this.currencies[currency],
             },
           },
