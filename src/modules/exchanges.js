@@ -94,7 +94,7 @@ module.exports = class Exchanges {
     for (let i = 0; i < subscriptions.length; i++) {
       setTimeout(() => {
         subscriptions[i].exchanges.forEach((exchange) => {
-          this.exchanges[exchange].subscribeOb(subscriptions[i].symbol, '100');
+          this.exchanges[exchange].subscribeOb(subscriptions[i].symbol, '50');
         });
 
         // arbitrary value not to flood

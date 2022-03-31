@@ -15,7 +15,7 @@ module.exports = class Arbitrage {
     return bid / ask - fees.reduce((acc, val) => acc + val, 0);
   }
 
-  _scanMarketTickersForArbs(tickerData, hPass = 0.001, lPass = 0.7) {
+  _scanMarketTickersForArbs(tickerData, highPass = 0.001, lowPass = 0.7) {
     const exchanges = Object.keys(tickerData);
     let arbs = [];
 
@@ -27,14 +27,14 @@ module.exports = class Arbitrage {
 
         if (reference.ask < checkup.bid) {
           const spread = this._spread(checkup.bid, reference.ask, fees);
-          if (spread < 1 + lPass && spread > 1 + hPass) {
+          if (spread < 1 + lowPass && spread > 1 + highPass) {
             arbs.push(
               new TickerArb(reference.symbol, reference.ask, exchanges[i], checkup.bid, exchanges[g], spread, fees),
             );
           }
         } else if (checkup.ask < reference.bid) {
           const spread = this._spread(reference.bid, checkup.ask, fees);
-          if (spread < 1 + lPass && spread > 1 + hPass) {
+          if (spread < 1 + lowPass && spread > 1 + highPass) {
             arbs.push(
               new TickerArb(checkup.symbol, checkup.ask, exchanges[g], reference.bid, exchanges[i], spread, fees),
             );
@@ -46,13 +46,13 @@ module.exports = class Arbitrage {
     if (arbs.length) return arbs;
   }
 
-  scanAllMarketTickers({ tickers, hPass, lPass }) {
+  scanAllMarketTickers({ tickers, highPass, lowPass }) {
     let { _scanMarketTickersForArbs, exchanges } = this;
     const markets = Object.keys(tickers);
     let arbs = {};
 
     for (let i = 0; i < markets.length; i++) {
-      const marketTickerScan = _scanMarketTickersForArbs(tickers[markets[i]], hPass, lPass);
+      const marketTickerScan = _scanMarketTickersForArbs(tickers[markets[i]], highPass, lowPass);
 
       if (marketTickerScan) {
         arbs = {
@@ -87,48 +87,49 @@ module.exports = class Arbitrage {
     } = obData;
 
     // mapping volume of currency regarding levels variable
-    const levelWallets = asks.reduce((acc, priceVol, idx) => {
+    const levelWallets = asks.reduce((acc, _, idx) => {
       const accLength = Object.keys(acc).length;
       if (accLength === levels.length) return acc;
 
-      const levelValVol = asks.slice(0, idx + 1).reduce(
-        (cum, pV) => {
-          cum.val += parseFloat(pV[0]) * parseFloat(pV[1]);
-          cum.vol += parseFloat(pV[1]);
+      const currentLevelValueVolume = asks.slice(0, idx + 1).reduce(
+        // priceVolume = [price, volume]
+        (cum, priceVolume) => {
+          cum.value += parseFloat(priceVolume[0]) * parseFloat(priceVolume[1]);
+          cum.volume += parseFloat(priceVolume[1]);
           return cum;
         },
-        { val: 0, vol: 0 },
+        { value: 0, volume: 0 },
       );
 
-      if (levelValVol.val > levels[accLength]) {
-        acc[accLength] = levelValVol;
+      if (currentLevelValueVolume.value > levels[accLength]) {
+        acc[accLength] = currentLevelValueVolume;
         return acc;
       }
       return acc;
     }, {});
 
     const output = Object.keys(levelWallets).reduce((acc, key, idx) => {
-      const { val } = levelWallets[key];
-      let vol = levelWallets[key].vol;
+      const { value } = levelWallets[key];
+      let volume = levelWallets[key].volume;
 
       const postVal = bids.reduce((valAcc, bid) => {
         const bidVol = parseFloat(bid[1]);
         const bidPrice = parseFloat(bid[0]);
 
-        if (vol === 0) return valAcc;
-        if (vol - bidVol >= 0) {
+        if (volume === 0) return valAcc;
+        if (volume - bidVol >= 0) {
           valAcc += bidPrice * bidVol;
-          vol -= bidVol;
+          volume -= bidVol;
           return valAcc;
         }
-        if (vol - bidVol < 0) {
+        if (volume - bidVol < 0) {
           for (let i = 1; i <= bidVol; i++) {
-            if (vol > 0) {
+            if (volume > 0) {
               valAcc += bidPrice;
               // as we perform "-1 from volume"
               // this method is invalid for currencies
               // using floating points (ETH, BTC etc)
-              vol -= 1;
+              volume -= 1;
               return valAcc;
             }
           }
@@ -137,9 +138,9 @@ module.exports = class Arbitrage {
       }, 0);
 
       acc[key] = {
-        preVal: val.toString(),
+        preVal: value.toString(),
         postVal: postVal.toString(),
-        arb: postVal / val - tradeFee,
+        arb: postVal / value - tradeFee,
       };
 
       return acc;

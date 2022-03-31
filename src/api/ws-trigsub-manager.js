@@ -19,8 +19,8 @@ module.exports = class WsTrigSubManager {
     this._tickerTriggerFunctions = this._tickerTriggerFunctions.bind(this);
   }
 
-  subscribe(channel, payload) {
-    const { _initChannelBroker, subscriber, obScanner } = this;
+  subscribe(channel) {
+    const { subscriber, obScanner } = this;
     if (!subscriber) {
       logger.error(`WS trigsub-manager: subscriber not provided`);
       return;
@@ -60,7 +60,7 @@ module.exports = class WsTrigSubManager {
     }
   }
 
-  _tickerTriggerFunctions(name, params) {
+  _tickerTriggerFunctions(name) {
     const { tickerScanner } = this;
 
     switch (name) {

@@ -2,7 +2,6 @@ const got = require('got');
 const WebSocket = require('ws');
 const CryptoJS = require('crypto-js');
 const Hex = require('crypto-js/enc-hex');
-const Utf8 = require('crypto-js/enc-utf8');
 
 const fs = require('fs');
 const path = require('path');
@@ -80,7 +79,7 @@ module.exports = class Gateio {
         setTimeout(async () => {
           await restartObSubscriptions();
           logger.info(`Gateio: Public stream (${_wssUrl}) connection reconnecting`);
-        }, 1000 * 3);
+        }, 3000);
       }
     };
 
@@ -117,9 +116,9 @@ module.exports = class Gateio {
 
   _generateSignature(method, url, queryString, payload, timestamp) {
     const payload512 = Hex.stringify(CryptoJS.SHA512(payload));
-    const s = `${method}\n${url}\n${queryString}\n${payload512}\n${timestamp}`;
+    const string = `${method}\n${url}\n${queryString}\n${payload512}\n${timestamp}`;
 
-    return Hex.stringify(CryptoJS.HmacSHA512(s, this._secretKey));
+    return Hex.stringify(CryptoJS.HmacSHA512(string, this._secretKey));
   }
 
   async _makeRequest(method, endpoint, query) {
@@ -151,7 +150,6 @@ module.exports = class Gateio {
           logger.error(`${this._baseUrl + endpoint}: ${err.message}`);
           return err;
         }
-        return;
       default:
         throw new Error('BinanceSpot _makeRequest method value error');
     }

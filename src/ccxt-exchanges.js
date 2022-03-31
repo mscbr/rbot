@@ -23,18 +23,16 @@ module.exports = class CcxtExchanges {
       // hitbtc: new ccxt.hitbtc({ enableRateLimit: true }),
     };
 
-    this._marketsForExchanges = {};
-
     this.tickers = {};
 
     this.usdtConversionMarkets = {};
   }
 
   async init() {
-    await this._loadMarkets();
+    await this._loadExchangesMarkets();
   }
 
-  async _loadMarkets() {
+  async _loadExchangesMarkets() {
     const { exchanges, logger } = this;
 
     const marketPromises = Object.values(exchanges).map(async (exchange) => {
@@ -52,9 +50,7 @@ module.exports = class CcxtExchanges {
   }
 
   get marketsForExchanges() {
-    let { exchanges, _marketsForExchanges } = this;
-
-    if (!!Object.keys(_marketsForExchanges).length) return _marketsForExchanges;
+    let { exchanges } = this;
 
     let exchangesForMarkets = Object.values(exchanges).reduce((acc, exchange) => {
       for (let market in exchange.markets) {
@@ -79,15 +75,13 @@ module.exports = class CcxtExchanges {
       if (exchangesForMarkets[key].length < 2) delete exchangesForMarkets[key];
     });
 
-    _marketsForExchanges = Object.keys(exchangesForMarkets).reduce((acc, market) => {
+    return Object.keys(exchangesForMarkets).reduce((acc, market) => {
       exchangesForMarkets[market].forEach((exchange) => {
         if (!acc[exchange]) acc[exchange] = [];
         acc[exchange].push(market);
       });
       return acc;
     }, {});
-
-    return _marketsForExchanges;
   }
 
   async fetchMarketTickers(excludedCoins = []) {
