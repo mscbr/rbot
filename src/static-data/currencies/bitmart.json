@@ -1143,7 +1143,7 @@
     "UMA": {
         "symbol": "UMA",
         "withdrawDisabled": false,
-        "withdrawMin": 3,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 4.2,
@@ -1610,7 +1610,7 @@
     "SXP": {
         "symbol": "SXP",
         "withdrawDisabled": false,
-        "withdrawMin": 5,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 11,
@@ -1663,7 +1663,7 @@
     },
     "MOONSHOT": {
         "symbol": "MOONSHOT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -1734,7 +1734,12 @@
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
-        "withdrawFee": {}
+        "withdrawFee": {
+            "fix": 65,
+            "quoteEstimation": {
+                "USDT": 30.6215
+            }
+        }
     },
     "EPK": {
         "symbol": "EPK",
@@ -1814,7 +1819,7 @@
         "withdrawFee": {
             "fix": 1.3,
             "quoteEstimation": {
-                "USDT": 0.32019
+                "USDT": 0.43706
             }
         }
     },
@@ -1842,7 +1847,7 @@
     "ARES": {
         "symbol": "ARES",
         "withdrawDisabled": false,
-        "withdrawMin": 400,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 1502,
@@ -1854,7 +1859,7 @@
     "SAFEMARS": {
         "symbol": "SAFEMARS",
         "withdrawDisabled": false,
-        "withdrawMin": 100000000,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 123512817,
@@ -1976,7 +1981,7 @@
     "PIG": {
         "symbol": "PIG",
         "withdrawDisabled": false,
-        "withdrawMin": 50000000,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 20928856,
@@ -2056,7 +2061,7 @@
     "ELON": {
         "symbol": "ELON",
         "withdrawDisabled": false,
-        "withdrawMin": 11834320,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 22073007,
@@ -2452,9 +2457,9 @@
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 13,
+            "fix": 17,
             "quoteEstimation": {
-                "USDT": 2.06
+                "USDT": 1.0183
             }
         }
     },
@@ -2523,7 +2528,7 @@
     },
     "BTCN": {
         "symbol": "BTCN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -2862,7 +2867,12 @@
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
-        "withdrawFee": {}
+        "withdrawFee": {
+            "fix": 24093477794,
+            "quoteEstimation": {
+                "USDT": 41.32031441671
+            }
+        }
     },
     "ALICE": {
         "symbol": "ALICE",
@@ -2888,7 +2898,7 @@
     "LIKE": {
         "symbol": "LIKE",
         "withdrawDisabled": false,
-        "withdrawMin": 150,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 15,
@@ -3176,12 +3186,12 @@
     "QI": {
         "symbol": "QI",
         "withdrawDisabled": false,
-        "withdrawMin": 200,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 1,
             "quoteEstimation": {
-                "USDT": 0.06172
+                "USDT": 0.0702
             }
         }
     },
@@ -3265,7 +3275,7 @@
     "10SET": {
         "symbol": "10SET",
         "withdrawDisabled": false,
-        "withdrawMin": 20,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 4.9,
@@ -3384,7 +3394,12 @@
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
-        "withdrawFee": {}
+        "withdrawFee": {
+            "fix": 26,
+            "quoteEstimation": {
+                "USDT": 31.0362
+            }
+        }
     },
     "PETG": {
         "symbol": "PETG",
@@ -3416,7 +3431,7 @@
     },
     "XET": {
         "symbol": "XET",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -3618,7 +3633,7 @@
     "VEMP": {
         "symbol": "VEMP",
         "withdrawDisabled": false,
-        "withdrawMin": 300,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 263,
@@ -3741,7 +3756,7 @@
     },
     "BME": {
         "symbol": "BME",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4101,7 +4116,7 @@
     },
     "PLANETS": {
         "symbol": "PLANETS",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -4109,7 +4124,7 @@
     "DMTR": {
         "symbol": "DMTR",
         "withdrawDisabled": false,
-        "withdrawMin": 8,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 77,
@@ -4128,12 +4143,12 @@
     "BP": {
         "symbol": "BP",
         "withdrawDisabled": false,
-        "withdrawMin": 1,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 179,
+            "fix": 351,
             "quoteEstimation": {
-                "USDT": 17.901253
+                "USDT": 30.771468
             }
         }
     },
@@ -4219,7 +4234,12 @@
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
-        "withdrawFee": {}
+        "withdrawFee": {
+            "fix": 389442978848,
+            "quoteEstimation": {
+                "USDT": 136.30504259679998
+            }
+        }
     },
     "PETS": {
         "symbol": "PETS",
@@ -4334,7 +4354,7 @@
     "PBR": {
         "symbol": "PBR",
         "withdrawDisabled": false,
-        "withdrawMin": 18,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 46,
@@ -4537,7 +4557,12 @@
         "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
-        "withdrawFee": {}
+        "withdrawFee": {
+            "fix": 0.8,
+            "quoteEstimation": {
+                "USDT": 1.0432000000000001
+            }
+        }
     },
     "TZKI": {
         "symbol": "TZKI",
@@ -4619,7 +4644,7 @@
     "NIFT": {
         "symbol": "NIFT",
         "withdrawDisabled": false,
-        "withdrawMin": 57,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 331,
@@ -4645,12 +4670,12 @@
     "WSIENNA": {
         "symbol": "WSIENNA",
         "withdrawDisabled": false,
-        "withdrawMin": 1,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 3.6,
+            "fix": 5.7,
             "quoteEstimation": {
-                "USDT": 17.974800000000002
+                "USDT": 31.0707
             }
         }
     },
@@ -4695,9 +4720,9 @@
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 830042,
+            "fix": 2960517,
             "quoteEstimation": {
-                "USDT": 7.5948843
+                "USDT": 30.641350949999996
             }
         }
     },
@@ -4852,9 +4877,9 @@
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 6,
+            "fix": 23,
             "quoteEstimation": {
-                "USDT": 9.78
+                "USDT": 30.452
             }
         }
     },
@@ -5011,7 +5036,7 @@
     "GAIA": {
         "symbol": "GAIA",
         "withdrawDisabled": false,
-        "withdrawMin": 20,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 2,
@@ -5142,7 +5167,7 @@
     "HOGE": {
         "symbol": "HOGE",
         "withdrawDisabled": false,
-        "withdrawMin": 54795,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 298023,
@@ -5376,7 +5401,7 @@
         "withdrawFee": {
             "fix": 5,
             "quoteEstimation": {
-                "USDT": 1.85
+                "USDT": 0.8729549999999999
             }
         }
     },
@@ -5521,7 +5546,7 @@
     "DFA": {
         "symbol": "DFA",
         "withdrawDisabled": false,
-        "withdrawMin": 10,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 15,
@@ -5580,7 +5605,7 @@
     "HOTCROSS": {
         "symbol": "HOTCROSS",
         "withdrawDisabled": false,
-        "withdrawMin": 400,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 5.2,
@@ -5627,12 +5652,12 @@
     "FRR": {
         "symbol": "FRR",
         "withdrawDisabled": false,
-        "withdrawMin": 4000,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 168,
+            "fix": 501,
             "quoteEstimation": {
-                "USDT": 18.774
+                "USDT": 30.71631
             }
         }
     },
@@ -5874,9 +5899,9 @@
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 3000,
+            "fix": 8404,
             "quoteEstimation": {
-                "USDT": 4.752
+                "USDT": 8.462828
             }
         }
     },
@@ -5942,9 +5967,9 @@
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 0.17,
+            "fix": 0.3,
             "quoteEstimation": {
-                "USDT": 24.310000000000002
+                "USDT": 42.3615
             }
         }
     },
@@ -6219,7 +6244,7 @@
     },
     "OK": {
         "symbol": "OK",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6240,7 +6265,7 @@
     },
     "RDD": {
         "symbol": "RDD",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -6310,7 +6335,7 @@
     },
     "AKT": {
         "symbol": "AKT",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
@@ -6539,7 +6564,7 @@
     },
     "ALGO": {
         "symbol": "ALGO",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {}
@@ -7190,7 +7215,7 @@
     },
     "YLDY": {
         "symbol": "YLDY",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7244,7 +7269,7 @@
     },
     "PARA": {
         "symbol": "PARA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7304,7 +7329,7 @@
     },
     "SMILE": {
         "symbol": "SMILE",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7318,7 +7343,13 @@
         "symbol": "METAN",
         "withdrawDisabled": false,
         "withdrawMin": 0,
-        "anyToWithdraw": false
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 14,
+            "quoteEstimation": {
+                "USDT": 1.089074
+            }
+        }
     },
     "TOWER_POLYGON": {
         "symbol": "TOWER_POLYGON",
@@ -7366,7 +7397,13 @@
         "symbol": "POLC",
         "withdrawDisabled": false,
         "withdrawMin": 0,
-        "anyToWithdraw": false
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 100,
+            "quoteEstimation": {
+                "USDT": 30.95
+            }
+        }
     },
     "SPHRI": {
         "symbol": "SPHRI",
@@ -7533,12 +7570,12 @@
     "DEP": {
         "symbol": "DEP",
         "withdrawDisabled": false,
-        "withdrawMin": 1920,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
-            "fix": 608,
+            "fix": 1302,
             "quoteEstimation": {
-                "USDT": 17.8144
+                "USDT": 32.419799999999995
             }
         }
     },
@@ -7575,7 +7612,7 @@
     "OMI": {
         "symbol": "OMI",
         "withdrawDisabled": false,
-        "withdrawMin": 1378,
+        "withdrawMin": 0,
         "anyToWithdraw": false,
         "withdrawFee": {
             "fix": 6507,
@@ -7672,7 +7709,13 @@
         "symbol": "ZBC",
         "withdrawDisabled": false,
         "withdrawMin": 0,
-        "anyToWithdraw": false
+        "anyToWithdraw": false,
+        "withdrawFee": {
+            "fix": 96,
+            "quoteEstimation": {
+                "USDT": 3.1442879999999995
+            }
+        }
     },
     "G1X": {
         "symbol": "G1X",
@@ -7730,7 +7773,7 @@
     },
     "FYN": {
         "symbol": "FYN",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7748,7 +7791,7 @@
     },
     "ANML": {
         "symbol": "ANML",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7772,7 +7815,7 @@
     },
     "CCT": {
         "symbol": "CCT",
-        "withdrawDisabled": false,
+        "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7790,19 +7833,19 @@
     },
     "GAMI": {
         "symbol": "GAMI",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "SOLAR": {
         "symbol": "SOLAR",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "VXL": {
         "symbol": "VXL",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7820,13 +7863,13 @@
     },
     "$MESA": {
         "symbol": "$MESA",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
     "WNK": {
         "symbol": "WNK",
-        "withdrawDisabled": true,
+        "withdrawDisabled": false,
         "withdrawMin": 0,
         "anyToWithdraw": false
     },
@@ -7880,6 +7923,108 @@
     },
     "BOT": {
         "symbol": "BOT",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ADAO": {
+        "symbol": "ADAO",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PERI": {
+        "symbol": "PERI",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "BVC": {
+        "symbol": "BVC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "CHEQ": {
+        "symbol": "CHEQ",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "VULC": {
+        "symbol": "VULC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "UBT": {
+        "symbol": "UBT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "VSOL": {
+        "symbol": "VSOL",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "AVAT": {
+        "symbol": "AVAT",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "SWARM": {
+        "symbol": "SWARM",
+        "withdrawDisabled": false,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "GMM": {
+        "symbol": "GMM",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FLAG": {
+        "symbol": "FLAG",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PTX": {
+        "symbol": "PTX",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "LED_LED": {
+        "symbol": "LED_LED",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "FWC": {
+        "symbol": "FWC",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "DOGEMETA": {
+        "symbol": "DOGEMETA",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "PKN": {
+        "symbol": "PKN",
+        "withdrawDisabled": true,
+        "withdrawMin": 0,
+        "anyToWithdraw": false
+    },
+    "ASW-ERC": {
+        "symbol": "ASW-ERC",
         "withdrawDisabled": true,
         "withdrawMin": 0,
         "anyToWithdraw": false

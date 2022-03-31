@@ -111,7 +111,7 @@ module.exports = class CcxtExchanges {
 
         // excludedCoins ~ withdrawal disabled
         const base = ticker.symbol.split('/')[0];
-        if (excludedCoins && excludedCoins[exchange].includes(base)) return;
+        if (excludedCoins && excludedCoins[exchange] && excludedCoins[exchange].includes(base)) return;
 
         this.tickers[market] = {
           ...this.tickers[market],
